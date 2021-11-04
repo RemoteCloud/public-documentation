@@ -11,12 +11,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://remotecloud.github.io/public-documentation/dev/examples/login/</loc>
+         <loc>https://remotecloud.github.io/public-documentation/dev/examples/authentication/</loc>
          <lastmod>2021-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://remotecloud.github.io/public-documentation/dev/general-information/authorization%20-%20Copy/</loc>
+         <loc>https://remotecloud.github.io/public-documentation/dev/general-information/</loc>
          <lastmod>2021-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -26,7 +26,57 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://remotecloud.github.io/public-documentation/dev/user-guide/getting-started/</loc>
+         <loc>https://remotecloud.github.io/public-documentation/dev/general-information/syncronization/</loc>
+         <lastmod>2021-11-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://remotecloud.github.io/public-documentation/dev/general-information/documentation/permissions/</loc>
+         <lastmod>2021-11-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://remotecloud.github.io/public-documentation/dev/general-information/documentation/validation/</loc>
+         <lastmod>2021-11-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://remotecloud.github.io/public-documentation/dev/general-information/templates/approval/</loc>
+         <lastmod>2021-11-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://remotecloud.github.io/public-documentation/dev/general-information/templates/message-bus/</loc>
+         <lastmod>2021-11-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://remotecloud.github.io/public-documentation/dev/general-information/templates/permissions/</loc>
+         <lastmod>2021-11-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://remotecloud.github.io/public-documentation/dev/general-information/templates/synchronization/</loc>
+         <lastmod>2021-11-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://remotecloud.github.io/public-documentation/dev/general-information/templates/webhooks/</loc>
+         <lastmod>2021-11-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://remotecloud.github.io/public-documentation/dev/general-information/user-management/permissions/</loc>
+         <lastmod>2021-11-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://remotecloud.github.io/public-documentation/dev/general-information/user-management/position/</loc>
+         <lastmod>2021-11-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://remotecloud.github.io/public-documentation/dev/general-information/user-management/user/</loc>
          <lastmod>2021-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
