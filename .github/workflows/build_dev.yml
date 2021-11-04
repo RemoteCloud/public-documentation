@@ -1,0 +1,51 @@
+name: Generate documentation
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build_docs:
+    name: Generate documentation
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ 3.8 ]
+
+    steps:
+      - name: Checkout source files
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64
+
+      - name: Cache pip
+        uses: actions/cache@v2
+        with:
+          # This path is specific to Ubuntu
+          path: ~/.cache/pip
+          # Look to see if there is a cache hit for the corresponding requirements file
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+          
+      - name: Install dependencies
+        run: python3 -m pip install -r requirements.txt
+
+      - name: Configure Git user
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+        #git config --local user.email "$(git log --format='%ae' HEAD^!)"
+        #git config --local user.name "$(git log --format='%an' HEAD^!)"
+                
+      - name: Deploy with mike 🚀
+        run: |
+          mike deploy --push dev

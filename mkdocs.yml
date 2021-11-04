@@ -1,0 +1,55 @@
+site_name: Maranics Developer Documentation
+site_url: https://remotecloud.github.io/public-documentation
+site_description: The developer documentation for the Maranics products.
+site_author: Maranics Development Team
+
+repo_url: https://github.com/RemoteCloud/public-documentation
+edit_uri: edit/dev/docs
+
+theme:
+    name: material
+    custom_dir: overrides
+    logo: assets/images/maranics-logo-white.png
+    favicon: assets/images/maranics-logo-white.png
+    palette:
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" 
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+    features:
+        - navigation.instant        
+        - navigation.tabs
+        - navigation.tabs.sticky
+        - navigation.expand
+        - navigation.indexes
+        - navigation.top
+    locale: en
+    highlightjs: true
+    hljs_languages:
+        - http
+        - csharp
+        
+extra:
+    version:
+        provider: mike
+    generator: false
+        
+extra_css:
+    - assets/css/extra.css
+
+#copyright: ...
+
+plugins:
+  - search
+  - awesome-pages
+  - mike:
+      # these fields are all optional; the defaults are as below...
+      version_selector: true   # set to false to leave out the version selector
+      css_dir: css             # the directory to put the version selector's CSS
+      javascript_dir: js       # the directory to put the version selector's JS
