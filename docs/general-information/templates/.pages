@@ -1,0 +1,6 @@
+nav:
+  - Approval: approval
+  - Message Bus: message-bus
+  - Permissions: permissions
+  - Synchronization: synchronization
+  - Webhooks: webhooks

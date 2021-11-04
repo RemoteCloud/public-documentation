@@ -1,0 +1,4 @@
+nav:
+  - User: user
+  - Position: position
+  - Permissions: permissions

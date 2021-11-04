@@ -12,13 +12,14 @@ mkdocs==1.2.3
 mkdocs-awesome-pages-plugin==2.6.0
 mkdocs-material==7.3.6
 mkdocs-material-extensions==1.0.3
+mkdocs-section-index==0.3.2
 packaging==21.2
 Pygments==2.10.0
 pymdown-extensions==9.0
 pyparsing==2.4.7
 python-dateutil==2.8.2
 PyYAML==6.0
-pyyaml_env_tag==0.1
+pyyaml-env-tag==0.1
 six==1.16.0
 typing-extensions==3.10.0.2
 verspec==0.1.0

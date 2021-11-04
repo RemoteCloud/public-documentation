@@ -48,6 +48,7 @@ extra_css:
 plugins:
   - search
   - awesome-pages
+  - section-index
   - mike:
       # these fields are all optional; the defaults are as below...
       version_selector: true   # set to false to leave out the version selector
