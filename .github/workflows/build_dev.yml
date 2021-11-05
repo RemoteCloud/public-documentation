@@ -26,6 +26,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}    
           
+      - name: Cache NPM
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.node-version }}-
+      
       - name: Install Widdershins
         run: npm install -g widdershins
         
@@ -55,7 +63,9 @@ jobs:
           bundle install --gemfile ./slate/Gemfile --jobs 4 --retry 3
           
       - name: Build source with middleman 
-        run: bundle exec middleman build --clean --data-dir ./slate/source --build-dir ./mkdocs/docs/api            
+        run: |
+          cd slate
+          bundle exec middleman build --clean --build-dir ../mkdocs/docs/api            
           
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
