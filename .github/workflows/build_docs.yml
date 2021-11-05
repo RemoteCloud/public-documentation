@@ -17,7 +17,7 @@ jobs:
       - name: Checkout source files
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          submodules: recursive
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
@@ -37,14 +37,12 @@ jobs:
             ${{ runner.os }}-
           
       - name: Install dependencies
-        run: python3 -m pip install -r requirements.txt
+        run: python3 -m pip install -r ./mkdocs/requirements.txt
 
       - name: Configure Git user
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-        #git config --local user.email "$(git log --format='%ae' HEAD^!)"
-        #git config --local user.name "$(git log --format='%an' HEAD^!)"
         
       - name: Extract branch name
         shell: bash
@@ -53,4 +51,4 @@ jobs:
         
       - name: Deploy with mike 🚀
         run: |
-          mike deploy --push ${{ steps.extract_branch.outputs.branch }}
+          mike deploy --prefix mkdocs --push ${{ steps.extract_branch.outputs.branch }}
