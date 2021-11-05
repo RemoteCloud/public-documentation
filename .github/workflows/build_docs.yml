@@ -1,4 +1,4 @@
-name: Generate documentation
+name: Generate [version] documentation
 
 on:
   push:
