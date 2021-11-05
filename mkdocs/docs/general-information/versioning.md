@@ -1,0 +1,2 @@
+- breaking changes between major version
+- new api's and properties between minor version - existing api's will not have any breaking changes
