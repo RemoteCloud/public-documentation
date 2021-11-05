@@ -49,7 +49,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: vendor/bundle
-          key: gems-${{ runner.os }}-${{ matrix.ruby-version }}-${{ hashFiles('**/Gemfile.lock') }}
+          key: gems-${{ runner.os }}-${{ matrix.ruby-version }}-${{ hashFiles('slate/Gemfile.lock') }}
           restore-keys: |
             gems-${{ runner.os }}-${{ matrix.ruby-version }}-
             gems-${{ runner.os }}-
@@ -78,7 +78,7 @@ jobs:
         with:
           # This path is specific to Ubuntu
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('mkdocs/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
             ${{ runner.os }}-
@@ -92,4 +92,6 @@ jobs:
           git config --local user.name "github-actions[bot]"
                 
       - name: Deploy MkDoc with mike 🚀
-        run: mike deploy --prefix mkdocs --push dev
+        run: |
+          cd mkdocs
+          mike deploy --push dev
