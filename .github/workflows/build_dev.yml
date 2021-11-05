@@ -27,16 +27,21 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}    
           
+      - name: Get npm cache directory
+        id: npm-cache
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+    
       - name: Cache NPM
         uses: actions/cache@v2
         with:
-          path: ~/.npm
+          path: ${{ steps.npm-cache.outputs.dir }}
           key: ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-${{ matrix.node-version }}-
       
       - name: Install Widdershins
-        run: npm install -g widdershins
+        run: npm install widdershins
         
       - name: Convert swagger to markdown
         run: widdershins swagger.json -o ./slate/source/index.html.md          
