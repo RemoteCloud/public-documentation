@@ -12,40 +12,75 @@ jobs:
     strategy:
       matrix:
         python-version: [ 3.8 ]
+        ruby-version: [ 3.0 ]
+        node-version: [ 16.x ]
 
     steps:
       - name: Checkout source files
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+          submodules: recursive
+          
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}    
+          
+      - name: Install Widdershins
+        run: npm install -g widdershins
+        
+      - name: Convert swagger to markdown
+        run: widdershins swagger.json -o ./slate/source/index.html.md          
 
+      - name: Set up Ruby  ${{ matrix.ruby-version }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+            
+      - name: Cache gems
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: gems-${{ runner.os }}-${{ matrix.ruby-version }}-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            gems-${{ runner.os }}-${{ matrix.ruby-version }}-
+            gems-${{ runner.os }}-
+            
+      - name: Set bundle to deployment mode
+        run: bundle config set deployment 'true'
+        
+      - name: bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle install --gemfile ./slate/Gemfile --jobs 4 --retry 3
+          
+      - name: Build source with middleman 
+        run: bundle exec middleman build --clean --data-dir ./slate/source --build-dir ./mkdocs/docs/api            
+          
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-          architecture: x64
-
+          architecture: x64          
+          
       - name: Cache pip
         uses: actions/cache@v2
         with:
           # This path is specific to Ubuntu
           path: ~/.cache/pip
-          # Look to see if there is a cache hit for the corresponding requirements file
           key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
             ${{ runner.os }}-
-          
-      - name: Install dependencies
-        run: python3 -m pip install -r requirements.txt
+            
+      - name: Install Python dependencies
+        run: python3 -m pip install -r ./mkdocs/requirements.txt
 
       - name: Configure Git user
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-        #git config --local user.email "$(git log --format='%ae' HEAD^!)"
-        #git config --local user.name "$(git log --format='%an' HEAD^!)"
                 
-      - name: Deploy with mike 🚀
-        run: |
-          mike deploy --push dev
+      - name: Deploy MkDoc with mike 🚀
+        run: mike deploy --prefix mkdocs --push dev
