@@ -1,6 +1,6 @@
 ## MkDocs
 
-We use [MkDocs][mkdocs] together with the [material theme][material-theme] and [mike][mike] to build our developer documentation. 
+We use [MkDocs][mkdocs] together with the [material theme][material-theme],  [mike][mike] and [Slate][slate] to build our developer documentation. 
 
 ### Local setup 
 
@@ -22,20 +22,9 @@ Run it via `mkdocs serve`
 We use the [awesome pages plugin][awesome-pages-plugin] for the navigation definition.
 
 
-## API Version
+## API Versioning
 
-We use [widdershins][widdershins] to generate a md file out of our swagger document. Then we use [slate][slate] to generate a static page with our API definition. Afterwards we build MkDocs and the API will be included in the API folder. At the moment we need to manually update which API version it needs to build as well as updating the version when a minor version changes.
-
-```
-# retrieve swagger definition from API gateway
-wget --directory-prefix ./ –output-document swagger.json https://.../v1/swagger.json
-
-# convert
-widdershins swagger.json -o ./slate/source/index.html.md
-
-# build static page
-bundle exec middleman build --clean --data-dir ./slate/source --build-dir ./docs/api
-```
+In the GitHub Action we use [widdershins][widdershins] to generate a md-file out of our `swagger.json` document found in the root of this repository. Then we use [Slate][slate] to generate a static page with our API definition. Afterwards we build MkDocs and the API will be included in the API folder. 
 
 
 ## Build Instructions
