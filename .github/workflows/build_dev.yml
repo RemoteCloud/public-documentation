@@ -41,7 +41,7 @@ jobs:
             ${{ runner.os }}-${{ matrix.node-version }}-
       
       - name: Install Widdershins
-        run: npm install widdershins
+        run: npm install
         
       - name: Convert swagger to markdown
         run: widdershins swagger.json -o ./slate/source/index.html.md          
