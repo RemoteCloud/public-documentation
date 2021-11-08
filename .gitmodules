@@ -1,3 +1,4 @@
 [submodule "slate"]
 	path = slate
 	url = https://github.com/RemoteCloud/slate.git
+	branch = main
