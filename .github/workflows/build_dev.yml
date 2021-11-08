@@ -46,40 +46,32 @@ jobs:
       - name: Convert swagger to markdown
         run: widdershins swagger.json --language_tabs shell:Shell http:HTTP javascript:JS php:PHP csharp:C# java:Java -o ./slate/source/index.html.md          
 
-      #- name: Set up Ruby  ${{ matrix.ruby-version }}
-      #  uses: ruby/setup-ruby@v1
-      #  with:
-      #    ruby-version: ${{ matrix.ruby-version }}
-      #      
-      #- name: Cache gems
-      #  uses: actions/cache@v2
-      #  with:
-      #    path: vendor/bundle
-      #    key: gems-${{ runner.os }}-${{ matrix.ruby-version }}-${{ hashFiles('slate/Gemfile.lock') }}
-      #    restore-keys: |
-      #      gems-${{ runner.os }}-${{ matrix.ruby-version }}-
-      #      gems-${{ runner.os }}-
-      #      
-      #- name: Set bundle to deployment mode
-      #  run: bundle config set deployment 'true'
-      #  
-      #- name: bundle install
-      #  run: |
-      #    bundle config path vendor/bundle
-      #    bundle install --gemfile ./slate/Gemfile --jobs 4 --retry 3
-      #    
-      #- name: Build source with middleman 
-      #  run: |
-      #    cd slate
-      #    bundle exec middleman build --clean --build-dir ../mkdocs/docs/api      
-
-      - name: Build Slate
-        uses: addnab/docker-run-action@v3
-        with:     
-          image: slatedocs/slate:latest
-          options: -v ${{ github.workspace }}/mkdocs/docs/api:/srv/slate/build -v ${{ github.workspace }}/slate/source:/srv/slate/source
-          run: build
-          shell: /srv/slate/slate.sh
+      - name: Set up Ruby  ${{ matrix.ruby-version }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+            
+      - name: Cache gems
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: gems-${{ runner.os }}-${{ matrix.ruby-version }}-${{ hashFiles('slate/Gemfile.lock') }}
+          restore-keys: |
+            gems-${{ runner.os }}-${{ matrix.ruby-version }}-
+            gems-${{ runner.os }}-
+            
+      - name: Set bundle to deployment mode
+        run: bundle config set deployment 'true'
+        
+      - name: bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle install --gemfile ./slate/Gemfile --jobs 4 --retry 3
+          
+      - name: Build source with middleman 
+        run: |
+          cd slate
+          bundle exec middleman build --clean --build-dir ../mkdocs/docs/api      
           
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
