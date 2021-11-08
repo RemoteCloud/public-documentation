@@ -74,6 +74,7 @@ jobs:
       #    bundle exec middleman build --clean --build-dir ../mkdocs/docs/api      
 
       - name: Build Slate
+        uses: ./
         with:     
           image: slatedocs/slate:latest
           options: -v ${{ github.workspace }}/mkdocs/docs/api:/srv/slate/build -v ${{ github.workspace }}/slate/source:/srv/slate/source
