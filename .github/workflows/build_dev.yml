@@ -78,7 +78,6 @@ jobs:
         with:     
           image: slatedocs/slate:latest
           options: -v ${{ github.workspace }}/mkdocs/docs/api:/srv/slate/build -v ${{ github.workspace }}/slate/source:/srv/slate/source
-          run: build
           
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
