@@ -44,7 +44,7 @@ jobs:
         run: npm install -g widdershins
         
       - name: Convert swagger to markdown
-        run: widdershins swagger.json -o ./slate/source/index.html.md          
+        run: widdershins swagger.json --language_tabs shell:Shell http:HTTP javascript:JS php:PHP csharp:C# java:Java -o ./slate/source/index.html.md          
 
       - name: Set up Ruby  ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
