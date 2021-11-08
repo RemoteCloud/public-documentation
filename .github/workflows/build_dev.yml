@@ -74,11 +74,11 @@ jobs:
       #    bundle exec middleman build --clean --build-dir ../mkdocs/docs/api      
 
       - name: Build Slate
-        uses: ./
+        uses: addnab/docker-run-action@v3
         with:     
           image: slatedocs/slate:latest
           options: -v ${{ github.workspace }}/mkdocs/docs/api:/srv/slate/build -v ${{ github.workspace }}/slate/source:/srv/slate/source
-          args: build
+          run: build
           
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
