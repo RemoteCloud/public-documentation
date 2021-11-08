@@ -76,7 +76,7 @@ jobs:
       - name: Build Slate
         uses: docker://slatedocs/slate:latest
         with:     
-          options: -v mkdocs/docs/api:/srv/slate/build -v slate:/srv/slate/source
+          options: -v ${{ github.workspace }}/mkdocs/docs/api:/srv/slate/build -v ${{ github.workspace }}/slate:/srv/slate/source
           
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
