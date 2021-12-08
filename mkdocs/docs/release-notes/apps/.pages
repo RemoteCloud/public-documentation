@@ -1,0 +1,9 @@
+nav:
+  - user-management.md
+  - launcher.md
+  - flow.md
+  - template.md
+  - portal.md
+  - barrier-model.md
+  - ...
+  - automation.md
