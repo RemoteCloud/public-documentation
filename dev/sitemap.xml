@@ -121,12 +121,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://development.maranics.com/dev/release-notes/bundle/</loc>
+         <lastmod>2021-12-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://development.maranics.com/dev/release-notes/apps/automation/</loc>
          <lastmod>2021-12-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/apps/barrier-model/</loc>
+         <lastmod>2021-12-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://development.maranics.com/dev/release-notes/apps/documentation/</loc>
          <lastmod>2021-12-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -172,6 +182,11 @@
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/services/pdf-generator/</loc>
+         <lastmod>2021-12-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://development.maranics.com/dev/release-notes/services/remote-execution/</loc>
          <lastmod>2021-12-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
