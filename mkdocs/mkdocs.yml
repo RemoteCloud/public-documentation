@@ -4,7 +4,7 @@ site_description: The developer documentation for the Maranics products.
 site_author: Maranics Development Team
 
 repo_url: https://github.com/RemoteCloud/public-documentation
-edit_uri: edit/dev/docs
+edit_uri: edit/dev/mkdocs/docs
 
 theme:
     name: material
