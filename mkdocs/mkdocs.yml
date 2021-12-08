@@ -43,6 +43,10 @@ extra:
 extra_css:
     - assets/css/extra.css
 
+markdown_extensions:
+  - toc:
+      permalink: true
+
 #copyright: ...
 
 plugins:
