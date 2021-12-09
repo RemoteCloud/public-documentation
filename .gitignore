@@ -1,4 +1,4 @@
 mkdocs/site/
 mkdocs/env/
-mkdocs/docs/api/
+mkdocs/docs/api/*/
 node_modules/
