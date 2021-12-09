@@ -14,7 +14,8 @@ jobs:
         python-version: [ 3.8 ]
         ruby-version: [ 3.0 ]
         node-version: [ 16.x ]
-        api-endpoint: [ usermanagement_service, documentation ]
+    env:
+      ENDPOINTS: usermanagement_service documentation
 
     steps:
       - name: Checkout source files
@@ -45,9 +46,7 @@ jobs:
         run: npm install -g widdershins
         
       - name: Convert swagger to markdown
-        env:
-          ENDPOINT: ${{ matrix.api-endpoint }}
-        run: widdershins ./swagger-definitions/${ENDPOINT}.json --language_tabs shell:Shell http:HTTP javascript:JS php:PHP csharp:C# java:Java -o ./swagger-definitions/${ENDPOINT}.md          
+        run: for endpoint in $ENDPOINTS; do widdershins ./swagger-definitions/${endpoint}.json --language_tabs shell:Shell http:HTTP javascript:JS php:PHP csharp:C# java:Java -o ./swagger-definitions/${endpoint}.md; done
 
       - name: Set up Ruby  ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
@@ -72,12 +71,9 @@ jobs:
           bundle install --gemfile ./slate/Gemfile --jobs 4 --retry 3
           
       - name: Build source with middleman 
-        env:
-          ENDPOINT: ${{ matrix.api-endpoint }}
         run: |
-          cp ./swagger-definitions/${ENDPOINT}.md ./slate/source/index.html.md
-          cd slate          
-          bundle exec middleman build --clean --build-dir ../mkdocs/docs/api/{ENDPOINT}     
+          cd slate
+          for endpoint in $ENDPOINTS; do cp ../swagger-definitions/${ENDPOINT}.md ../slate/source/index.html.md && bundle exec middleman build --clean --build-dir ../mkdocs/docs/api/{ENDPOINT}; done
           
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
