@@ -1,0 +1,331 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "PDF from HTML generator REST API",
+    "description": "API to generate PDF file from provided HTML source.",
+    "version": "1.0"
+  },
+  "paths": {
+    "/service/pdf-generator/Conversion/htmlToPdf": {
+      "post": {
+        "tags": [
+          "Conversion"
+        ],
+        "summary": "Convert HTML to PDF",
+        "description": "Sample request:\r\n            \r\n    curl --location --request POST 'https://.../api/conversion/htmlToPdf' \\\r\n         --header 'name: Test.pdf' \\\r\n         --header 'headerId: test' \\\r\n         --header 'footerId: test' \\\r\n         --header 'Content-Type: text/html' \\\r\n         --data-raw '<html> ... </html>'",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "header",
+            "description": "Test.pdf",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "headerId",
+            "in": "header",
+            "description": "test",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "footerId",
+            "in": "header",
+            "description": "test",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Content: \\<html>...\\</html>",
+          "content": {
+            "text/html": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/service/pdf-generator/Health/status": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "summary": "Default endpoint called on application start",
+        "description": "Sample request:\r\n            \r\n    curl --location --request POST 'https://.../api/health/status' \\",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/service/pdf-generator/Template/list": {
+      "get": {
+        "tags": [
+          "Template"
+        ],
+        "summary": "List Templates",
+        "description": "Sample request:\r\n            \r\n    curl --location --request GET 'https://.../api/template/list' \\\r\n         --header 'Content-Type: text/html' \\",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/service/pdf-generator/Template/get": {
+      "get": {
+        "tags": [
+          "Template"
+        ],
+        "summary": "Get Template",
+        "description": "Sample request:\r\n            \r\n    curl --location --request GET 'https://.../api/template/get' \\\r\n         --header 'id: test' \\\r\n         --header 'Content-Type: text/html' \\",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/service/pdf-generator/Template/upload": {
+      "post": {
+        "tags": [
+          "Template"
+        ],
+        "summary": "Create Template",
+        "description": "Sample request:\r\n            \r\n    curl --location --request POST 'https://.../api/template/upload' \\\r\n         --header 'id: test' \\\r\n         --header 'Content-Type: text/html' \\\r\n         --data-raw '<html> header </html>'",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "header",
+            "description": "Template ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Content: \\<html>header\\</html>",
+          "content": {
+            "text/html": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/service/pdf-generator/Template/update": {
+      "put": {
+        "tags": [
+          "Template"
+        ],
+        "summary": "Update Template",
+        "description": "Sample request:\r\n            \r\n    curl --location --request PUT 'https://.../api/template/update' \\\r\n         --header 'id: test' \\\r\n         --header 'Content-Type: text/html' \\\r\n         --data-raw '<html> header </html>'",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "header",
+            "description": "Template ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Content: \\<html>header\\</html>",
+          "content": {
+            "text/html": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/service/pdf-generator/Template/removeHeader": {
+      "delete": {
+        "tags": [
+          "Template"
+        ],
+        "summary": "Delete Template",
+        "description": "Sample request:\r\n            \r\n    curl --location --request DELETE 'https://.../api/template/remove' \\\r\n         --header 'id: test' \\\r\n         --header 'Content-Type: text/html' \\",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "header",
+            "description": "Template ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}
