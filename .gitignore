@@ -2,3 +2,4 @@ mkdocs/site/
 mkdocs/env/
 mkdocs/docs/api/*/
 node_modules/
+swagger-definitions/*.md
