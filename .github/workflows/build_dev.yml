@@ -15,8 +15,9 @@ jobs:
         ruby-version: [ 3.0 ]
         node-version: [ 16.x ]
     env:
-      ENDPOINTS: usermanagement_service documentation
-
+      # same endpoints as in the dl-swagger.sh file
+      ENDPOINTS: usermanagement_service usermanagement_oauth documentation flows templates pdf-generator notifications remote-execution
+      
     steps:
       - name: Checkout source files
         uses: actions/checkout@v2
