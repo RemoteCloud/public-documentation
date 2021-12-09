@@ -73,7 +73,7 @@ jobs:
       - name: Build source with middleman 
         run: |
           cd slate
-          for endpoint in $ENDPOINTS; do cp ../swagger-definitions/${ENDPOINT}.md ../slate/source/index.html.md && bundle exec middleman build --clean --build-dir ../mkdocs/docs/api/{ENDPOINT}; done
+          for endpoint in $ENDPOINTS; do cp ../swagger-definitions/${endpoint}.md ../slate/source/index.html.md && bundle exec middleman build --clean --build-dir ../mkdocs/docs/api/{endpoint}; done
           
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
