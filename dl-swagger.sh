@@ -7,6 +7,16 @@ YELLOW='\033[00;33m'
 LIGHTGRAY='\033[00;37m'
 CYAN='\033[00;36m'
 
+# Changing or modifying the endpoints also requires modifications in GitHub Actions and MKDocs API folder.
+ENDPOINTS="
+    usermanagement_service 
+    usermanagement_oauth 
+    documentation 
+    flows 
+    templates 
+    pdf-generator 
+    notifications 
+    remote-execution"
 
 echo -e "\n${CYAN}========== Script configuration ===============${RESTORE_COLOR}\n"
 
@@ -29,12 +39,9 @@ fi
 url="${BaseUrl}/swagger/docs/${Version}/"
 dl_path=./swagger-definitions
 
-mkdir ${dl_path}
-wget -O ${dl_path}/usermanagement_service.json "${url}usermanagement_service"
-wget -O ${dl_path}/usermanagement_oauth.json "${url}usermanagement_oauth"
-wget -O ${dl_path}/documentation.json "${url}documentation"
-wget -O ${dl_path}/flows.json "${url}flows"
-wget -O ${dl_path}/templates.json "${url}templates"
-wget -O ${dl_path}/pdf-generator.json "${url}pdf-generator"
-wget -O ${dl_path}/notifications.json "${url}notifications"
-wget -O ${dl_path}/remote-execution.json "${url}remote-execution"
+mkdir -p ${dl_path}
+
+for endpoint in $ENDPOINTS
+do
+  wget -O ${dl_path}/${endpoint}.json "${url}${endpoint}"
+done
