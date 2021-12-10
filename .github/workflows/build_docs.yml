@@ -44,7 +44,9 @@ jobs:
         run: npm install -g widdershins
         
       - name: Convert swagger to markdown
-        run: widdershins swagger.json --language_tabs shell:Shell http:HTTP javascript:JS php:PHP csharp:C# java:Java -o ./slate/source/index.html.md         
+        run: |
+          cd scripts
+          sh github-action-json-to-markdown.sh        
 
       - name: Set up Ruby  ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
@@ -70,8 +72,8 @@ jobs:
           
       - name: Build source with middleman 
         run: |
-          cd slate
-          bundle exec middleman build --clean --build-dir ../mkdocs/docs/api            
+          cd scripts
+          sh github-action-build-slate.sh           
           
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2

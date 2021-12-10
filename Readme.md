@@ -21,12 +21,9 @@ Run it via `mkdocs serve`
 
 We use the [awesome pages plugin][awesome-pages-plugin] for the navigation definition.
 
-
 ## API Versioning
 
-In the GitHub Action we use [widdershins][widdershins] to generate md-files out of all swagger JSON documents found in the swagger-definitions folder. Then we use [Slate][slate] to generate static pages with our API definitions. Afterwards we build MkDocs and the API will be included in the API folder. 
-
-To update the API you can locally execute `dl-swagger.sh` to retrieve the latest swagger definitions for all services and commit them. To test the generated API definition on your local system you can use `local-api-generation.sh` - make sure [widdershins][widdershins] and [Slate][slate] is installed on your system. It will do the same steps as our GitHub Action. After it completes you can [run the MKDocs][#run-mkdocs] and see the generated APIs.
+In the GitHub Action we use [widdershins][widdershins] to generate md-files out of all swagger JSON documents found in the swagger-definitions folder. Then we use [Slate][slate] to generate static pages with our API definitions. Afterwards we build MkDocs and the API will be included in the API folder. To update the swagger-definitions you need to execute the `dl-swagger` script in the [scripts folder](./scripts).
 
 ## Build Instructions
 
