@@ -8,7 +8,7 @@ This script retrieves all API definitions from the specified API gateway and sto
 
 ### local-api-generation
 
- You can use this script to test the generated API definition on your local system - make sure [widdershins][widdershins] and [Slate][slate] is installed. After it completes you can [run the MKDocs][../public-documentation#run-mkdocs] and see the generated APIs.
+ You can use this script to test the generated API definition on your local system - make sure [widdershins][widdershins] and [Slate][slate] is installed. After it completes you can [run the MKDocs](../Readme.md#run-mkdocs) and see the generated APIs.
 
 ### github-action-*
 
