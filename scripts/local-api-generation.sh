@@ -7,15 +7,7 @@ YELLOW='\033[00;33m'
 LIGHTGRAY='\033[00;37m'
 CYAN='\033[00;36m'
 
-ENDPOINTS="
-    usermanagement_service 
-    usermanagement_oauth 
-    documentation 
-    flows 
-    templates 
-    pdf-generator 
-    notifications 
-    remote-execution"
+ENDPOINTS=$(grep -v '^#' api-endpoints.txt | xargs -d '\n')
     
 for endpoint in $ENDPOINTS 
 do 

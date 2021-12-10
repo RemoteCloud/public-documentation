@@ -1,0 +1,16 @@
+# =============
+# API ENDPOINTS
+# =============
+#
+# These endpoints are processed by various scripts and will be displayed in the API documentation.
+# If you modify the names or add additional endpoints you also need to update the mkdocs/docs/api/.pages file.
+#
+
+usermanagement_service 
+usermanagement_oauth 
+documentation 
+flows 
+templates 
+pdf-generator 
+notifications 
+remote-execution

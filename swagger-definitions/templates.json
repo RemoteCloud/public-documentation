@@ -34,7 +34,7 @@
                 "$ref": "#/components/schemas/IdAndRefIdApiModel"
               },
               "example": {
-                "id": "c802c6e8-c0c9-47b7-84fe-40c9ef8e944c",
+                "id": "3fa24e24-1e4a-4098-8dc7-9ca2201dbdf1",
                 "refId": null
               }
             },
@@ -43,7 +43,7 @@
                 "$ref": "#/components/schemas/IdAndRefIdApiModel"
               },
               "example": {
-                "id": "c802c6e8-c0c9-47b7-84fe-40c9ef8e944c",
+                "id": "3fa24e24-1e4a-4098-8dc7-9ca2201dbdf1",
                 "refId": null
               }
             },
@@ -52,7 +52,7 @@
                 "$ref": "#/components/schemas/IdAndRefIdApiModel"
               },
               "example": {
-                "id": "c802c6e8-c0c9-47b7-84fe-40c9ef8e944c",
+                "id": "3fa24e24-1e4a-4098-8dc7-9ca2201dbdf1",
                 "refId": null
               }
             },
@@ -61,7 +61,7 @@
                 "$ref": "#/components/schemas/IdAndRefIdApiModel"
               },
               "example": {
-                "id": "c802c6e8-c0c9-47b7-84fe-40c9ef8e944c",
+                "id": "3fa24e24-1e4a-4098-8dc7-9ca2201dbdf1",
                 "refId": null
               }
             }
@@ -93,14 +93,14 @@
                   "status": 0,
                   "approved": true,
                   "locations": [
-                    "779fc15f-1395-4307-9a25-4ba2f9de4b7e"
+                    "2edd7752-540f-4db4-8f36-02656fe9b84e"
                   ],
                   "permissions": [
                     {
                       "possibility": 121,
                       "positions": [
                         {
-                          "position": "5bf619a3-e824-458f-a41e-b2a4cfeb5f5c",
+                          "position": "234cc0f3-3c9e-4727-8268-78e3ab1051fb",
                           "activeOnly": true
                         }
                       ],
@@ -124,8 +124,8 @@
                   "publishToMessagebus": false,
                   "singleUserTemplate": false,
                   "allowExternalUse": false,
-                  "revisionUpdateTime": "2021-12-09T14:57:56.240747Z",
-                  "revisionUpdateTimeString": "2021-12-09T14:57:56.240747Z",
+                  "revisionUpdateTime": "2021-12-10T09:53:29.5683786Z",
+                  "revisionUpdateTimeString": "2021-12-10T09:53:29.5683786Z",
                   "revision": 1,
                   "reoccurring": false,
                   "archiveChecklistsAfter": 1,
@@ -136,7 +136,7 @@
                   "preventFlowCreateByActiveRefId": null,
                   "discardReasons": null,
                   "commentTypes": null,
-                  "id": "f720278d-62b5-42cc-90ae-151f8f2f0d98",
+                  "id": "00058e52-3c6b-4499-9938-535ab2739bcf",
                   "name": "Template name",
                   "sectionTemplates": [
                     {
@@ -152,20 +152,20 @@
                           "description": "Comment webhook"
                         }
                       ],
-                      "templateId": "f720278d-62b5-42cc-90ae-151f8f2f0d98",
+                      "templateId": "00058e52-3c6b-4499-9938-535ab2739bcf",
                       "metadata": null,
-                      "id": "055d3f8c-72e0-4f1d-ad36-7937c7e1863b",
+                      "id": "342b2e8b-0925-4b12-934b-a6337d95372b",
                       "taskTemplates": [
                         {
-                          "id": "e4385e91-e446-45eb-977c-142a858121b7",
+                          "id": "7d7c3539-86e5-4067-acfb-513821abfc18",
                           "reminderHours": null,
                           "reminderMinutes": null,
                           "reminderTimeString": null,
-                          "templateId": "f720278d-62b5-42cc-90ae-151f8f2f0d98",
+                          "templateId": "00058e52-3c6b-4499-9938-535ab2739bcf",
                           "name": "Task 1",
                           "documentation": [],
                           "order": 0,
-                          "sectionId": "055d3f8c-72e0-4f1d-ad36-7937c7e1863b",
+                          "sectionId": "342b2e8b-0925-4b12-934b-a6337d95372b",
                           "control": {
                             "values": null,
                             "valueTitle": null,
@@ -212,11 +212,11 @@
                           "commentTypes": null
                         },
                         {
-                          "id": "db8091e6-5ea3-4feb-ac71-cbf314d30a34",
+                          "id": "18c62275-3b9d-475e-8dfe-8299e993a8e1",
                           "reminderHours": null,
                           "reminderMinutes": null,
                           "reminderTimeString": null,
-                          "templateId": "f720278d-62b5-42cc-90ae-151f8f2f0d98",
+                          "templateId": "00058e52-3c6b-4499-9938-535ab2739bcf",
                           "name": "Task 2",
                           "documentation": [
                             {
@@ -230,7 +230,7 @@
                             }
                           ],
                           "order": 1,
-                          "sectionId": "055d3f8c-72e0-4f1d-ad36-7937c7e1863b",
+                          "sectionId": "342b2e8b-0925-4b12-934b-a6337d95372b",
                           "control": {
                             "values": "",
                             "valueTitle": null,
@@ -286,16 +286,16 @@
                   ],
                   "rules": {
                     "hiddenByDefault": [
-                      "db8091e6-5ea3-4feb-ac71-cbf314d30a34"
+                      "18c62275-3b9d-475e-8dfe-8299e993a8e1"
                     ],
                     "rules": [
                       {
                         "condition": "is not empty",
                         "effect": "show",
                         "effectedItems": [
-                          "db8091e6-5ea3-4feb-ac71-cbf314d30a34"
+                          "18c62275-3b9d-475e-8dfe-8299e993a8e1"
                         ],
-                        "formField": "e4385e91-e446-45eb-977c-142a858121b7",
+                        "formField": "7d7c3539-86e5-4067-acfb-513821abfc18",
                         "values": null
                       }
                     ]
@@ -305,7 +305,7 @@
                       "displayAsSubHeading": false,
                       "type": 1,
                       "fillOnlyByAPI": false,
-                      "id": "efb84ba9-d077-4936-a941-337f9f8934be",
+                      "id": "5076e7f1-51bf-448f-abc2-4c08aef0463c",
                       "dataRegister": null,
                       "name": "Title",
                       "value": null
@@ -493,10 +493,10 @@
                 "$ref": "#/components/schemas/TemplateTaskMetadataApiModel"
               },
               "example": {
-                "templateId": "703cc9d7-4c35-44c4-8c4b-50b86ca6eba3",
+                "templateId": "5cd0c1eb-36a3-464e-b1a4-48dfb0adae4a",
                 "taskMetadata": [
                   {
-                    "taskId": "a56197c3-cb24-4ff1-9855-e34f223bdfef",
+                    "taskId": "2d599142-a75d-48ca-bb59-dc9e87120da3",
                     "metadata": {
                       "title1": "value1",
                       "title2": "value2"
@@ -510,10 +510,10 @@
                 "$ref": "#/components/schemas/TemplateTaskMetadataApiModel"
               },
               "example": {
-                "templateId": "703cc9d7-4c35-44c4-8c4b-50b86ca6eba3",
+                "templateId": "5cd0c1eb-36a3-464e-b1a4-48dfb0adae4a",
                 "taskMetadata": [
                   {
-                    "taskId": "a56197c3-cb24-4ff1-9855-e34f223bdfef",
+                    "taskId": "2d599142-a75d-48ca-bb59-dc9e87120da3",
                     "metadata": {
                       "title1": "value1",
                       "title2": "value2"
@@ -527,10 +527,10 @@
                 "$ref": "#/components/schemas/TemplateTaskMetadataApiModel"
               },
               "example": {
-                "templateId": "703cc9d7-4c35-44c4-8c4b-50b86ca6eba3",
+                "templateId": "5cd0c1eb-36a3-464e-b1a4-48dfb0adae4a",
                 "taskMetadata": [
                   {
-                    "taskId": "a56197c3-cb24-4ff1-9855-e34f223bdfef",
+                    "taskId": "2d599142-a75d-48ca-bb59-dc9e87120da3",
                     "metadata": {
                       "title1": "value1",
                       "title2": "value2"
@@ -544,10 +544,10 @@
                 "$ref": "#/components/schemas/TemplateTaskMetadataApiModel"
               },
               "example": {
-                "templateId": "703cc9d7-4c35-44c4-8c4b-50b86ca6eba3",
+                "templateId": "5cd0c1eb-36a3-464e-b1a4-48dfb0adae4a",
                 "taskMetadata": [
                   {
-                    "taskId": "a56197c3-cb24-4ff1-9855-e34f223bdfef",
+                    "taskId": "2d599142-a75d-48ca-bb59-dc9e87120da3",
                     "metadata": {
                       "title1": "value1",
                       "title2": "value2"
@@ -617,7 +617,7 @@
                 "$ref": "#/components/schemas/ChangeTemplateStatusApiModel"
               },
               "example": {
-                "id": "3d30ad15-33aa-40b2-9985-f5b1faecc9ca",
+                "id": "84367515-198b-43d4-8e26-489e4a9ab450",
                 "status": 8,
                 "onlyIfStatus": null,
                 "comment": "Comment text"
@@ -628,7 +628,7 @@
                 "$ref": "#/components/schemas/ChangeTemplateStatusApiModel"
               },
               "example": {
-                "id": "3d30ad15-33aa-40b2-9985-f5b1faecc9ca",
+                "id": "84367515-198b-43d4-8e26-489e4a9ab450",
                 "status": 8,
                 "onlyIfStatus": null,
                 "comment": "Comment text"
@@ -639,7 +639,7 @@
                 "$ref": "#/components/schemas/ChangeTemplateStatusApiModel"
               },
               "example": {
-                "id": "3d30ad15-33aa-40b2-9985-f5b1faecc9ca",
+                "id": "84367515-198b-43d4-8e26-489e4a9ab450",
                 "status": 8,
                 "onlyIfStatus": null,
                 "comment": "Comment text"
@@ -650,7 +650,7 @@
                 "$ref": "#/components/schemas/ChangeTemplateStatusApiModel"
               },
               "example": {
-                "id": "3d30ad15-33aa-40b2-9985-f5b1faecc9ca",
+                "id": "84367515-198b-43d4-8e26-489e4a9ab450",
                 "status": 8,
                 "onlyIfStatus": null,
                 "comment": "Comment text"
@@ -769,8 +769,8 @@
               },
               "example": {
                 "applicationName": "Checklist",
-                "applicationPublicKey": "6aa3d10eaebaa823d744085c795414cbd02026fbc782c5ee913d0d616370e9c1",
-                "previousInputPublicKey": "ab952b4aa94be63820c2263be79b8670d5864242e69de8e426af4cbe1e7e3226"
+                "applicationPublicKey": "436a88b5a13f93bdb74766702cb20aed3267ca9a9ec50dbf48c8514ce06cbf2d",
+                "previousInputPublicKey": "4171399af4dff99c973c577da583d5bf896a13cd1f1ffe91cd8285060bf48436"
               }
             },
             "application/json": {
@@ -779,8 +779,8 @@
               },
               "example": {
                 "applicationName": "Checklist",
-                "applicationPublicKey": "6aa3d10eaebaa823d744085c795414cbd02026fbc782c5ee913d0d616370e9c1",
-                "previousInputPublicKey": "ab952b4aa94be63820c2263be79b8670d5864242e69de8e426af4cbe1e7e3226"
+                "applicationPublicKey": "436a88b5a13f93bdb74766702cb20aed3267ca9a9ec50dbf48c8514ce06cbf2d",
+                "previousInputPublicKey": "4171399af4dff99c973c577da583d5bf896a13cd1f1ffe91cd8285060bf48436"
               }
             },
             "text/json": {
@@ -789,8 +789,8 @@
               },
               "example": {
                 "applicationName": "Checklist",
-                "applicationPublicKey": "6aa3d10eaebaa823d744085c795414cbd02026fbc782c5ee913d0d616370e9c1",
-                "previousInputPublicKey": "ab952b4aa94be63820c2263be79b8670d5864242e69de8e426af4cbe1e7e3226"
+                "applicationPublicKey": "436a88b5a13f93bdb74766702cb20aed3267ca9a9ec50dbf48c8514ce06cbf2d",
+                "previousInputPublicKey": "4171399af4dff99c973c577da583d5bf896a13cd1f1ffe91cd8285060bf48436"
               }
             },
             "application/*+json": {
@@ -799,8 +799,8 @@
               },
               "example": {
                 "applicationName": "Checklist",
-                "applicationPublicKey": "6aa3d10eaebaa823d744085c795414cbd02026fbc782c5ee913d0d616370e9c1",
-                "previousInputPublicKey": "ab952b4aa94be63820c2263be79b8670d5864242e69de8e426af4cbe1e7e3226"
+                "applicationPublicKey": "436a88b5a13f93bdb74766702cb20aed3267ca9a9ec50dbf48c8514ce06cbf2d",
+                "previousInputPublicKey": "4171399af4dff99c973c577da583d5bf896a13cd1f1ffe91cd8285060bf48436"
               }
             }
           },
@@ -829,7 +829,7 @@
                 },
                 "example": {
                   "applicationName": "Checklist",
-                  "inputPublicKey": "2640c69f484723d1d0825fa98be0b13e4ce1e9fa417920926e519a8cd24eb011"
+                  "inputPublicKey": "58619b1106b37b18da8be6cb23f16f609033216a8d078524f0ff57723030b897"
                 }
               }
             }
@@ -865,16 +865,16 @@
                 "$ref": "#/components/schemas/NewTemplateApiModel"
               },
               "example": {
-                "id": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                "id": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                 "locations": [
-                  "59135cd4-ee24-466a-88bf-8465d3c153ac"
+                  "347d114a-55e7-44fe-ac89-b7c509ce2596"
                 ],
                 "permissions": [
                   {
                     "possibility": 121,
                     "positions": [
                       {
-                        "position": "d6c642b5-9281-48e0-b0a8-88b81e57afb1",
+                        "position": "3b31020f-173d-4cc9-b75b-fdc2a04be9ab",
                         "activeOnly": true
                       }
                     ],
@@ -899,8 +899,8 @@
                 "publishToMessagebus": false,
                 "singleUserTemplate": false,
                 "allowExternalUse": false,
-                "revisionUpdateTime": "2021-12-09T14:57:56.2463272Z",
-                "revisionUpdateTimeString": "2021-12-09T14:57:56.2463272Z",
+                "revisionUpdateTime": "2021-12-10T09:53:29.5739622Z",
+                "revisionUpdateTimeString": "2021-12-10T09:53:29.5739622Z",
                 "revision": 1,
                 "reoccurring": false,
                 "archiveChecklistsAfter": 1,
@@ -911,13 +911,13 @@
                 "preventFlowCreateByActiveRefId": null,
                 "discardReasons": [
                   {
-                    "id": "7e8d191b-94b5-404d-afbd-150d9a2acb51",
+                    "id": "42f2a2b1-2a58-4ab5-b1c3-80f08ab7317d",
                     "name": "Discard reason 1",
                     "requireComment": false,
                     "default": true
                   },
                   {
-                    "id": "04279866-5ece-4b96-9aca-acdb6d3fe521",
+                    "id": "91ab3904-fd26-4b7d-9194-a2704175566b",
                     "name": "Discard reason 2",
                     "requireComment": true,
                     "default": false
@@ -925,12 +925,12 @@
                 ],
                 "commentTypes": [
                   {
-                    "id": "a3995c82-4c2b-457b-afec-6e554c6fac3a",
+                    "id": "2961e147-db82-459f-a19d-1f5253614b50",
                     "name": "Comment type 1",
                     "requireComment": false
                   },
                   {
-                    "id": "3c39eac3-ec3b-4b91-ba05-7e8bb4174d25",
+                    "id": "92b3b036-2a69-4196-bcd3-d66a29dfee44",
                     "name": "Comment type 2",
                     "requireComment": true
                   }
@@ -950,20 +950,20 @@
                         "description": "Comment webhook"
                       }
                     ],
-                    "templateId": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                    "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                     "metadata": null,
-                    "id": "0235db80-86ae-4f8e-aaf1-df327f97e53c",
+                    "id": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
                     "taskTemplates": [
                       {
-                        "id": "6d143afb-0db3-4b98-864e-b9b590eda491",
+                        "id": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                         "name": "Task 1",
                         "documentation": [],
                         "order": 0,
-                        "sectionId": "0235db80-86ae-4f8e-aaf1-df327f97e53c",
+                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
                         "control": {
                           "values": null,
                           "valueTitle": null,
@@ -1010,11 +1010,11 @@
                         "commentTypes": null
                       },
                       {
-                        "id": "00d6fb51-2fdc-4a08-a3c2-0a66f180e704",
+                        "id": "cb3d4205-ec91-44ce-a492-f9396b7879cc",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                         "name": "Task 2",
                         "documentation": [
                           {
@@ -1028,7 +1028,7 @@
                           }
                         ],
                         "order": 1,
-                        "sectionId": "0235db80-86ae-4f8e-aaf1-df327f97e53c",
+                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
                         "control": {
                           "values": "",
                           "valueTitle": null,
@@ -1084,16 +1084,16 @@
                 ],
                 "rules": {
                   "hiddenByDefault": [
-                    "00d6fb51-2fdc-4a08-a3c2-0a66f180e704"
+                    "cb3d4205-ec91-44ce-a492-f9396b7879cc"
                   ],
                   "rules": [
                     {
                       "condition": "is not empty",
                       "effect": "show",
                       "effectedItems": [
-                        "00d6fb51-2fdc-4a08-a3c2-0a66f180e704"
+                        "cb3d4205-ec91-44ce-a492-f9396b7879cc"
                       ],
-                      "formField": "6d143afb-0db3-4b98-864e-b9b590eda491",
+                      "formField": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
                       "values": null
                     }
                   ]
@@ -1103,7 +1103,7 @@
                     "displayAsSubHeading": false,
                     "type": 1,
                     "fillOnlyByAPI": false,
-                    "id": "8a07f94a-3406-4015-9f7d-623f1cdf12fd",
+                    "id": "b58879dd-e12c-472b-8638-016d865e7267",
                     "dataRegister": null,
                     "name": "Title",
                     "value": null
@@ -1117,16 +1117,16 @@
                 "$ref": "#/components/schemas/NewTemplateApiModel"
               },
               "example": {
-                "id": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                "id": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                 "locations": [
-                  "59135cd4-ee24-466a-88bf-8465d3c153ac"
+                  "347d114a-55e7-44fe-ac89-b7c509ce2596"
                 ],
                 "permissions": [
                   {
                     "possibility": 121,
                     "positions": [
                       {
-                        "position": "d6c642b5-9281-48e0-b0a8-88b81e57afb1",
+                        "position": "3b31020f-173d-4cc9-b75b-fdc2a04be9ab",
                         "activeOnly": true
                       }
                     ],
@@ -1151,8 +1151,8 @@
                 "publishToMessagebus": false,
                 "singleUserTemplate": false,
                 "allowExternalUse": false,
-                "revisionUpdateTime": "2021-12-09T14:57:56.2463272Z",
-                "revisionUpdateTimeString": "2021-12-09T14:57:56.2463272Z",
+                "revisionUpdateTime": "2021-12-10T09:53:29.5739622Z",
+                "revisionUpdateTimeString": "2021-12-10T09:53:29.5739622Z",
                 "revision": 1,
                 "reoccurring": false,
                 "archiveChecklistsAfter": 1,
@@ -1163,13 +1163,13 @@
                 "preventFlowCreateByActiveRefId": null,
                 "discardReasons": [
                   {
-                    "id": "7e8d191b-94b5-404d-afbd-150d9a2acb51",
+                    "id": "42f2a2b1-2a58-4ab5-b1c3-80f08ab7317d",
                     "name": "Discard reason 1",
                     "requireComment": false,
                     "default": true
                   },
                   {
-                    "id": "04279866-5ece-4b96-9aca-acdb6d3fe521",
+                    "id": "91ab3904-fd26-4b7d-9194-a2704175566b",
                     "name": "Discard reason 2",
                     "requireComment": true,
                     "default": false
@@ -1177,12 +1177,12 @@
                 ],
                 "commentTypes": [
                   {
-                    "id": "a3995c82-4c2b-457b-afec-6e554c6fac3a",
+                    "id": "2961e147-db82-459f-a19d-1f5253614b50",
                     "name": "Comment type 1",
                     "requireComment": false
                   },
                   {
-                    "id": "3c39eac3-ec3b-4b91-ba05-7e8bb4174d25",
+                    "id": "92b3b036-2a69-4196-bcd3-d66a29dfee44",
                     "name": "Comment type 2",
                     "requireComment": true
                   }
@@ -1202,20 +1202,20 @@
                         "description": "Comment webhook"
                       }
                     ],
-                    "templateId": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                    "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                     "metadata": null,
-                    "id": "0235db80-86ae-4f8e-aaf1-df327f97e53c",
+                    "id": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
                     "taskTemplates": [
                       {
-                        "id": "6d143afb-0db3-4b98-864e-b9b590eda491",
+                        "id": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                         "name": "Task 1",
                         "documentation": [],
                         "order": 0,
-                        "sectionId": "0235db80-86ae-4f8e-aaf1-df327f97e53c",
+                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
                         "control": {
                           "values": null,
                           "valueTitle": null,
@@ -1262,11 +1262,11 @@
                         "commentTypes": null
                       },
                       {
-                        "id": "00d6fb51-2fdc-4a08-a3c2-0a66f180e704",
+                        "id": "cb3d4205-ec91-44ce-a492-f9396b7879cc",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                         "name": "Task 2",
                         "documentation": [
                           {
@@ -1280,7 +1280,7 @@
                           }
                         ],
                         "order": 1,
-                        "sectionId": "0235db80-86ae-4f8e-aaf1-df327f97e53c",
+                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
                         "control": {
                           "values": "",
                           "valueTitle": null,
@@ -1336,16 +1336,16 @@
                 ],
                 "rules": {
                   "hiddenByDefault": [
-                    "00d6fb51-2fdc-4a08-a3c2-0a66f180e704"
+                    "cb3d4205-ec91-44ce-a492-f9396b7879cc"
                   ],
                   "rules": [
                     {
                       "condition": "is not empty",
                       "effect": "show",
                       "effectedItems": [
-                        "00d6fb51-2fdc-4a08-a3c2-0a66f180e704"
+                        "cb3d4205-ec91-44ce-a492-f9396b7879cc"
                       ],
-                      "formField": "6d143afb-0db3-4b98-864e-b9b590eda491",
+                      "formField": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
                       "values": null
                     }
                   ]
@@ -1355,7 +1355,7 @@
                     "displayAsSubHeading": false,
                     "type": 1,
                     "fillOnlyByAPI": false,
-                    "id": "8a07f94a-3406-4015-9f7d-623f1cdf12fd",
+                    "id": "b58879dd-e12c-472b-8638-016d865e7267",
                     "dataRegister": null,
                     "name": "Title",
                     "value": null
@@ -1369,16 +1369,16 @@
                 "$ref": "#/components/schemas/NewTemplateApiModel"
               },
               "example": {
-                "id": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                "id": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                 "locations": [
-                  "59135cd4-ee24-466a-88bf-8465d3c153ac"
+                  "347d114a-55e7-44fe-ac89-b7c509ce2596"
                 ],
                 "permissions": [
                   {
                     "possibility": 121,
                     "positions": [
                       {
-                        "position": "d6c642b5-9281-48e0-b0a8-88b81e57afb1",
+                        "position": "3b31020f-173d-4cc9-b75b-fdc2a04be9ab",
                         "activeOnly": true
                       }
                     ],
@@ -1403,8 +1403,8 @@
                 "publishToMessagebus": false,
                 "singleUserTemplate": false,
                 "allowExternalUse": false,
-                "revisionUpdateTime": "2021-12-09T14:57:56.2463272Z",
-                "revisionUpdateTimeString": "2021-12-09T14:57:56.2463272Z",
+                "revisionUpdateTime": "2021-12-10T09:53:29.5739622Z",
+                "revisionUpdateTimeString": "2021-12-10T09:53:29.5739622Z",
                 "revision": 1,
                 "reoccurring": false,
                 "archiveChecklistsAfter": 1,
@@ -1415,13 +1415,13 @@
                 "preventFlowCreateByActiveRefId": null,
                 "discardReasons": [
                   {
-                    "id": "7e8d191b-94b5-404d-afbd-150d9a2acb51",
+                    "id": "42f2a2b1-2a58-4ab5-b1c3-80f08ab7317d",
                     "name": "Discard reason 1",
                     "requireComment": false,
                     "default": true
                   },
                   {
-                    "id": "04279866-5ece-4b96-9aca-acdb6d3fe521",
+                    "id": "91ab3904-fd26-4b7d-9194-a2704175566b",
                     "name": "Discard reason 2",
                     "requireComment": true,
                     "default": false
@@ -1429,12 +1429,12 @@
                 ],
                 "commentTypes": [
                   {
-                    "id": "a3995c82-4c2b-457b-afec-6e554c6fac3a",
+                    "id": "2961e147-db82-459f-a19d-1f5253614b50",
                     "name": "Comment type 1",
                     "requireComment": false
                   },
                   {
-                    "id": "3c39eac3-ec3b-4b91-ba05-7e8bb4174d25",
+                    "id": "92b3b036-2a69-4196-bcd3-d66a29dfee44",
                     "name": "Comment type 2",
                     "requireComment": true
                   }
@@ -1454,20 +1454,20 @@
                         "description": "Comment webhook"
                       }
                     ],
-                    "templateId": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                    "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                     "metadata": null,
-                    "id": "0235db80-86ae-4f8e-aaf1-df327f97e53c",
+                    "id": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
                     "taskTemplates": [
                       {
-                        "id": "6d143afb-0db3-4b98-864e-b9b590eda491",
+                        "id": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                         "name": "Task 1",
                         "documentation": [],
                         "order": 0,
-                        "sectionId": "0235db80-86ae-4f8e-aaf1-df327f97e53c",
+                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
                         "control": {
                           "values": null,
                           "valueTitle": null,
@@ -1514,11 +1514,11 @@
                         "commentTypes": null
                       },
                       {
-                        "id": "00d6fb51-2fdc-4a08-a3c2-0a66f180e704",
+                        "id": "cb3d4205-ec91-44ce-a492-f9396b7879cc",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                         "name": "Task 2",
                         "documentation": [
                           {
@@ -1532,7 +1532,7 @@
                           }
                         ],
                         "order": 1,
-                        "sectionId": "0235db80-86ae-4f8e-aaf1-df327f97e53c",
+                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
                         "control": {
                           "values": "",
                           "valueTitle": null,
@@ -1588,16 +1588,16 @@
                 ],
                 "rules": {
                   "hiddenByDefault": [
-                    "00d6fb51-2fdc-4a08-a3c2-0a66f180e704"
+                    "cb3d4205-ec91-44ce-a492-f9396b7879cc"
                   ],
                   "rules": [
                     {
                       "condition": "is not empty",
                       "effect": "show",
                       "effectedItems": [
-                        "00d6fb51-2fdc-4a08-a3c2-0a66f180e704"
+                        "cb3d4205-ec91-44ce-a492-f9396b7879cc"
                       ],
-                      "formField": "6d143afb-0db3-4b98-864e-b9b590eda491",
+                      "formField": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
                       "values": null
                     }
                   ]
@@ -1607,7 +1607,7 @@
                     "displayAsSubHeading": false,
                     "type": 1,
                     "fillOnlyByAPI": false,
-                    "id": "8a07f94a-3406-4015-9f7d-623f1cdf12fd",
+                    "id": "b58879dd-e12c-472b-8638-016d865e7267",
                     "dataRegister": null,
                     "name": "Title",
                     "value": null
@@ -1621,16 +1621,16 @@
                 "$ref": "#/components/schemas/NewTemplateApiModel"
               },
               "example": {
-                "id": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                "id": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                 "locations": [
-                  "59135cd4-ee24-466a-88bf-8465d3c153ac"
+                  "347d114a-55e7-44fe-ac89-b7c509ce2596"
                 ],
                 "permissions": [
                   {
                     "possibility": 121,
                     "positions": [
                       {
-                        "position": "d6c642b5-9281-48e0-b0a8-88b81e57afb1",
+                        "position": "3b31020f-173d-4cc9-b75b-fdc2a04be9ab",
                         "activeOnly": true
                       }
                     ],
@@ -1655,8 +1655,8 @@
                 "publishToMessagebus": false,
                 "singleUserTemplate": false,
                 "allowExternalUse": false,
-                "revisionUpdateTime": "2021-12-09T14:57:56.2463272Z",
-                "revisionUpdateTimeString": "2021-12-09T14:57:56.2463272Z",
+                "revisionUpdateTime": "2021-12-10T09:53:29.5739622Z",
+                "revisionUpdateTimeString": "2021-12-10T09:53:29.5739622Z",
                 "revision": 1,
                 "reoccurring": false,
                 "archiveChecklistsAfter": 1,
@@ -1667,13 +1667,13 @@
                 "preventFlowCreateByActiveRefId": null,
                 "discardReasons": [
                   {
-                    "id": "7e8d191b-94b5-404d-afbd-150d9a2acb51",
+                    "id": "42f2a2b1-2a58-4ab5-b1c3-80f08ab7317d",
                     "name": "Discard reason 1",
                     "requireComment": false,
                     "default": true
                   },
                   {
-                    "id": "04279866-5ece-4b96-9aca-acdb6d3fe521",
+                    "id": "91ab3904-fd26-4b7d-9194-a2704175566b",
                     "name": "Discard reason 2",
                     "requireComment": true,
                     "default": false
@@ -1681,12 +1681,12 @@
                 ],
                 "commentTypes": [
                   {
-                    "id": "a3995c82-4c2b-457b-afec-6e554c6fac3a",
+                    "id": "2961e147-db82-459f-a19d-1f5253614b50",
                     "name": "Comment type 1",
                     "requireComment": false
                   },
                   {
-                    "id": "3c39eac3-ec3b-4b91-ba05-7e8bb4174d25",
+                    "id": "92b3b036-2a69-4196-bcd3-d66a29dfee44",
                     "name": "Comment type 2",
                     "requireComment": true
                   }
@@ -1706,20 +1706,20 @@
                         "description": "Comment webhook"
                       }
                     ],
-                    "templateId": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                    "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                     "metadata": null,
-                    "id": "0235db80-86ae-4f8e-aaf1-df327f97e53c",
+                    "id": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
                     "taskTemplates": [
                       {
-                        "id": "6d143afb-0db3-4b98-864e-b9b590eda491",
+                        "id": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                         "name": "Task 1",
                         "documentation": [],
                         "order": 0,
-                        "sectionId": "0235db80-86ae-4f8e-aaf1-df327f97e53c",
+                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
                         "control": {
                           "values": null,
                           "valueTitle": null,
@@ -1766,11 +1766,11 @@
                         "commentTypes": null
                       },
                       {
-                        "id": "00d6fb51-2fdc-4a08-a3c2-0a66f180e704",
+                        "id": "cb3d4205-ec91-44ce-a492-f9396b7879cc",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "346b2f50-d5c4-4db1-8a7f-d2688a697337",
+                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
                         "name": "Task 2",
                         "documentation": [
                           {
@@ -1784,7 +1784,7 @@
                           }
                         ],
                         "order": 1,
-                        "sectionId": "0235db80-86ae-4f8e-aaf1-df327f97e53c",
+                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
                         "control": {
                           "values": "",
                           "valueTitle": null,
@@ -1840,16 +1840,16 @@
                 ],
                 "rules": {
                   "hiddenByDefault": [
-                    "00d6fb51-2fdc-4a08-a3c2-0a66f180e704"
+                    "cb3d4205-ec91-44ce-a492-f9396b7879cc"
                   ],
                   "rules": [
                     {
                       "condition": "is not empty",
                       "effect": "show",
                       "effectedItems": [
-                        "00d6fb51-2fdc-4a08-a3c2-0a66f180e704"
+                        "cb3d4205-ec91-44ce-a492-f9396b7879cc"
                       ],
-                      "formField": "6d143afb-0db3-4b98-864e-b9b590eda491",
+                      "formField": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
                       "values": null
                     }
                   ]
@@ -1859,7 +1859,7 @@
                     "displayAsSubHeading": false,
                     "type": 1,
                     "fillOnlyByAPI": false,
-                    "id": "8a07f94a-3406-4015-9f7d-623f1cdf12fd",
+                    "id": "b58879dd-e12c-472b-8638-016d865e7267",
                     "dataRegister": null,
                     "name": "Title",
                     "value": null
@@ -1893,7 +1893,7 @@
                   "$ref": "#/components/schemas/IdApiModel"
                 },
                 "example": {
-                  "id": "109a24b5-16d0-494b-8f49-31c197ed7c3a"
+                  "id": "05aa6505-0335-4088-a320-58c934c18f65"
                 }
               }
             }
@@ -1958,7 +1958,7 @@
                 "content": [],
                 "base64Content": null,
                 "urlContent": null,
-                "templateId": "397049e9-32ed-4543-97ee-935cd6f2cb70"
+                "templateId": "c2c48f37-5c69-46ab-9baf-900e8fad8e1d"
               }
             },
             "application/json": {
@@ -1969,7 +1969,7 @@
                 "content": [],
                 "base64Content": null,
                 "urlContent": null,
-                "templateId": "397049e9-32ed-4543-97ee-935cd6f2cb70"
+                "templateId": "c2c48f37-5c69-46ab-9baf-900e8fad8e1d"
               }
             },
             "text/json": {
@@ -1980,7 +1980,7 @@
                 "content": [],
                 "base64Content": null,
                 "urlContent": null,
-                "templateId": "397049e9-32ed-4543-97ee-935cd6f2cb70"
+                "templateId": "c2c48f37-5c69-46ab-9baf-900e8fad8e1d"
               }
             },
             "application/*+json": {
@@ -1991,7 +1991,7 @@
                 "content": [],
                 "base64Content": null,
                 "urlContent": null,
-                "templateId": "397049e9-32ed-4543-97ee-935cd6f2cb70"
+                "templateId": "c2c48f37-5c69-46ab-9baf-900e8fad8e1d"
               }
             }
           },
@@ -2159,7 +2159,7 @@
                   "$ref": "#/components/schemas/IdApiModel"
                 },
                 "example": {
-                  "id": "109a24b5-16d0-494b-8f49-31c197ed7c3a"
+                  "id": "05aa6505-0335-4088-a320-58c934c18f65"
                 }
               }
             }
@@ -2208,7 +2208,7 @@
                 "$ref": "#/components/schemas/IdApiModel"
               },
               "example": {
-                "id": "109a24b5-16d0-494b-8f49-31c197ed7c3a"
+                "id": "05aa6505-0335-4088-a320-58c934c18f65"
               }
             },
             "application/json": {
@@ -2216,7 +2216,7 @@
                 "$ref": "#/components/schemas/IdApiModel"
               },
               "example": {
-                "id": "109a24b5-16d0-494b-8f49-31c197ed7c3a"
+                "id": "05aa6505-0335-4088-a320-58c934c18f65"
               }
             },
             "text/json": {
@@ -2224,7 +2224,7 @@
                 "$ref": "#/components/schemas/IdApiModel"
               },
               "example": {
-                "id": "109a24b5-16d0-494b-8f49-31c197ed7c3a"
+                "id": "05aa6505-0335-4088-a320-58c934c18f65"
               }
             },
             "application/*+json": {
@@ -2232,7 +2232,7 @@
                 "$ref": "#/components/schemas/IdApiModel"
               },
               "example": {
-                "id": "109a24b5-16d0-494b-8f49-31c197ed7c3a"
+                "id": "05aa6505-0335-4088-a320-58c934c18f65"
               }
             }
           },
@@ -2413,7 +2413,7 @@
                   "$ref": "#/components/schemas/IdApiModel"
                 },
                 "example": {
-                  "id": "109a24b5-16d0-494b-8f49-31c197ed7c3a"
+                  "id": "05aa6505-0335-4088-a320-58c934c18f65"
                 }
               }
             }
@@ -2462,7 +2462,7 @@
                 "$ref": "#/components/schemas/IdApiModel"
               },
               "example": {
-                "id": "109a24b5-16d0-494b-8f49-31c197ed7c3a"
+                "id": "05aa6505-0335-4088-a320-58c934c18f65"
               }
             },
             "application/json": {
@@ -2470,7 +2470,7 @@
                 "$ref": "#/components/schemas/IdApiModel"
               },
               "example": {
-                "id": "109a24b5-16d0-494b-8f49-31c197ed7c3a"
+                "id": "05aa6505-0335-4088-a320-58c934c18f65"
               }
             },
             "text/json": {
@@ -2478,7 +2478,7 @@
                 "$ref": "#/components/schemas/IdApiModel"
               },
               "example": {
-                "id": "109a24b5-16d0-494b-8f49-31c197ed7c3a"
+                "id": "05aa6505-0335-4088-a320-58c934c18f65"
               }
             },
             "application/*+json": {
@@ -2486,7 +2486,7 @@
                 "$ref": "#/components/schemas/IdApiModel"
               },
               "example": {
-                "id": "109a24b5-16d0-494b-8f49-31c197ed7c3a"
+                "id": "05aa6505-0335-4088-a320-58c934c18f65"
               }
             }
           },

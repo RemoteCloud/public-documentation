@@ -7,16 +7,7 @@ YELLOW='\033[00;33m'
 LIGHTGRAY='\033[00;37m'
 CYAN='\033[00;36m'
 
-# Changing or modifying the endpoints also requires modifications in GitHub Actions and MKDocs API folder.
-ENDPOINTS="
-    usermanagement_service 
-    usermanagement_oauth 
-    documentation 
-    flows 
-    templates 
-    pdf-generator 
-    notifications 
-    remote-execution"
+ENDPOINTS=$(grep -v '^#' api-endpoints.txt | xargs -d '\n')
 
 echo -e "\n${CYAN}========== Script configuration ===============${RESTORE_COLOR}\n"
 
