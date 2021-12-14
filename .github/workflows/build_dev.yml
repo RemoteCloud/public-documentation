@@ -14,6 +14,8 @@ jobs:
         python-version: [ 3.8 ]
         ruby-version: [ 3.0 ]
         node-version: [ 16.x ]
+    env:
+      BUNDLE_GEMFILE: ${{ github.workspace }}/slate/Gemfile
       
     steps:
       - name: Checkout source files
@@ -40,14 +42,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
-          bundler-cache: true
-            
-      - name: Set bundle to deployment mode
-        run: bundle config set deployment 'true'
-        
-      - name: bundle install
-        run: bundle install --gemfile ./slate/Gemfile --jobs 4 --retry 3
-          
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically on env.BUNDLE_GEMFILE
+                      
       - name: Build source with middleman 
         run: |
           cd scripts
