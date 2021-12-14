@@ -13,7 +13,7 @@ Run it via `mkdocs serve`
 
 ### Install additional plugins
 
-- Create a virtual environment as described in [local setup][#local-setup].
+- Create a virtual environment as described in [local setup](#local-setup).
 - Install new plugins
 - Update `requirements.txt` via `pip freeze > requirements.txt`
 
