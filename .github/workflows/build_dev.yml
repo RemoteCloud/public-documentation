@@ -36,7 +36,7 @@ jobs:
       - name: Convert swagger to markdown
         run: |
           cd scripts
-          sh github-action-json-to-markdown.sh          
+          sh github-action-json-to-markdown.sh
 
       - name: Set up Ruby  ${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
