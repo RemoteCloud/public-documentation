@@ -25,21 +25,9 @@ jobs:
       - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}    
-          
-      - name: Get npm cache directory
-        id: npm-cache
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
-    
-      - name: Cache NPM
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.npm-cache.outputs.dir }}
-          key: ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.node-version }}-
-      
+          node-version: ${{ matrix.node-version }}   
+          cache: 'npm'          
+                
       - name: Install Widdershins
         run: npm install -g widdershins
         
@@ -52,23 +40,13 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby-version }}
-            
-      - name: Cache gems
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: gems-${{ runner.os }}-${{ matrix.ruby-version }}-${{ hashFiles('slate/Gemfile.lock') }}
-          restore-keys: |
-            gems-${{ runner.os }}-${{ matrix.ruby-version }}-
-            gems-${{ runner.os }}-
+          bundler-cache: true
             
       - name: Set bundle to deployment mode
         run: bundle config set deployment 'true'
         
       - name: bundle install
-        run: |
-          bundle config path vendor/bundle
-          bundle install --gemfile ./slate/Gemfile --jobs 4 --retry 3
+        run: bundle install --gemfile ./slate/Gemfile --jobs 4 --retry 3
           
       - name: Build source with middleman 
         run: |
@@ -79,17 +57,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-          architecture: x64          
-          
-      - name: Cache pip
-        uses: actions/cache@v2
-        with:
-          # This path is specific to Ubuntu
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('mkdocs/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-            ${{ runner.os }}-
+          architecture: x64      
+          cache: 'pip'          
+          cache-dependency-path: 'mkdocs/requirements.txt'
             
       - name: Install Python dependencies
         run: python3 -m pip install -r ./mkdocs/requirements.txt
