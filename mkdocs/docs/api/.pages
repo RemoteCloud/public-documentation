@@ -1,10 +1,10 @@
 nav:  
   - ...
-  - User Management: api/usermanagement_service 
-  - OAuth: api/usermanagement_oauth 
-  - Documentation: api/documentation 
-  - Flows: api/flows 
-  - Templates: api/templates 
-  - PDF Generator: api/pdf-generator 
-  - Notifications: api/notifications 
-  - Remote Execution: api/remote-execution
+  - User Management: api/usermanagement_service#open-in-new-tab 
+  - OAuth: api/usermanagement_oauth#open-in-new-tab
+  - Documentation: api/documentation#open-in-new-tab
+  - Flows: api/flows#open-in-new-tab
+  - Templates: api/templates#open-in-new-tab
+  - PDF Generator: api/pdf-generator#open-in-new-tab
+  - Notifications: api/notifications#open-in-new-tab
+  - Remote Execution: api/remote-execution#open-in-new-tab

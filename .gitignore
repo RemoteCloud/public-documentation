@@ -1,3 +1,4 @@
+mkdocs/__pycache__/
 mkdocs/site/
 mkdocs/env/
 mkdocs/docs/api/*/
