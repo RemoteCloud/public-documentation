@@ -7,7 +7,7 @@ Deployment bundles represent a collection of all applications with a specific ve
 
 Application     | Type     | Version
 :-------------- | :------- | ------------:
-User Management | App      | [v2.1.6.2][user-mgm-v2.1.6.2]
+User Management | App      | [v2.1.6.3][user-mgm-v2.1.6.3]
 Launcher        | App      | [v1.1.0.5][launcher-v1.1.0.5]
 Flow            | App      | [v2.6.0.1][flow-v2.6.0.1]
 Template        | App      | [v2.6.0.1][template-v2.6.0.1]
@@ -22,7 +22,7 @@ PDF Generator   | Service  | [v2.1.0.6][pdf-generator-v2.1.0.6]
 RemoteExecution | Service  | [v2.1.2.1][remote-exec-v2.1.2.1]
 Sync            | Service  | [v1.2.1.0][sync-v1.2.1.0]
 
-[user-mgm-v2.1.6.2]: ./apps/user-management.md#v2162
+[user-mgm-v2.1.6.3]: ./apps/user-management.md#v2163
 [launcher-v1.1.0.5]: ./apps/launcher.md#v1105
 [flow-v2.6.0.1]: ./apps/flow.md#v2601
 [template-v2.6.0.1]: ./apps/template.md#v2601
