@@ -18,7 +18,7 @@ Automation      | App      | [nightly][automation-nightly]
 Data Register   | Service  | [v2.0.0.2][data-register-v2.0.0.2]
 Monitoring      | Service  | [v1.0.0.2][monitor-v1.0.0.2]
 Notifications   | Service  | [1.0.1][notifications-1.0.1]
-PDF Generator   | Service  | [v2.1.0.6][pdf-generator-v2.1.0.6]
+PDF Generator   | Service  | [2.1.1][pdf-generator-2.1.1]
 RemoteExecution | Service  | [v2.1.2.1][remote-exec-v2.1.2.1]
 Sync            | Service  | [v1.2.1.0][sync-v1.2.1.0]
 
@@ -34,6 +34,6 @@ Sync            | Service  | [v1.2.1.0][sync-v1.2.1.0]
 [data-register-v2.0.0.2]: ./services/data-register.md#v2002
 [monitor-v1.0.0.2]: ./services/monitoring.md#v1002
 [notifications-1.0.1]: ./services/notifications.md#101
-[pdf-generator-v2.1.0.6]: ./services/pdf-generator.md#v2106
+[pdf-generator-2.1.1]: ./services/pdf-generator.md#211
 [remote-exec-v2.1.2.1]: ./services/remote-execution.md#v2121
 [sync-v1.2.1.0]: ./services/sync.md#v1210

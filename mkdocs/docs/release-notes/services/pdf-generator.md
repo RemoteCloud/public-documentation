@@ -1,5 +1,5 @@
 title: PDF Generator
 
-## v2.1.0.6
+## 2.1.1
 
 - ..
