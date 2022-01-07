@@ -7,7 +7,7 @@ Deployment bundles represent a collection of all applications with a specific ve
 
 Application     | Type     | Version
 :-------------- | :------- | ------------:
-User Management | App      | [v2.1.6.3][user-mgm-v2.1.10]
+User Management | App      | [v2.1.10][user-mgm-v2.1.10]
 Launcher        | App      | [v1.1.0.5][launcher-v1.1.0.5]
 Flow            | App      | [2.6.1][flow-2.6.1]
 Template        | App      | [2.6.1][template-2.6.1]
