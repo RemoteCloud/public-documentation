@@ -8,6 +8,7 @@ Bug-fixes and improvements:
 - [high] Solved issue with webhook multiplication
 - [medium] Pictures now are included in Api/GenerateChecklistPdf report
 - [medium] Signature is displayed fully in the list control
+- [medium] In handovered checklists in consecutive long text control long value without spaces does not go out of the window anymore
 
 Features:
 
