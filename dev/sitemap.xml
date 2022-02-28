@@ -171,6 +171,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://development.maranics.com/dev/release-notes/services/api-gateway/</loc>
+         <lastmod>2022-02-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://development.maranics.com/dev/release-notes/services/app-store/</loc>
          <lastmod>2022-02-28</lastmod>
          <changefreq>daily</changefreq>
