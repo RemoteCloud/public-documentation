@@ -5,6 +5,8 @@ Deployment bundles represent a collection of all applications with a specific ve
 
 ## V1.0.1
 
+**Introduction of an API gateway to introduce a consistent API endpoint.**
+
 Application     | Type     | Version
 :-------------- | :------- | ------------:
 User Management | App      | [v2.1.11][user-mgm-v2.1.11]
@@ -15,6 +17,7 @@ Documentation   | App      | [v3.0.5][doc-v3.0.5]
 Portal          | App      | [v2.1.1][portal-v2.1.1]
 Barrier Model   | App      | [v2.1.8][barrier-model-v2.1.8]
 Automation      | App      | [nightly][automation-nightly]
+API Gateway     | Service  | [nightly][api-gateway-nightly]
 Data Register   | Service  | [v2.0.1][data-register-v2.0.1]
 Monitoring      | Service  | [v1.0.0.2][monitor-v1.0.0.2]
 Notifications   | Service  | [1.0.1][notifications-1.0.1]
@@ -31,6 +34,7 @@ Sync            | Service  | [v1.2.1.0][sync-v1.2.1.0]
 [barrier-model-v2.1.8]: ./apps/barrier-model.md#v218
 [automation-nightly]: ./apps/automation.md#nightly
 
+[api-gateway-nightly]: ./services/api-gateway.md#nightly
 [data-register-v2.0.1]: ./services/data-register.md#v201
 [monitor-v1.0.0.2]: ./services/monitoring.md#v1002
 [notifications-1.0.1]: ./services/notifications.md#101
