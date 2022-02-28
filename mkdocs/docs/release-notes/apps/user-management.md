@@ -1,14 +1,13 @@
 title: User Management
 
 ## Latest
-Bug-fixes and improvements:
+
+- ..
+
+
+## v2.1.11
 
 - [high] Improvements for virtual location
-
-Features:
-
-- 
-
 
 ## v2.1.10
 

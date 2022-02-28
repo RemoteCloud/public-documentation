@@ -1,6 +1,5 @@
-## 2.6.1
+## v2.6.4
 
-## Latest
 Bug-fixes and improvements:
 
 - [high] Fixed section complete webhook trigger
@@ -10,9 +9,8 @@ Bug-fixes and improvements:
 - [medium] Signature is displayed fully in the list control
 - [medium] In handovered checklists in consecutive long text control long value without spaces does not go out of the window anymore
 
-Features:
 
-- 
+## v2.6.1
 
-## v3.0.4.1
+- ...
 

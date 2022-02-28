@@ -3,7 +3,42 @@ title: Deployment Bundles
 Deployment bundles represent a collection of all applications with a specific version. The specific app versions in a bundle are validated to play nice together. A bundle does not represent a complete list of applications that are deployed. Depending on the customer and use case only a subset of applications might be deployed. However when adding additional applications to a deployment they will use the version specified in the deployed bundle version.
 
 
-## V1.0.0.0
+## V1.0.1
+
+Application     | Type     | Version
+:-------------- | :------- | ------------:
+User Management | App      | [v2.1.11][user-mgm-v2.1.11]
+Launcher        | App      | [v1.1.0.6][launcher-v1.1.0.6]
+Flow            | App      | [2.6.4][flow-2.6.4]
+Template        | App      | [2.6.4][template-2.6.4]
+Documentation   | App      | [v3.0.5][doc-v3.0.5]
+Portal          | App      | [v2.1.1][portal-v2.1.1]
+Barrier Model   | App      | [v2.1.8][barrier-model-v2.1.8]
+Automation      | App      | [nightly][automation-nightly]
+Data Register   | Service  | [v2.0.1][data-register-v2.0.1]
+Monitoring      | Service  | [v1.0.0.2][monitor-v1.0.0.2]
+Notifications   | Service  | [1.0.1][notifications-1.0.1]
+PDF Generator   | Service  | [2.2.1][pdf-generator-2.2.1]
+RemoteExecution | Service  | [v2.1.2.1][remote-exec-v2.1.2.1]
+Sync            | Service  | [v1.2.1.0][sync-v1.2.1.0]
+
+[user-mgm-v2.1.11]: ./apps/user-management.md#v2111
+[launcher-v1.1.0.6]: ./apps/launcher.md#v1106
+[flow-2.6.4]: ./apps/flow.md#264
+[template-2.6.4]: ./apps/template.md#264
+[doc-v3.0.5]: ./apps/documentation.md#v305
+[portal-v2.1.1]: ./apps/portal.md#v211
+[barrier-model-v2.1.8]: ./apps/barrier-model.md#v218
+[automation-nightly]: ./apps/automation.md#nightly
+
+[data-register-v2.0.1]: ./services/data-register.md#v201
+[monitor-v1.0.0.2]: ./services/monitoring.md#v1002
+[notifications-1.0.1]: ./services/notifications.md#101
+[pdf-generator-2.2.1]: ./services/pdf-generator.md#221
+[remote-exec-v2.1.2.1]: ./services/remote-execution.md#v2121
+[sync-v1.2.1.0]: ./services/sync.md#v1210
+
+## V1.0.0
 
 Application     | Type     | Version
 :-------------- | :------- | ------------:
