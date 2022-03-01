@@ -1,5 +1,5 @@
 title: API Gateway
 
-## Nightly
+## v1.0.0
 
-- In development
+- First release with limited functionality
