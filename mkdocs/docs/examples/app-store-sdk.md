@@ -4,7 +4,7 @@ title: App Store SDK
 
 This SDK offers methods to communicate with the app store and validate API requests.
 
-[**Nuget Feed**](https://www.nuget.org/packages/Maranics.AppStore.SDK/) | [**Documentation**](https://developer.maranics.com/dev/examples/app-store-sdk/) | [**Git Repository**](https://github.com/RemoteCloud/AppStoreService)
+[**Demo**](https://github.com/RemoteCloud/AppStore.SDK.Demo) | [**Documentation**](https://developer.maranics.com/dev/examples/app-store-sdk/) | [**Nuget Feed**](https://www.nuget.org/packages/Maranics.AppStore.SDK/) | [**Git Repository**](https://github.com/RemoteCloud/AppStoreService)
 
 ---
 
