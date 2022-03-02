@@ -1,6 +1,6 @@
 title: App Store SDK
 
-# Maranics.AppStrore.SDK
+# Maranics.AppStore.SDK
 
 
 This SDK offers methods to communicate with the app store and validate API requests.
