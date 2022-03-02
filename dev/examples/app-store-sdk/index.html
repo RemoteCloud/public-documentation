@@ -850,56 +850,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#initialize-app-store-in-startupcs" class="md-nav__link">
-    Initialize app store in Startup.cs:
-  </a>
-  
-    <nav class="md-nav" aria-label="Initialize app store in Startup.cs:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-add-appstore-required-services-to-di-services-container" class="md-nav__link">
-    1) Add AppStore required services to DI services container
+  <a href="#initialization" class="md-nav__link">
+    Initialization
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-run-appstore-initialization-tasks-in-case-when-need-authorize-app-on-startup" class="md-nav__link">
-    2) Run AppStore initialization tasks in case when need authorize app on startup
+      
+        <li class="md-nav__item">
+  <a href="#validate-incoming-api-calls" class="md-nav__link">
+    Validate incoming API calls
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validate-incoming-api-calls-against-the-app-store" class="md-nav__link">
-    Validate incoming API calls against the app store:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#get-allowed-tenants-list" class="md-nav__link">
     Get allowed tenants list
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1547,56 +1514,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    Usage
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#initialize-app-store-in-startupcs" class="md-nav__link">
-    Initialize app store in Startup.cs:
-  </a>
-  
-    <nav class="md-nav" aria-label="Initialize app store in Startup.cs:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-add-appstore-required-services-to-di-services-container" class="md-nav__link">
-    1) Add AppStore required services to DI services container
+  <a href="#initialization" class="md-nav__link">
+    Initialization
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-run-appstore-initialization-tasks-in-case-when-need-authorize-app-on-startup" class="md-nav__link">
-    2) Run AppStore initialization tasks in case when need authorize app on startup
+      
+        <li class="md-nav__item">
+  <a href="#validate-incoming-api-calls" class="md-nav__link">
+    Validate incoming API calls
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validate-incoming-api-calls-against-the-app-store" class="md-nav__link">
-    Validate incoming API calls against the app store:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#get-allowed-tenants-list" class="md-nav__link">
     Get allowed tenants list
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1619,50 +1553,40 @@
                 
                 <h1 id="maranicsappstoresdk">Maranics.AppStore.SDK<a class="headerlink" href="#maranicsappstoresdk" title="Permanent link">&para;</a></h1>
 <p>This SDK offers methods to communicate with the app store and validate API requests.</p>
-<p><a href="https://github.com/RemoteCloud/AppStoreService"><strong>Git Repository</strong></a> | <a href="https://www.nuget.org/packages/Maranics.AppStore.SDK/"><strong>Nuget Feed</strong></a></p>
+<p><a href="https://www.nuget.org/packages/Maranics.AppStore.SDK/"><strong>Nuget Feed</strong></a> | <a href="https://developer.maranics.com/dev/examples/app-store-sdk/"><strong>Documentation</strong></a> | <a href="https://github.com/RemoteCloud/AppStoreService"><strong>Git Repository</strong></a></p>
 <hr />
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<h3 id="initialize-app-store-in-startupcs">Initialize app store in <code>Startup.cs</code>:<a class="headerlink" href="#initialize-app-store-in-startupcs" title="Permanent link">&para;</a></h3>
-<h4 id="1-add-appstore-required-services-to-di-services-container">1) Add AppStore required services to DI services container<a class="headerlink" href="#1-add-appstore-required-services-to-di-services-container" title="Permanent link">&para;</a></h4>
+<h3 id="initialization">Initialization<a class="headerlink" href="#initialization" title="Permanent link">&para;</a></h3>
+<p>Authorization result will be stored in DI container in <code>AccessTokenData</code> object. You can use it in any service via dependency injection.</p>
 <pre><code class="language-csharp">using Maranics.AppStore.SDK;
-....
+
 public IConfiguration Configuration { get; }
-....
+
 public Startup(IConfiguration configuration)
 {
     Configuration = configuration;
-    ....
 }
-....
+
 public void ConfigureServices(IServiceCollection services)
 {
-    ....
     services.ConfigureAppStore(Configuration);
-    ....
+}
+
+public void Configure(IApplicationBuilder app)
+{
+    app.UseAppStore();
 }
 </code></pre>
-<p>Configuration file should contain section:</p>
+<p><strong>Note:</strong> <code>AppSettings.json</code> requires the following section for the auto configuration. Alternatively you can use <code>ConfigureAppStore(..)</code> overloads.</p>
 <pre><code class="language-json">&quot;AppStoreSettings&quot;: {
    &quot;ClientId&quot;: &quot;key&quot;,
    &quot;ClientSecret&quot;: &quot;secretKey&quot;,
    &quot;AppStoreUrl&quot;: &quot;url&quot;
 }
 </code></pre>
-<p>Otherwise you should use ConfigureAppStore method overloads to pass data in different way</p>
-<h4 id="2-run-appstore-initialization-tasks-in-case-when-need-authorize-app-on-startup">2) Run AppStore initialization tasks in case when need authorize app on startup<a class="headerlink" href="#2-run-appstore-initialization-tasks-in-case-when-need-authorize-app-on-startup" title="Permanent link">&para;</a></h4>
-<pre><code class="language-csharp">public void Configure(IApplicationBuilder app)
-{
-    ....
-    app.UseAppStore();
-    ....
-}
-</code></pre>
-<p>Authorization result will be stored in DI container in AccessTokenData object. After you can use it in any service via Dependency Injection</p>
-<h3 id="validate-incoming-api-calls-against-the-app-store">Validate incoming API calls against the app store:<a class="headerlink" href="#validate-incoming-api-calls-against-the-app-store" title="Permanent link">&para;</a></h3>
-<p>The presented example uses a custom Environment attribute inherited from TypeFilterAttribute and implements the OnAuthorization method</p>
+<h3 id="validate-incoming-api-calls">Validate incoming API calls<a class="headerlink" href="#validate-incoming-api-calls" title="Permanent link">&para;</a></h3>
+<p>The example uses a custom Environment attribute inherited from <code>TypeFilterAttribute</code> and implements the <code>OnAuthorization</code> method.</p>
 <pre><code class="language-csharp">using Maranics.AppStore.SDK.Models;
 using Maranics.AppStore.SDK.Services;
-....
 
 public void OnAuthorization(AuthorizationFilterContext context)
 {
@@ -1684,7 +1608,7 @@ public void OnAuthorization(AuthorizationFilterContext context)
     }
 }
 </code></pre>
-<p>ValidationResponse:</p>
+<p>Validation response:</p>
 <pre><code class="language-json">{
   &quot;HasAccess&quot;: &quot;false&quot;,
   &quot;Error&quot;: &quot;error description&quot;,
@@ -1699,7 +1623,7 @@ public void OnAuthorization(AuthorizationFilterContext context)
 <p>As an example we use a service that is added to the DI container at startup. </p>
 <pre><code class="language-csharp">using Maranics.AppStore.SDK.Models;
 using Maranics.AppStore.SDK.Services;
-....
+
 public class MyCustomService : IMyCustomService
 {
     private IConnectivityService _service;
@@ -1709,7 +1633,6 @@ public class MyCustomService : IMyCustomService
     {
         _service = service;
     _tokenData = tokenData;
-    ....
     }
 
     public async Task&lt;List&lt;TenantAccess&gt;&gt; GetAllowedTenantList()
@@ -1719,8 +1642,6 @@ public class MyCustomService : IMyCustomService
             return response.Data;
         return new List&lt;TenantAccess&gt;();
     }
-
-    ....
 }
 </code></pre>
                 
