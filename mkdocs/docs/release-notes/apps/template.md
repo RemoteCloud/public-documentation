@@ -4,6 +4,8 @@
 Bug-fixes and improvements:
 
 - [high] Flow metadata isn't lost in process of template import
+- [medium] Changes pf template name are immediately displayed in the template's taks view
+- [medium] Users will be notified if two metadata fields has same names
 
 Features:
 
