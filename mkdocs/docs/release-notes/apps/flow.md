@@ -14,6 +14,10 @@ Bug-fixes and improvements:
 - [medium] It is now possible to select current date and time for date and time controls on the Android phones
 - [low] Fixed item scrolling in sections 
 
+Features:
+- [very high] Date and time control was built into the layout and now is more responsive
+
+
 ## v2.6.1
 
 - ...
