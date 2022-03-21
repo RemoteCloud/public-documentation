@@ -8,6 +8,8 @@ Bug-fixes and improvements:
 
 Features:
 
-- [medium] Implement search in Documentation's topbar
+- [medium] Implemented search in Documentation's topbar
+- [medium] Changelog and Build information now is available for Documentation app
+- 
 
 ## v3.0.4.1
