@@ -12,6 +12,7 @@ Bug-fixes and improvements:
 - [medium] Discarded checklist list is not affected by switching filter
 - [medium] When switching between sections, user will always see the first item in the section
 - [medium] It is now possible to select current date and time for date and time controls on the Android phones
+- [medium] Improved long text control diplay in the flow view
 - [low] Fixed item scrolling in sections 
 
 Features:
