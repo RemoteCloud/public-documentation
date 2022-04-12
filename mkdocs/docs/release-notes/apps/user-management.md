@@ -1,6 +1,6 @@
 title: User Management
 
-## Latest
+## v2.1.12
 
 **Bugs and Changes**
 
@@ -12,6 +12,3 @@ title: User Management
 
 - [high] Improvements for virtual location
 
-## v2.1.10
-
-- ...

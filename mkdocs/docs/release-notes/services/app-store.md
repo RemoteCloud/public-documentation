@@ -1,5 +1,5 @@
 title: App Store
 
-## v1.0.0
+## v1.0.1
 
-- In development
+- Basic app store implementation. SDK availavble at https://github.com/RemoteCloud/AppStore.SDK.Demo

@@ -1,3 +1,5 @@
+## v3.0.6
+
 ## v3.0.5
 
 Bug-fixes and improvements:

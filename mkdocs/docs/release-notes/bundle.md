@@ -3,6 +3,47 @@ title: Deployment Bundles
 Deployment bundles represent a collection of all applications with a specific version. The specific app versions in a bundle are validated to play nice together. A bundle does not represent a complete list of applications that are deployed. Depending on the customer and use case only a subset of applications might be deployed. However when adding additional applications to a deployment they will use the version specified in the deployed bundle version.
 
 
+## V1.0.3
+
+**New Applications:** App store and automation application
+
+Application     | Type     | Version
+:-------------- | :------- | ------------:
+User Management | App      | [v2.1.12][user-mgm-v2.1.12]
+Launcher        | App      | [v1.1.1][launcher-v1.1.1]
+Flow            | App      | [2.6.5][flow-2.6.5]
+Template        | App      | [2.6.5][template-2.6.5]
+Documentation   | App      | [v3.0.6][doc-v3.0.6]
+Portal          | App      | [v2.1.1][portal-v2.1.1]
+Barrier Model   | App      | [v2.1.8][barrier-model-v2.1.8]
+Automation      | App      | [nightly][automation-nightly]
+App Store       | Service  | [v1.0.1][app-store-v1.0.1]
+API Gateway     | Service  | [v1.0.1][api-gateway-v1.0.1]
+Data Register   | Service  | [v2.0.2][data-register-v2.0.2]
+Monitoring      | Service  | [v1.0.1][monitor-v1.0.1]
+Notifications   | Service  | [1.0.2][notifications-1.0.2]
+PDF Generator   | Service  | [2.2.1][pdf-generator-2.2.1]
+RemoteExecution | Service  | [v2.1.3][remote-exec-v2.1.3]
+Sync            | Service  | [v1.2.1.0][sync-v1.2.1.0]
+
+[user-mgm-v2.1.12]: ./apps/user-management.md#v2112
+[launcher-v1.1.1]: ./apps/launcher.md#v111
+[flow-2.6.5]: ./apps/flow.md#265
+[template-2.6.5]: ./apps/template.md#265
+[doc-v3.0.6]: ./apps/documentation.md#v306
+[portal-v2.1.1]: ./apps/portal.md#v211
+[barrier-model-v2.1.8]: ./apps/barrier-model.md#v218
+[automation-nightly]: ./apps/automation.md#nightly
+
+[app-store-v1.0.1]: ./services/app-store.md#v101
+[api-gateway-v1.0.1]: ./services/api-gateway.md#v101
+[data-register-v2.0.2]: ./services/data-register.md#v202
+[monitor-v1.0.1]: ./services/monitoring.md#v101
+[notifications-1.0.2]: ./services/notifications.md#102
+[pdf-generator-2.2.1]: ./services/pdf-generator.md#221
+[remote-exec-v2.1.3]: ./services/remote-execution.md#v213
+[sync-v1.2.1.0]: ./services/sync.md#v1210
+
 ## V1.0.1
 
 **Note:** Introduction of an API gateway to introduce a consistent API endpoint.
