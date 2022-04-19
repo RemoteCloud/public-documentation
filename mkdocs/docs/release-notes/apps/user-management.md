@@ -1,5 +1,9 @@
 title: User Management
 
+## v2.1.13
+
+- [high] Updated locations API 
+
 ## v2.1.12
 
 **Bugs and Changes**
