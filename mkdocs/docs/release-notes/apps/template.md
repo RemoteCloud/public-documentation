@@ -1,6 +1,7 @@
 ## v2.6.7
 
 **Bug-fixes and improvements:**
+
 - [high] Fix overriding existing templates through template menu
 - [medium] Fixed override notice for template import dialog
 
