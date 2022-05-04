@@ -1,15 +1,18 @@
 ## v2.6.7
 
 **Bug-fixes and improvements:**
+
 - [high] Fixed flushing action groups for asynchronous UI actions
 - [high] Fixed flow completion issue for templates with archive timeout beyond limit
 
 **Features:**
+
 - [medium] Possibility to set current D/T value by swiping DateTime, Date or Time task
 
 ## v2.6.6
 
 **Bug-fixes and improvements:**
+
 - [high] Prevent blocking UI on bad connections (asynchronous UI actions)
 - [high] Prevent saving value right on change for DT picker if it is in double control
 - [medium] Allow to recover discarded checklists that were not finished
