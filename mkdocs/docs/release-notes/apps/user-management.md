@@ -3,10 +3,10 @@ title: User Management
 
 **Bugs and Changes**
 
-- [Very high] Refactoring of Location UI
-- [Very high] Major imporovements of Location setup logic
-- [Very high] Fixed issue with defined metadata title field duplication in the value field
-- [Very high] Improved redirection for third party apps on multitenant environments 
+- [Very high] Refactoring of Location UI: improved location creation interface and location edit possibilities.
+- [Very high] Major imporovements of Location setup logic.
+- [Very high] Fixed issue with defined metadata title field duplication in the value field.
+- [Very high] Improved redirection for third party apps on multitenant environments.
 
 
 ## v2.1.13
