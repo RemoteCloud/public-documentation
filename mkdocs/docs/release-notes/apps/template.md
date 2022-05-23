@@ -1,3 +1,15 @@
+## Latest
+
+**Bug-fixes and improvements:**
+
+- [Very High] Fixed issue with overriding template by importing.
+- [Very high] Fixed bug that didn't allow to add instructions from Documentation app.
+- [Very high] When draft is deactivated, the revision number is not changed anymore.
+- [High] Enabling "Flow can be assigned to user" now is synced.
+- [Medium] Improved diplay of internal documentation.
+- [Medium] Improved display of the template list. Fixed template list layout.
+
+
 ## v2.6.7
 
 **Bug-fixes and improvements:**
