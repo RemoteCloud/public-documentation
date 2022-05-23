@@ -1,3 +1,22 @@
+## Latest
+
+**Bug-fixes and improvements:**
+
+- [Very high] Major improvements in webhook trigger performance when working in conditions of poor internet signal.
+- [Very high] Fixed issue with date and time control UI layout compatibility with mobile devices.
+- [Very high] Improved logic for discarded template recovery.
+- [Very high] GET ​/api​/flows​/{flowId}​/tasks now is updating Request URL with a value from {flowId}​ field.
+- [High] Major user interface improvements: completion of the item does not switch the flow view, sections are not closed after picture, sign, file upload in tasks, possible to close comment filter block.
+- [High] Time before template is deleted now can't exceed 50 months and wrong values now does not prevent the flow from being completed or discarded.
+- [Medium] Fixed bugs with modal window display fopr date, signature, picture and file upload tasks.
+
+**Features:**
+
+- [Very high] Implemented the asynchronous mode that allows users to work in in conditions of poor internet signal.
+- [Very high] Added indicators to show task upload process to improve usability.
+
+
+
 ## v2.6.7
 
 **Bug-fixes and improvements:**
