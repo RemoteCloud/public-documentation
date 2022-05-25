@@ -1,4 +1,5 @@
-## Latest
+## v3.0.7
+
 **Bug-fixes and improvements**
 
 - [High] Fixed issue with customised page verification settings. Removing positions from "Verifiers selected by default" list was updated only visually, and the data was not saver correctly. 
@@ -6,6 +7,7 @@
 - [Medium] Improved UI for application drawer in Documentation app.
 - [Medium] Page can have a diverse type of content now and it does not affect page creation.
 - [Medium] Now the update webhook is triggered when changes are made to a published and verified page.
+- [low] Automatic bug reporting endpoint changed
 
 ## v3.0.6
 

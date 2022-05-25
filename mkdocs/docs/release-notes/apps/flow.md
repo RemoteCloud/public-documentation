@@ -1,4 +1,4 @@
-## Latest
+## v2.6.8
 
 **Bug-fixes and improvements:**
 
@@ -9,6 +9,7 @@
 - [High] Major user interface improvements: completion of the item does not switch the flow view, sections are not closed after picture, sign, file upload in tasks, possible to close comment filter block.
 - [High] Time before template is deleted now can't exceed 50 months and wrong values now does not prevent the flow from being completed or discarded.
 - [Medium] Fixed bugs with modal window display fopr date, signature, picture and file upload tasks.
+- [low] Automatic bug reporting endpoint changed
 
 **Features:**
 

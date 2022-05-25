@@ -1,4 +1,4 @@
-## Latest
+## v2.6.8
 
 **Bug-fixes and improvements:**
 
@@ -8,7 +8,7 @@
 - [High] Enabling "Flow can be assigned to user" now is synced.
 - [Medium] Improved diplay of internal documentation.
 - [Medium] Improved display of the template list. Fixed template list layout.
-
+- [low] Automatic bug reporting endpoint changed
 
 ## v2.6.7
 

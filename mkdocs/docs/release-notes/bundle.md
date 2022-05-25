@@ -3,6 +3,47 @@ title: Deployment Bundles
 Deployment bundles represent a collection of all applications with a specific version. The specific app versions in a bundle are validated to play nice together. A bundle does not represent a complete list of applications that are deployed. Depending on the customer and use case only a subset of applications might be deployed. However when adding additional applications to a deployment they will use the version specified in the deployed bundle version.
 
 
+## V1.0.4
+
+**Note**: Automatic bug reporting endpoint changed for all services
+
+Application     | Type     | Version
+:-------------- | :------- | ------------:
+User Management | App      | [v2.1.15][user-mgm-v2.1.15]
+Launcher        | App      | [v1.1.3][launcher-v1.1.3]
+Flow            | App      | [2.6.8][flow-2.6.8]
+Template        | App      | [2.6.8][template-2.6.8]
+Documentation   | App      | [v3.0.7][doc-v3.0.7]
+Portal          | App      | [v2.1.3][portal-v2.1.3]
+Barrier Model   | App      | [v2.1.10][barrier-model-v2.1.10]
+Automation      | App      | [nightly][automation-nightly]
+App Store       | Service  | [v1.0.2][app-store-v1.0.2]
+API Gateway     | Service  | [v1.0.2][api-gateway-v1.0.2]
+Data Register   | Service  | [v2.0.3][data-register-v2.0.3]
+Monitoring      | Service  | [v1.0.2][monitor-v1.0.2]
+Notifications   | Service  | [1.0.2][notifications-1.0.2]
+PDF Generator   | Service  | [2.2.2][pdf-generator-2.2.2]
+RemoteExecution | Service  | [v2.1.4][remote-exec-v2.1.4]
+Sync            | Service  | [v1.2.2][sync-v1.2.2]
+
+[user-mgm-v2.1.15]: ./apps/user-management.md#v2115
+[launcher-v1.1.3]: ./apps/launcher.md#v113
+[flow-2.6.8]: ./apps/flow.md#268
+[template-2.6.8]: ./apps/template.md#268
+[doc-v3.0.7]: ./apps/documentation.md#v307
+[portal-v2.1.3]: ./apps/portal.md#v213
+[barrier-model-v2.1.10]: ./apps/barrier-model.md#v2110
+[automation-nightly]: ./apps/automation.md#nightly
+
+[app-store-v1.0.2]: ./services/app-store.md#v102
+[api-gateway-v1.0.2]: ./services/api-gateway.md#v102
+[data-register-v2.0.3]: ./services/data-register.md#v203
+[monitor-v1.0.2]: ./services/monitoring.md#v102
+[notifications-1.0.2]: ./services/notifications.md#102
+[pdf-generator-2.2.2]: ./services/pdf-generator.md#222
+[remote-exec-v2.1.4]: ./services/remote-execution.md#v214
+[sync-v1.2.2]: ./services/sync.md#v122
+
 ## V1.0.3
 
 **New Applications:** App store and automation application

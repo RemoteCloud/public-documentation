@@ -1,6 +1,6 @@
 title: User Management
 
-## Latest
+## v2.1.15
 
 **Bugs and Changes**
 
@@ -8,6 +8,7 @@ title: User Management
 - [Very high] Major imporovements of Location setup logic.
 - [Very high] Fixed issue with defined metadata title field duplication in the value field.
 - [Very high] Improved redirection for third party apps on multitenant environments.
+- [low] Automatic bug reporting endpoint changed
 
 
 ## v2.1.13

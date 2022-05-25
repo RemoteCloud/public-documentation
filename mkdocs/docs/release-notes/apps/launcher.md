@@ -1,4 +1,6 @@
-## v1.1.1
+## v1.1.3
+
+- [low] Automatic bug reporting endpoint changed
 
 ## v1.1.0.6
 
