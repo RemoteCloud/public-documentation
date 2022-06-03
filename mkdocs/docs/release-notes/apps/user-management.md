@@ -1,5 +1,11 @@
 title: User Management
 
+## v2.1.16
+
+- Login screen UI fix for mobile
+- Display ID in organization menu
+- Lib updates
+
 ## v2.1.15
 
 **Bugs and Changes**

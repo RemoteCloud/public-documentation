@@ -1,3 +1,8 @@
+## v2.6.9
+
+- API updates
+- Bugfixes
+
 ## v2.6.8
 
 **Bug-fixes and improvements:**

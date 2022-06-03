@@ -1,3 +1,9 @@
+## v2.6.9
+
+- Offline improvements to picture upload
+- API updates
+- Bugfixes
+
 ## v2.6.8
 
 **Bug-fixes and improvements:**

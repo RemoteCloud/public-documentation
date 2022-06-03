@@ -1,3 +1,9 @@
+## v3.0.8
+
+- Lib updates
+- Image resize fix
+- Improved search experience on mobile
+
 ## v3.0.7
 
 **Bug-fixes and improvements**

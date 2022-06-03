@@ -1,3 +1,9 @@
+## v1.1.4
+
+- Back button added to modal
+- Workspace name is now case insensitive
+- Lib updates
+
 ## v1.1.3
 
 - [low] Automatic bug reporting endpoint changed
