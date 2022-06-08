@@ -6,70 +6,12 @@
     "version": "1.0"
   },
   "paths": {
-    "/app/documentation/CreatePage": {
-      "post": {
-        "tags": [
-          "Api"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ExternalCreatePage"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ExternalCreatePage"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ExternalCreatePage"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ExternalCreatePage"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExternalPage"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/app/documentation/GetAll": {
+    "/external/api/pages": {
       "get": {
         "tags": [
-          "Api"
+          "ExternalApi"
         ],
+        "summary": "Get all pages",
         "parameters": [
           {
             "name": "api-version",
@@ -92,22 +34,28 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ExternalPageLookupItem"
-                  }
+                  "$ref": "#/components/schemas/ExternalPageLookupItemIEnumerableApiResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
                 }
               }
             }
           }
         }
-      }
-    },
-    "/app/documentation/GetContentAndSetRelation": {
+      },
       "post": {
         "tags": [
-          "Api"
+          "ExternalApi"
         ],
+        "summary": "Create new Page",
         "parameters": [
           {
             "name": "api-version",
@@ -125,6 +73,184 @@
           }
         ],
         "requestBody": {
+          "description": "Page data in ExternalCreatePage model",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExternalCreatePage"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExternalCreatePage"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExternalCreatePage"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExternalCreatePage"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalPageApiResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/external/api/pages/{id}": {
+      "get": {
+        "tags": [
+          "ExternalApi"
+        ],
+        "summary": "Get a single",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Page Id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExternalPageApiResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/external/api/pages/{id}/references": {
+      "post": {
+        "tags": [
+          "ExternalApi"
+        ],
+        "summary": "Creates relation with external item in Page\r\nUsed in TemplatesApp",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of target page",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "External content reference",
           "content": {
             "application/json-patch+json": {
               "schema": {
@@ -149,8 +275,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "Created",
             "content": {
               "application/json": {
                 "schema": {
@@ -158,19 +284,62 @@
                 }
               }
             }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
     },
-    "/app/documentation/GetPage": {
-      "get": {
+    "/external/api/pages/{id}/references/{externalItemId}": {
+      "delete": {
         "tags": [
-          "Api"
+          "ExternalApi"
         ],
+        "summary": "Remove relation to external item in page",
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "description": "Id of page with reference",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "externalItemId",
+            "in": "path",
+            "description": "External item id (also reference id)",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -192,12 +361,42 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success",
+          "204": {
+            "description": "No Content",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ExternalPage"
+                  "$ref": "#/components/schemas/NoContentResult"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
                 }
               }
             }
@@ -205,172 +404,12 @@
         }
       }
     },
-    "/app/documentation/GetShelf": {
+    "/external/api/search": {
       "get": {
         "tags": [
-          "Api"
+          "ExternalApi"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExternalShelf"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/app/documentation/ReadItem": {
-      "post": {
-        "tags": [
-          "Api"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ObjectIdModel"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ObjectIdModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ObjectIdModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ObjectIdModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiMessage"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/app/documentation/RemoveRelation": {
-      "post": {
-        "tags": [
-          "Api"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PageExternalReferenceInfo"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PageExternalReferenceInfo"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PageExternalReferenceInfo"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PageExternalReferenceInfo"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiMessage"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/app/documentation/SearchPage": {
-      "get": {
-        "tags": [
-          "Api"
-        ],
+        "summary": "Get all pages available for user",
         "parameters": [
           {
             "name": "Query",
@@ -415,10 +454,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ExternalPageInfo"
-                  }
+                  "$ref": "#/components/schemas/ExternalPageInfoIEnumerableApiResponseWithMessage"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
                 }
               }
             }
@@ -426,12 +472,23 @@
         }
       }
     },
-    "/app/documentation/Verify": {
-      "post": {
+    "/external/api/shelves/{id}": {
+      "get": {
         "tags": [
-          "Api"
+          "ExternalApi"
         ],
+        "summary": "Get a single Shelf",
         "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Shelf Id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
           {
             "name": "api-version",
             "in": "query",
@@ -447,37 +504,33 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PageVerificationRequest"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PageVerificationRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PageVerificationRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PageVerificationRequest"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiMessage"
+                  "$ref": "#/components/schemas/ExternalShelfApiResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
                 }
               }
             }
@@ -488,16 +541,6 @@
   },
   "components": {
     "schemas": {
-      "ApiMessage": {
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "ExternalBook": {
         "type": "object",
         "properties": {
@@ -621,6 +664,10 @@
             "type": "string",
             "nullable": true
           },
+          "plainText": {
+            "type": "string",
+            "nullable": true
+          },
           "chapterId": {
             "type": "string",
             "format": "uuid"
@@ -637,7 +684,7 @@
           },
           "revisionIdSync": {
             "type": "string",
-            "nullable": true
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -699,6 +746,15 @@
         },
         "additionalProperties": false
       },
+      "ExternalPageApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ExternalPage"
+          }
+        },
+        "additionalProperties": false
+      },
       "ExternalPageContentLink": {
         "type": "object",
         "properties": {
@@ -735,6 +791,23 @@
         },
         "additionalProperties": false
       },
+      "ExternalPageInfoIEnumerableApiResponseWithMessage": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExternalPageInfo"
+            },
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ExternalPageLookupItem": {
         "type": "object",
         "properties": {
@@ -751,6 +824,19 @@
           },
           "chapter": {
             "$ref": "#/components/schemas/ExternalChapterInfo"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExternalPageLookupItemIEnumerableApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExternalPageLookupItem"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -790,6 +876,15 @@
         },
         "additionalProperties": false
       },
+      "ExternalShelfApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ExternalShelf"
+          }
+        },
+        "additionalProperties": false
+      },
       "ExternalShelfInfo": {
         "type": "object",
         "properties": {
@@ -816,52 +911,49 @@
           7,
           8,
           9,
-          10
+          10,
+          11
         ],
         "type": "integer",
-        "description": "<br/>UserManagement = 0<br/> Checklist = 1<br/> Portal = 2<br/> ChecklistManagement = 3<br/> Documentation = 4<br/> EquipmentCatalogue = 5<br/> Barrier = 6<br/> AlertValidation = 7<br/> DataRegister = 8<br/> ShoreViewer = 9<br/> NotificationApp = 10",
+        "description": "<br/>UserManagement = 0<br/> Checklist = 1<br/> Portal = 2<br/> ChecklistManagement = 3<br/> Documentation = 4<br/> EquipmentCatalogue = 5<br/> Barrier = 6<br/> AlertValidation = 7<br/> DataRegister = 8<br/> ShoreViewer = 9<br/> NotificationApp = 10<br/> ElsaAutomationApp = 11",
         "format": "int32"
       },
-      "ObjectIdModel": {
+      "NoContentResult": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
+          "statusCode": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
       },
-      "PageExternalReferenceInfo": {
-        "required": [
-          "externalItemId",
-          "itemId"
-        ],
+      "ProblemDetails": {
         "type": "object",
         "properties": {
-          "itemId": {
+          "type": {
             "type": "string",
-            "format": "uuid"
+            "nullable": true
           },
-          "externalItemId": {
+          "title": {
             "type": "string",
-            "format": "uuid"
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
           }
         },
-        "additionalProperties": false
-      },
-      "PageVerificationRequest": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "verify": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
+        "additionalProperties": { }
       },
       "SearchFieldOption": {
         "enum": [
@@ -889,13 +981,11 @@
         "properties": {
           "key": {
             "type": "string",
-            "nullable": true,
-            "readOnly": true
+            "nullable": true
           },
           "value": {
             "type": "string",
-            "nullable": true,
-            "readOnly": true
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -935,8 +1025,8 @@
   },
   "security": [
     {
-      "Bearer": [],
-      "Tenant": []
+      "Bearer": [ ],
+      "Tenant": [ ]
     }
   ]
 }
