@@ -321,7 +321,7 @@
             <a href="#pdf-from-html-generator-rest-api-conversion" class="toc-h1 toc-link" data-title="Conversion">Conversion</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#post__service_pdf-generator_conversion_htmltopdf" class="toc-h2 toc-link" data-title="post__service_pdf-generator_Conversion_htmlToPdf">post__service_pdf-generator_Conversion_htmlToPdf</a>
+                    <a href="#convert-html-to-pdf" class="toc-h2 toc-link" data-title="Convert HTML to PDF">Convert HTML to PDF</a>
                   </li>
               </ul>
           </li>
@@ -329,7 +329,7 @@
             <a href="#pdf-from-html-generator-rest-api-health" class="toc-h1 toc-link" data-title="Health">Health</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get__service_pdf-generator_health_status" class="toc-h2 toc-link" data-title="get__service_pdf-generator_Health_status">get__service_pdf-generator_Health_status</a>
+                    <a href="#default-endpoint-called-on-application-start" class="toc-h2 toc-link" data-title="Default endpoint called on application start">Default endpoint called on application start</a>
                   </li>
               </ul>
           </li>
@@ -337,19 +337,19 @@
             <a href="#pdf-from-html-generator-rest-api-template" class="toc-h1 toc-link" data-title="Template">Template</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get__service_pdf-generator_template_list" class="toc-h2 toc-link" data-title="get__service_pdf-generator_Template_list">get__service_pdf-generator_Template_list</a>
+                    <a href="#list-templates" class="toc-h2 toc-link" data-title="List Templates">List Templates</a>
                   </li>
                   <li>
-                    <a href="#get__service_pdf-generator_template_get" class="toc-h2 toc-link" data-title="get__service_pdf-generator_Template_get">get__service_pdf-generator_Template_get</a>
+                    <a href="#get-template" class="toc-h2 toc-link" data-title="Get Template">Get Template</a>
                   </li>
                   <li>
-                    <a href="#post__service_pdf-generator_template_upload" class="toc-h2 toc-link" data-title="post__service_pdf-generator_Template_upload">post__service_pdf-generator_Template_upload</a>
+                    <a href="#create-template" class="toc-h2 toc-link" data-title="Create Template">Create Template</a>
                   </li>
                   <li>
-                    <a href="#put__service_pdf-generator_template_update" class="toc-h2 toc-link" data-title="put__service_pdf-generator_Template_update">put__service_pdf-generator_Template_update</a>
+                    <a href="#update-template" class="toc-h2 toc-link" data-title="Update Template">Update Template</a>
                   </li>
                   <li>
-                    <a href="#delete__service_pdf-generator_template_removeheader" class="toc-h2 toc-link" data-title="delete__service_pdf-generator_Template_removeHeader">delete__service_pdf-generator_Template_removeHeader</a>
+                    <a href="#delete-template" class="toc-h2 toc-link" data-title="Delete Template">Delete Template</a>
                   </li>
               </ul>
           </li>
@@ -371,7 +371,7 @@
 <p>API to generate PDF file from provided HTML source.</p>
 
 <h1 id="pdf-from-html-generator-rest-api-conversion">Conversion</h1>
-<h2 id='post__service_pdf-generator_conversion_htmltopdf'>post__service_pdf-generator_Conversion_htmlToPdf</h2>
+<h2 id='convert-html-to-pdf'>Convert HTML to PDF</h2>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
@@ -529,8 +529,6 @@ api-version: string
 </code></pre></div>
 <p><code>POST /service/pdf-generator/Conversion/htmlToPdf</code></p>
 
-<p><em>Convert HTML to PDF</em></p>
-
 <p>Sample request:</p>
 
 <p>curl --location --request POST &#39;https://.../api/conversion/htmlToPdf&#39; \
@@ -546,7 +544,7 @@ api-version: string
 <div class="highlight"><pre class="highlight plaintext"><code>string
 
 </code></pre></div>
-<h3 id="post__service_pdf-generator_conversion_htmltopdf-parameters">Parameters</h3>
+<h3 id="convert-html-to-pdf-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -601,7 +599,7 @@ api-version: string
 </tr>
 </tbody></table>
 
-<h3 id="post__service_pdf-generator_conversion_htmltopdf-responses">Responses</h3>
+<h3 id="convert-html-to-pdf-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -624,7 +622,7 @@ This operation does not require authentication
 </aside>
 
 <h1 id="pdf-from-html-generator-rest-api-health">Health</h1>
-<h2 id='get__service_pdf-generator_health_status'>get__service_pdf-generator_Health_status</h2>
+<h2 id='default-endpoint-called-on-application-start'>Default endpoint called on application start</h2>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
@@ -757,13 +755,11 @@ api-version: string
 </code></pre></div>
 <p><code>GET /service/pdf-generator/Health/status</code></p>
 
-<p><em>Default endpoint called on application start</em></p>
-
 <p>Sample request:</p>
 
 <p>curl --location --request POST &#39;https://.../api/health/status&#39; \</p>
 
-<h3 id="get__service_pdf-generator_health_status-parameters">Parameters</h3>
+<h3 id="default-endpoint-called-on-application-start-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -798,7 +794,7 @@ api-version: string
 <div class="highlight"><pre class="highlight plaintext"><code>true
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="kc">true</span><span class="w">
 </span></code></pre></div>
-<h3 id="get__service_pdf-generator_health_status-responses">Responses</h3>
+<h3 id="default-endpoint-called-on-application-start-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -821,7 +817,7 @@ This operation does not require authentication
 </aside>
 
 <h1 id="pdf-from-html-generator-rest-api-template">Template</h1>
-<h2 id='get__service_pdf-generator_template_list'>get__service_pdf-generator_Template_list</h2>
+<h2 id='list-templates'>List Templates</h2>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
@@ -950,14 +946,12 @@ api-version: string
 </code></pre></div>
 <p><code>GET /service/pdf-generator/Template/list</code></p>
 
-<p><em>List Templates</em></p>
-
 <p>Sample request:</p>
 
 <p>curl --location --request GET &#39;https://.../api/template/list&#39; \
          --header &#39;Content-Type: text/html&#39; \</p>
 
-<h3 id="get__service_pdf-generator_template_list-parameters">Parameters</h3>
+<h3 id="list-templates-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -984,7 +978,7 @@ api-version: string
 </tr>
 </tbody></table>
 
-<h3 id="get__service_pdf-generator_template_list-responses">Responses</h3>
+<h3 id="list-templates-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -1005,7 +999,7 @@ api-version: string
 <aside class="success">
 This operation does not require authentication
 </aside>
-<h2 id='get__service_pdf-generator_template_get'>get__service_pdf-generator_Template_get</h2>
+<h2 id='get-template'>Get Template</h2>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
@@ -1138,15 +1132,13 @@ api-version: string
 </code></pre></div>
 <p><code>GET /service/pdf-generator/Template/get</code></p>
 
-<p><em>Get Template</em></p>
-
 <p>Sample request:</p>
 
 <p>curl --location --request GET &#39;https://.../api/template/get&#39; \
          --header &#39;id: test&#39; \
          --header &#39;Content-Type: text/html&#39; \</p>
 
-<h3 id="get__service_pdf-generator_template_get-parameters">Parameters</h3>
+<h3 id="get-template-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -1180,7 +1172,7 @@ api-version: string
 </tr>
 </tbody></table>
 
-<h3 id="get__service_pdf-generator_template_get-responses">Responses</h3>
+<h3 id="get-template-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -1201,7 +1193,7 @@ api-version: string
 <aside class="success">
 This operation does not require authentication
 </aside>
-<h2 id='post__service_pdf-generator_template_upload'>post__service_pdf-generator_Template_upload</h2>
+<h2 id='create-template'>Create Template</h2>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
@@ -1351,8 +1343,6 @@ api-version: string
 </code></pre></div>
 <p><code>POST /service/pdf-generator/Template/upload</code></p>
 
-<p><em>Create Template</em></p>
-
 <p>Sample request:</p>
 
 <p>curl --location --request POST &#39;https://.../api/template/upload&#39; \
@@ -1366,7 +1356,7 @@ api-version: string
 <div class="highlight"><pre class="highlight plaintext"><code>string
 
 </code></pre></div>
-<h3 id="post__service_pdf-generator_template_upload-parameters">Parameters</h3>
+<h3 id="create-template-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -1407,7 +1397,7 @@ api-version: string
 </tr>
 </tbody></table>
 
-<h3 id="post__service_pdf-generator_template_upload-responses">Responses</h3>
+<h3 id="create-template-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -1428,7 +1418,7 @@ api-version: string
 <aside class="success">
 This operation does not require authentication
 </aside>
-<h2 id='put__service_pdf-generator_template_update'>put__service_pdf-generator_Template_update</h2>
+<h2 id='update-template'>Update Template</h2>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
@@ -1583,8 +1573,6 @@ api-version: string
 </code></pre></div>
 <p><code>PUT /service/pdf-generator/Template/update</code></p>
 
-<p><em>Update Template</em></p>
-
 <p>Sample request:</p>
 
 <p>curl --location --request PUT &#39;https://.../api/template/update&#39; \
@@ -1598,7 +1586,7 @@ api-version: string
 <div class="highlight"><pre class="highlight plaintext"><code>string
 
 </code></pre></div>
-<h3 id="put__service_pdf-generator_template_update-parameters">Parameters</h3>
+<h3 id="update-template-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -1639,7 +1627,7 @@ api-version: string
 </tr>
 </tbody></table>
 
-<h3 id="put__service_pdf-generator_template_update-responses">Responses</h3>
+<h3 id="update-template-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -1660,7 +1648,7 @@ api-version: string
 <aside class="success">
 This operation does not require authentication
 </aside>
-<h2 id='delete__service_pdf-generator_template_removeheader'>delete__service_pdf-generator_Template_removeHeader</h2>
+<h2 id='delete-template'>Delete Template</h2>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
@@ -1794,15 +1782,13 @@ api-version: string
 </code></pre></div>
 <p><code>DELETE /service/pdf-generator/Template/removeHeader</code></p>
 
-<p><em>Delete Template</em></p>
-
 <p>Sample request:</p>
 
 <p>curl --location --request DELETE &#39;https://.../api/template/remove&#39; \
          --header &#39;id: test&#39; \
          --header &#39;Content-Type: text/html&#39; \</p>
 
-<h3 id="delete__service_pdf-generator_template_removeheader-parameters">Parameters</h3>
+<h3 id="delete-template-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -1836,7 +1822,7 @@ api-version: string
 </tr>
 </tbody></table>
 
-<h3 id="delete__service_pdf-generator_template_removeheader-responses">Responses</h3>
+<h3 id="delete-template-responses">Responses</h3>
 
 <table><thead>
 <tr>
