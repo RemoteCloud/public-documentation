@@ -6,11 +6,12 @@
     "version": "1.0"
   },
   "paths": {
-    "/service/remote-execution/PublishMessage": {
+    "/service/remote-execution/messages": {
       "post": {
         "tags": [
           "Api"
         ],
+        "summary": "Publishes message to be executed on current or remote location.",
         "parameters": [
           {
             "name": "api-version",
@@ -28,6 +29,7 @@
           }
         ],
         "requestBody": {
+          "description": "Represents webhook request.",
           "content": {
             "application/json": {
               "schema": {
@@ -52,45 +54,17 @@
             "description": "Success"
           }
         }
-      }
-    },
-    "/service/remote-execution/GetLocations": {
+      },
       "get": {
         "tags": [
           "Api"
         ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/service/remote-execution/GetHistory": {
-      "get": {
-        "tags": [
-          "Api"
-        ],
+        "summary": "Retrieves last processed messages.",
         "parameters": [
           {
             "name": "count",
             "in": "query",
+            "description": "Count of messages to retrieve.",
             "schema": {
               "type": "integer",
               "format": "int32",
@@ -119,15 +93,47 @@
         }
       }
     },
-    "/service/remote-execution/GetMessageStatus": {
+    "/service/remote-execution/locations": {
       "get": {
         "tags": [
           "Api"
         ],
+        "summary": "Retrieves available locations.",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/service/remote-execution/messages/{id}": {
+      "get": {
+        "tags": [
+          "Api"
+        ],
+        "summary": "Retrieves status of message, if it was processed or not.",
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "description": "trackingId that was retieved after message push.",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
