@@ -6,12 +6,23 @@
     "version": "1.0"
   },
   "paths": {
-    "/app/templates/GetTemplate": {
-      "post": {
+    "/app/templates/templates/{id}": {
+      "get": {
         "tags": [
           "RestApi"
         ],
+        "summary": "Get information from specific template",
         "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Template ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
           {
             "name": "api-version",
             "in": "query",
@@ -27,47 +38,6 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdAndRefIdApiModel"
-              },
-              "example": {
-                "id": "3fa24e24-1e4a-4098-8dc7-9ca2201dbdf1",
-                "refId": null
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdAndRefIdApiModel"
-              },
-              "example": {
-                "id": "3fa24e24-1e4a-4098-8dc7-9ca2201dbdf1",
-                "refId": null
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdAndRefIdApiModel"
-              },
-              "example": {
-                "id": "3fa24e24-1e4a-4098-8dc7-9ca2201dbdf1",
-                "refId": null
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdAndRefIdApiModel"
-              },
-              "example": {
-                "id": "3fa24e24-1e4a-4098-8dc7-9ca2201dbdf1",
-                "refId": null
-              }
-            }
-          },
-          "required": true
-        },
         "responses": {
           "401": {
             "description": "Unauthorized",
@@ -93,14 +63,14 @@
                   "status": 0,
                   "approved": true,
                   "locations": [
-                    "2edd7752-540f-4db4-8f36-02656fe9b84e"
+                    "ccbaa575-7fe2-470d-8045-b58a98658a24"
                   ],
                   "permissions": [
                     {
                       "possibility": 121,
                       "positions": [
                         {
-                          "position": "234cc0f3-3c9e-4727-8268-78e3ab1051fb",
+                          "position": "73dd2558-98b1-4b3a-88e8-2d6257df360b",
                           "activeOnly": true
                         }
                       ],
@@ -124,8 +94,8 @@
                   "publishToMessagebus": false,
                   "singleUserTemplate": false,
                   "allowExternalUse": false,
-                  "revisionUpdateTime": "2021-12-10T09:53:29.5683786Z",
-                  "revisionUpdateTimeString": "2021-12-10T09:53:29.5683786Z",
+                  "revisionUpdateTime": "2022-06-09T10:13:33.3279839Z",
+                  "revisionUpdateTimeString": "2022-06-09T10:13:33.3279839Z",
                   "revision": 1,
                   "reoccurring": false,
                   "archiveChecklistsAfter": 1,
@@ -136,7 +106,7 @@
                   "preventFlowCreateByActiveRefId": null,
                   "discardReasons": null,
                   "commentTypes": null,
-                  "id": "00058e52-3c6b-4499-9938-535ab2739bcf",
+                  "id": "1e6d99eb-8b4d-4ed3-9380-7ae81afb3bec",
                   "name": "Template name",
                   "sectionTemplates": [
                     {
@@ -152,20 +122,20 @@
                           "description": "Comment webhook"
                         }
                       ],
-                      "templateId": "00058e52-3c6b-4499-9938-535ab2739bcf",
+                      "templateId": "1e6d99eb-8b4d-4ed3-9380-7ae81afb3bec",
                       "metadata": null,
-                      "id": "342b2e8b-0925-4b12-934b-a6337d95372b",
+                      "id": "482f362b-27a9-41e8-b252-4cf6e5c6a332",
                       "taskTemplates": [
                         {
-                          "id": "7d7c3539-86e5-4067-acfb-513821abfc18",
+                          "id": "a5880621-d0a0-49e8-b226-9295fa131285",
                           "reminderHours": null,
                           "reminderMinutes": null,
                           "reminderTimeString": null,
-                          "templateId": "00058e52-3c6b-4499-9938-535ab2739bcf",
+                          "templateId": "1e6d99eb-8b4d-4ed3-9380-7ae81afb3bec",
                           "name": "Task 1",
                           "documentation": [],
                           "order": 0,
-                          "sectionId": "342b2e8b-0925-4b12-934b-a6337d95372b",
+                          "sectionId": "482f362b-27a9-41e8-b252-4cf6e5c6a332",
                           "control": {
                             "values": null,
                             "valueTitle": null,
@@ -212,11 +182,11 @@
                           "commentTypes": null
                         },
                         {
-                          "id": "18c62275-3b9d-475e-8dfe-8299e993a8e1",
+                          "id": "9c4824e7-6235-4f2f-a042-dbb53126a1b9",
                           "reminderHours": null,
                           "reminderMinutes": null,
                           "reminderTimeString": null,
-                          "templateId": "00058e52-3c6b-4499-9938-535ab2739bcf",
+                          "templateId": "1e6d99eb-8b4d-4ed3-9380-7ae81afb3bec",
                           "name": "Task 2",
                           "documentation": [
                             {
@@ -230,7 +200,7 @@
                             }
                           ],
                           "order": 1,
-                          "sectionId": "342b2e8b-0925-4b12-934b-a6337d95372b",
+                          "sectionId": "482f362b-27a9-41e8-b252-4cf6e5c6a332",
                           "control": {
                             "values": "",
                             "valueTitle": null,
@@ -286,16 +256,16 @@
                   ],
                   "rules": {
                     "hiddenByDefault": [
-                      "18c62275-3b9d-475e-8dfe-8299e993a8e1"
+                      "9c4824e7-6235-4f2f-a042-dbb53126a1b9"
                     ],
                     "rules": [
                       {
                         "condition": "is not empty",
                         "effect": "show",
                         "effectedItems": [
-                          "18c62275-3b9d-475e-8dfe-8299e993a8e1"
+                          "9c4824e7-6235-4f2f-a042-dbb53126a1b9"
                         ],
-                        "formField": "7d7c3539-86e5-4067-acfb-513821abfc18",
+                        "formField": "a5880621-d0a0-49e8-b226-9295fa131285",
                         "values": null
                       }
                     ]
@@ -305,7 +275,7 @@
                       "displayAsSubHeading": false,
                       "type": 1,
                       "fillOnlyByAPI": false,
-                      "id": "5076e7f1-51bf-448f-abc2-4c08aef0463c",
+                      "id": "fc7e7ab2-04c5-4b98-8449-6dba7f41bcd0",
                       "dataRegister": null,
                       "name": "Title",
                       "value": null
@@ -332,12 +302,22 @@
         }
       }
     },
-    "/app/templates/SearchTemplates": {
-      "post": {
+    "/app/templates/templates/{refId}": {
+      "get": {
         "tags": [
           "RestApi"
         ],
+        "summary": "Get information from specific template by refID",
         "parameters": [
+          {
+            "name": "refId",
+            "in": "path",
+            "description": "refID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
           {
             "name": "api-version",
             "in": "query",
@@ -353,75 +333,365 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchTemplatesApiModel"
-              },
-              "example": {
-                "activeAndDraft": true,
-                "deactivated": false,
-                "archived": false,
-                "searchString": "board",
-                "searchInTitle": true,
-                "searchInRefId": true,
-                "searchInMetadataTitle": false,
-                "searchInMetadataValue": true,
-                "location": null
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchTemplatesApiModel"
-              },
-              "example": {
-                "activeAndDraft": true,
-                "deactivated": false,
-                "archived": false,
-                "searchString": "board",
-                "searchInTitle": true,
-                "searchInRefId": true,
-                "searchInMetadataTitle": false,
-                "searchInMetadataValue": true,
-                "location": null
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchTemplatesApiModel"
-              },
-              "example": {
-                "activeAndDraft": true,
-                "deactivated": false,
-                "archived": false,
-                "searchString": "board",
-                "searchInTitle": true,
-                "searchInRefId": true,
-                "searchInMetadataTitle": false,
-                "searchInMetadataValue": true,
-                "location": null
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/SearchTemplatesApiModel"
-              },
-              "example": {
-                "activeAndDraft": true,
-                "deactivated": false,
-                "archived": false,
-                "searchString": "board",
-                "searchInTitle": true,
-                "searchInRefId": true,
-                "searchInMetadataTitle": false,
-                "searchInMetadataValue": true,
-                "location": null
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                },
+                "example": {
+                  "message": "Result message"
+                }
               }
             }
           },
-          "required": true
-        },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChecklistTemplateInfo"
+                },
+                "example": {
+                  "status": 0,
+                  "approved": true,
+                  "locations": [
+                    "ccbaa575-7fe2-470d-8045-b58a98658a24"
+                  ],
+                  "permissions": [
+                    {
+                      "possibility": 121,
+                      "positions": [
+                        {
+                          "position": "73dd2558-98b1-4b3a-88e8-2d6257df360b",
+                          "activeOnly": true
+                        }
+                      ],
+                      "positionTeams": null
+                    }
+                  ],
+                  "onlyStartByApi": false,
+                  "refId": "Ref.Id",
+                  "shortDescription": "Description text",
+                  "customCompleteMessage": null,
+                  "everybodyCanFinishChecklist": false,
+                  "checklistCanBeAssigned": true,
+                  "webhooks": [
+                    {
+                      "location": null,
+                      "action": "Task_Comment",
+                      "url": "http://webhook.host/path",
+                      "description": "Comment webhook"
+                    }
+                  ],
+                  "publishToMessagebus": false,
+                  "singleUserTemplate": false,
+                  "allowExternalUse": false,
+                  "revisionUpdateTime": "2022-06-09T10:13:33.3331224Z",
+                  "revisionUpdateTimeString": "2022-06-09T10:13:33.3331224Z",
+                  "revision": 1,
+                  "reoccurring": false,
+                  "archiveChecklistsAfter": 1,
+                  "archiveChecklistsAfterSpan": 0,
+                  "locationTagging": false,
+                  "preventQuickDiscard": false,
+                  "imageUrl": null,
+                  "preventFlowCreateByActiveRefId": null,
+                  "discardReasons": null,
+                  "commentTypes": null,
+                  "id": "1e6d99eb-8b4d-4ed3-9380-7ae81afb3bec",
+                  "name": "Template name",
+                  "sectionTemplates": [
+                    {
+                      "name": "Section",
+                      "color": "#DEEBFF",
+                      "documentation": [],
+                      "order": 0,
+                      "webhooks": [
+                        {
+                          "location": null,
+                          "action": "Task_Comment",
+                          "url": "http://webhook.host/path",
+                          "description": "Comment webhook"
+                        }
+                      ],
+                      "templateId": "1e6d99eb-8b4d-4ed3-9380-7ae81afb3bec",
+                      "metadata": null,
+                      "id": "482f362b-27a9-41e8-b252-4cf6e5c6a332",
+                      "taskTemplates": [
+                        {
+                          "id": "a5880621-d0a0-49e8-b226-9295fa131285",
+                          "reminderHours": null,
+                          "reminderMinutes": null,
+                          "reminderTimeString": null,
+                          "templateId": "1e6d99eb-8b4d-4ed3-9380-7ae81afb3bec",
+                          "name": "Task 1",
+                          "documentation": [],
+                          "order": 0,
+                          "sectionId": "482f362b-27a9-41e8-b252-4cf6e5c6a332",
+                          "control": {
+                            "values": null,
+                            "valueTitle": null,
+                            "min": null,
+                            "max": null,
+                            "preventValueInThePast": false,
+                            "scanOption": null,
+                            "listControl": null,
+                            "fileControl": null,
+                            "numberControl": null,
+                            "phoneNumberControl": null,
+                            "dataRegisterControl": null,
+                            "systemListsControl": null,
+                            "text": null,
+                            "dataId": null,
+                            "type": 0,
+                            "shouldConfirm": null
+                          },
+                          "control2": null,
+                          "secondaryTitle": "Task info",
+                          "tags": "tag2",
+                          "analyticTags": "tag1",
+                          "webhooks": [
+                            {
+                              "location": null,
+                              "action": "Task_Comment",
+                              "url": "http://webhook.host/path",
+                              "description": "Comment webhook"
+                            }
+                          ],
+                          "transferValueOnConsecutiveChecklist": false,
+                          "preventQuickInput": false,
+                          "metadata": [
+                            {
+                              "name": "Title",
+                              "value": "Value"
+                            }
+                          ],
+                          "assignedPosition": null,
+                          "sensitiveData": false,
+                          "setContentByAPI": false,
+                          "isReadonly": false,
+                          "discardReasons": null,
+                          "commentTypes": null
+                        },
+                        {
+                          "id": "9c4824e7-6235-4f2f-a042-dbb53126a1b9",
+                          "reminderHours": null,
+                          "reminderMinutes": null,
+                          "reminderTimeString": null,
+                          "templateId": "1e6d99eb-8b4d-4ed3-9380-7ae81afb3bec",
+                          "name": "Task 2",
+                          "documentation": [
+                            {
+                              "externalItemId": null,
+                              "sourceName": "Internal",
+                              "order": 0,
+                              "title": "Information",
+                              "value": "Description text",
+                              "relativeExternalItemUrl": null,
+                              "message": null
+                            }
+                          ],
+                          "order": 1,
+                          "sectionId": "482f362b-27a9-41e8-b252-4cf6e5c6a332",
+                          "control": {
+                            "values": "",
+                            "valueTitle": null,
+                            "min": null,
+                            "max": null,
+                            "preventValueInThePast": false,
+                            "scanOption": null,
+                            "listControl": null,
+                            "fileControl": null,
+                            "numberControl": null,
+                            "phoneNumberControl": null,
+                            "dataRegisterControl": null,
+                            "systemListsControl": null,
+                            "text": null,
+                            "dataId": null,
+                            "type": 6,
+                            "shouldConfirm": null
+                          },
+                          "control2": {
+                            "values": null,
+                            "valueTitle": null,
+                            "min": null,
+                            "max": null,
+                            "preventValueInThePast": false,
+                            "scanOption": null,
+                            "listControl": null,
+                            "fileControl": null,
+                            "numberControl": null,
+                            "phoneNumberControl": null,
+                            "dataRegisterControl": null,
+                            "systemListsControl": null,
+                            "text": null,
+                            "dataId": null,
+                            "type": 5,
+                            "shouldConfirm": null
+                          },
+                          "secondaryTitle": "Task info",
+                          "tags": "tag2",
+                          "analyticTags": "tag3",
+                          "webhooks": null,
+                          "transferValueOnConsecutiveChecklist": false,
+                          "preventQuickInput": false,
+                          "metadata": null,
+                          "assignedPosition": null,
+                          "sensitiveData": false,
+                          "setContentByAPI": false,
+                          "isReadonly": false,
+                          "discardReasons": null,
+                          "commentTypes": null
+                        }
+                      ]
+                    }
+                  ],
+                  "rules": {
+                    "hiddenByDefault": [
+                      "9c4824e7-6235-4f2f-a042-dbb53126a1b9"
+                    ],
+                    "rules": [
+                      {
+                        "condition": "is not empty",
+                        "effect": "show",
+                        "effectedItems": [
+                          "9c4824e7-6235-4f2f-a042-dbb53126a1b9"
+                        ],
+                        "formField": "a5880621-d0a0-49e8-b226-9295fa131285",
+                        "values": null
+                      }
+                    ]
+                  },
+                  "metadata": [
+                    {
+                      "displayAsSubHeading": false,
+                      "type": 1,
+                      "fillOnlyByAPI": false,
+                      "id": "fc7e7ab2-04c5-4b98-8449-6dba7f41bcd0",
+                      "dataRegister": null,
+                      "name": "Title",
+                      "value": null
+                    }
+                  ],
+                  "categoryId": null
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                },
+                "example": {
+                  "message": "Result message"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/templates/templates": {
+      "get": {
+        "tags": [
+          "RestApi"
+        ],
+        "summary": "Get information from all templates",
+        "parameters": [
+          {
+            "name": "ActiveAndDraft",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "Deactivated",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "Archived",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "SearchString",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": null
+            }
+          },
+          {
+            "name": "SearchInTitle",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "SearchInRefId",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "SearchInMetadataTitle",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "SearchInMetadataValue",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "Location",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "default": null
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "401": {
             "description": "Unauthorized",
@@ -463,13 +733,12 @@
             }
           }
         }
-      }
-    },
-    "/app/templates/AddOrUpdateTemplateTaskMetadata": {
+      },
       "post": {
         "tags": [
           "RestApi"
         ],
+        "summary": "Creates a new information to a template",
         "parameters": [
           {
             "name": "api-version",
@@ -487,394 +756,23 @@
           }
         ],
         "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/TemplateTaskMetadataApiModel"
-              },
-              "example": {
-                "templateId": "5cd0c1eb-36a3-464e-b1a4-48dfb0adae4a",
-                "taskMetadata": [
-                  {
-                    "taskId": "2d599142-a75d-48ca-bb59-dc9e87120da3",
-                    "metadata": {
-                      "title1": "value1",
-                      "title2": "value2"
-                    }
-                  }
-                ]
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TemplateTaskMetadataApiModel"
-              },
-              "example": {
-                "templateId": "5cd0c1eb-36a3-464e-b1a4-48dfb0adae4a",
-                "taskMetadata": [
-                  {
-                    "taskId": "2d599142-a75d-48ca-bb59-dc9e87120da3",
-                    "metadata": {
-                      "title1": "value1",
-                      "title2": "value2"
-                    }
-                  }
-                ]
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TemplateTaskMetadataApiModel"
-              },
-              "example": {
-                "templateId": "5cd0c1eb-36a3-464e-b1a4-48dfb0adae4a",
-                "taskMetadata": [
-                  {
-                    "taskId": "2d599142-a75d-48ca-bb59-dc9e87120da3",
-                    "metadata": {
-                      "title1": "value1",
-                      "title2": "value2"
-                    }
-                  }
-                ]
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/TemplateTaskMetadataApiModel"
-              },
-              "example": {
-                "templateId": "5cd0c1eb-36a3-464e-b1a4-48dfb0adae4a",
-                "taskMetadata": [
-                  {
-                    "taskId": "2d599142-a75d-48ca-bb59-dc9e87120da3",
-                    "metadata": {
-                      "title1": "value1",
-                      "title2": "value2"
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiMessage"
-                },
-                "example": {
-                  "message": "Result message"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiMessage"
-                },
-                "example": {
-                  "message": "Result message"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/app/templates/ChangeTemplateStatus": {
-      "post": {
-        "tags": [
-          "RestApi"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChangeTemplateStatusApiModel"
-              },
-              "example": {
-                "id": "84367515-198b-43d4-8e26-489e4a9ab450",
-                "status": 8,
-                "onlyIfStatus": null,
-                "comment": "Comment text"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChangeTemplateStatusApiModel"
-              },
-              "example": {
-                "id": "84367515-198b-43d4-8e26-489e4a9ab450",
-                "status": 8,
-                "onlyIfStatus": null,
-                "comment": "Comment text"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChangeTemplateStatusApiModel"
-              },
-              "example": {
-                "id": "84367515-198b-43d4-8e26-489e4a9ab450",
-                "status": 8,
-                "onlyIfStatus": null,
-                "comment": "Comment text"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChangeTemplateStatusApiModel"
-              },
-              "example": {
-                "id": "84367515-198b-43d4-8e26-489e4a9ab450",
-                "status": 8,
-                "onlyIfStatus": null,
-                "comment": "Comment text"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiMessage"
-                },
-                "example": {
-                  "message": "Result message"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiMessage"
-                },
-                "example": {
-                  "message": "Result message"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/app/templates/Echo": {
-      "get": {
-        "tags": [
-          "RestApi"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiMessage"
-                },
-                "example": {
-                  "message": "Result message"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiMessage"
-                },
-                "example": {
-                  "message": "Result message"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/app/templates/CreateSecurityKey": {
-      "post": {
-        "tags": [
-          "RestApi"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/SecurityKeyApiModel"
-              },
-              "example": {
-                "applicationName": "Checklist",
-                "applicationPublicKey": "436a88b5a13f93bdb74766702cb20aed3267ca9a9ec50dbf48c8514ce06cbf2d",
-                "previousInputPublicKey": "4171399af4dff99c973c577da583d5bf896a13cd1f1ffe91cd8285060bf48436"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SecurityKeyApiModel"
-              },
-              "example": {
-                "applicationName": "Checklist",
-                "applicationPublicKey": "436a88b5a13f93bdb74766702cb20aed3267ca9a9ec50dbf48c8514ce06cbf2d",
-                "previousInputPublicKey": "4171399af4dff99c973c577da583d5bf896a13cd1f1ffe91cd8285060bf48436"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SecurityKeyApiModel"
-              },
-              "example": {
-                "applicationName": "Checklist",
-                "applicationPublicKey": "436a88b5a13f93bdb74766702cb20aed3267ca9a9ec50dbf48c8514ce06cbf2d",
-                "previousInputPublicKey": "4171399af4dff99c973c577da583d5bf896a13cd1f1ffe91cd8285060bf48436"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/SecurityKeyApiModel"
-              },
-              "example": {
-                "applicationName": "Checklist",
-                "applicationPublicKey": "436a88b5a13f93bdb74766702cb20aed3267ca9a9ec50dbf48c8514ce06cbf2d",
-                "previousInputPublicKey": "4171399af4dff99c973c577da583d5bf896a13cd1f1ffe91cd8285060bf48436"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiMessage"
-                },
-                "example": {
-                  "message": "Result message"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SecurityKey"
-                },
-                "example": {
-                  "applicationName": "Checklist",
-                  "inputPublicKey": "58619b1106b37b18da8be6cb23f16f609033216a8d078524f0ff57723030b897"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/app/templates/CreateTemplate": {
-      "post": {
-        "tags": [
-          "RestApi"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
+          "description": "",
           "content": {
             "application/json-patch+json": {
               "schema": {
                 "$ref": "#/components/schemas/NewTemplateApiModel"
               },
               "example": {
-                "id": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                "id": "1271eada-16da-4a69-903c-38b8f2c844ae",
                 "locations": [
-                  "347d114a-55e7-44fe-ac89-b7c509ce2596"
+                  "df425699-8461-435f-a198-3b048f62ea05"
                 ],
                 "permissions": [
                   {
                     "possibility": 121,
                     "positions": [
                       {
-                        "position": "3b31020f-173d-4cc9-b75b-fdc2a04be9ab",
+                        "position": "d78f1bdf-ff3c-478d-8658-ac90a6d356bd",
                         "activeOnly": true
                       }
                     ],
@@ -899,8 +797,8 @@
                 "publishToMessagebus": false,
                 "singleUserTemplate": false,
                 "allowExternalUse": false,
-                "revisionUpdateTime": "2021-12-10T09:53:29.5739622Z",
-                "revisionUpdateTimeString": "2021-12-10T09:53:29.5739622Z",
+                "revisionUpdateTime": "2022-06-09T10:13:33.3456149Z",
+                "revisionUpdateTimeString": "2022-06-09T10:13:33.3456149Z",
                 "revision": 1,
                 "reoccurring": false,
                 "archiveChecklistsAfter": 1,
@@ -911,13 +809,13 @@
                 "preventFlowCreateByActiveRefId": null,
                 "discardReasons": [
                   {
-                    "id": "42f2a2b1-2a58-4ab5-b1c3-80f08ab7317d",
+                    "id": "854c2e29-f062-450c-9b1a-e700728cf0f6",
                     "name": "Discard reason 1",
                     "requireComment": false,
                     "default": true
                   },
                   {
-                    "id": "91ab3904-fd26-4b7d-9194-a2704175566b",
+                    "id": "ed783035-73e9-43c5-8bb5-d3b45d1ae326",
                     "name": "Discard reason 2",
                     "requireComment": true,
                     "default": false
@@ -925,12 +823,12 @@
                 ],
                 "commentTypes": [
                   {
-                    "id": "2961e147-db82-459f-a19d-1f5253614b50",
+                    "id": "7b0342f6-22c2-4778-af9b-1b1b54486e0e",
                     "name": "Comment type 1",
                     "requireComment": false
                   },
                   {
-                    "id": "92b3b036-2a69-4196-bcd3-d66a29dfee44",
+                    "id": "30c12ee5-8606-4275-86f2-517e0bce7b7d",
                     "name": "Comment type 2",
                     "requireComment": true
                   }
@@ -950,20 +848,20 @@
                         "description": "Comment webhook"
                       }
                     ],
-                    "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                    "templateId": "1271eada-16da-4a69-903c-38b8f2c844ae",
                     "metadata": null,
-                    "id": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
+                    "id": "cf40f2a8-dc7d-43e8-80f2-6a446a0634b3",
                     "taskTemplates": [
                       {
-                        "id": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
+                        "id": "d7b5c49d-b56b-4ca0-ace1-93bb3e88d276",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                        "templateId": "1271eada-16da-4a69-903c-38b8f2c844ae",
                         "name": "Task 1",
                         "documentation": [],
                         "order": 0,
-                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
+                        "sectionId": "cf40f2a8-dc7d-43e8-80f2-6a446a0634b3",
                         "control": {
                           "values": null,
                           "valueTitle": null,
@@ -1010,11 +908,11 @@
                         "commentTypes": null
                       },
                       {
-                        "id": "cb3d4205-ec91-44ce-a492-f9396b7879cc",
+                        "id": "495800f3-94f9-44a0-bfee-ed47625df56c",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                        "templateId": "1271eada-16da-4a69-903c-38b8f2c844ae",
                         "name": "Task 2",
                         "documentation": [
                           {
@@ -1028,7 +926,7 @@
                           }
                         ],
                         "order": 1,
-                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
+                        "sectionId": "cf40f2a8-dc7d-43e8-80f2-6a446a0634b3",
                         "control": {
                           "values": "",
                           "valueTitle": null,
@@ -1084,16 +982,16 @@
                 ],
                 "rules": {
                   "hiddenByDefault": [
-                    "cb3d4205-ec91-44ce-a492-f9396b7879cc"
+                    "495800f3-94f9-44a0-bfee-ed47625df56c"
                   ],
                   "rules": [
                     {
                       "condition": "is not empty",
                       "effect": "show",
                       "effectedItems": [
-                        "cb3d4205-ec91-44ce-a492-f9396b7879cc"
+                        "495800f3-94f9-44a0-bfee-ed47625df56c"
                       ],
-                      "formField": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
+                      "formField": "d7b5c49d-b56b-4ca0-ace1-93bb3e88d276",
                       "values": null
                     }
                   ]
@@ -1103,7 +1001,7 @@
                     "displayAsSubHeading": false,
                     "type": 1,
                     "fillOnlyByAPI": false,
-                    "id": "b58879dd-e12c-472b-8638-016d865e7267",
+                    "id": "4f3357d4-0a1c-45e9-98bc-f67b6f98e434",
                     "dataRegister": null,
                     "name": "Title",
                     "value": null
@@ -1117,16 +1015,16 @@
                 "$ref": "#/components/schemas/NewTemplateApiModel"
               },
               "example": {
-                "id": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                "id": "1271eada-16da-4a69-903c-38b8f2c844ae",
                 "locations": [
-                  "347d114a-55e7-44fe-ac89-b7c509ce2596"
+                  "df425699-8461-435f-a198-3b048f62ea05"
                 ],
                 "permissions": [
                   {
                     "possibility": 121,
                     "positions": [
                       {
-                        "position": "3b31020f-173d-4cc9-b75b-fdc2a04be9ab",
+                        "position": "d78f1bdf-ff3c-478d-8658-ac90a6d356bd",
                         "activeOnly": true
                       }
                     ],
@@ -1151,8 +1049,8 @@
                 "publishToMessagebus": false,
                 "singleUserTemplate": false,
                 "allowExternalUse": false,
-                "revisionUpdateTime": "2021-12-10T09:53:29.5739622Z",
-                "revisionUpdateTimeString": "2021-12-10T09:53:29.5739622Z",
+                "revisionUpdateTime": "2022-06-09T10:13:33.3456149Z",
+                "revisionUpdateTimeString": "2022-06-09T10:13:33.3456149Z",
                 "revision": 1,
                 "reoccurring": false,
                 "archiveChecklistsAfter": 1,
@@ -1163,13 +1061,13 @@
                 "preventFlowCreateByActiveRefId": null,
                 "discardReasons": [
                   {
-                    "id": "42f2a2b1-2a58-4ab5-b1c3-80f08ab7317d",
+                    "id": "854c2e29-f062-450c-9b1a-e700728cf0f6",
                     "name": "Discard reason 1",
                     "requireComment": false,
                     "default": true
                   },
                   {
-                    "id": "91ab3904-fd26-4b7d-9194-a2704175566b",
+                    "id": "ed783035-73e9-43c5-8bb5-d3b45d1ae326",
                     "name": "Discard reason 2",
                     "requireComment": true,
                     "default": false
@@ -1177,12 +1075,12 @@
                 ],
                 "commentTypes": [
                   {
-                    "id": "2961e147-db82-459f-a19d-1f5253614b50",
+                    "id": "7b0342f6-22c2-4778-af9b-1b1b54486e0e",
                     "name": "Comment type 1",
                     "requireComment": false
                   },
                   {
-                    "id": "92b3b036-2a69-4196-bcd3-d66a29dfee44",
+                    "id": "30c12ee5-8606-4275-86f2-517e0bce7b7d",
                     "name": "Comment type 2",
                     "requireComment": true
                   }
@@ -1202,20 +1100,20 @@
                         "description": "Comment webhook"
                       }
                     ],
-                    "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                    "templateId": "1271eada-16da-4a69-903c-38b8f2c844ae",
                     "metadata": null,
-                    "id": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
+                    "id": "cf40f2a8-dc7d-43e8-80f2-6a446a0634b3",
                     "taskTemplates": [
                       {
-                        "id": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
+                        "id": "d7b5c49d-b56b-4ca0-ace1-93bb3e88d276",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                        "templateId": "1271eada-16da-4a69-903c-38b8f2c844ae",
                         "name": "Task 1",
                         "documentation": [],
                         "order": 0,
-                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
+                        "sectionId": "cf40f2a8-dc7d-43e8-80f2-6a446a0634b3",
                         "control": {
                           "values": null,
                           "valueTitle": null,
@@ -1262,11 +1160,11 @@
                         "commentTypes": null
                       },
                       {
-                        "id": "cb3d4205-ec91-44ce-a492-f9396b7879cc",
+                        "id": "495800f3-94f9-44a0-bfee-ed47625df56c",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                        "templateId": "1271eada-16da-4a69-903c-38b8f2c844ae",
                         "name": "Task 2",
                         "documentation": [
                           {
@@ -1280,7 +1178,7 @@
                           }
                         ],
                         "order": 1,
-                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
+                        "sectionId": "cf40f2a8-dc7d-43e8-80f2-6a446a0634b3",
                         "control": {
                           "values": "",
                           "valueTitle": null,
@@ -1336,16 +1234,16 @@
                 ],
                 "rules": {
                   "hiddenByDefault": [
-                    "cb3d4205-ec91-44ce-a492-f9396b7879cc"
+                    "495800f3-94f9-44a0-bfee-ed47625df56c"
                   ],
                   "rules": [
                     {
                       "condition": "is not empty",
                       "effect": "show",
                       "effectedItems": [
-                        "cb3d4205-ec91-44ce-a492-f9396b7879cc"
+                        "495800f3-94f9-44a0-bfee-ed47625df56c"
                       ],
-                      "formField": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
+                      "formField": "d7b5c49d-b56b-4ca0-ace1-93bb3e88d276",
                       "values": null
                     }
                   ]
@@ -1355,7 +1253,7 @@
                     "displayAsSubHeading": false,
                     "type": 1,
                     "fillOnlyByAPI": false,
-                    "id": "b58879dd-e12c-472b-8638-016d865e7267",
+                    "id": "4f3357d4-0a1c-45e9-98bc-f67b6f98e434",
                     "dataRegister": null,
                     "name": "Title",
                     "value": null
@@ -1369,16 +1267,16 @@
                 "$ref": "#/components/schemas/NewTemplateApiModel"
               },
               "example": {
-                "id": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                "id": "1271eada-16da-4a69-903c-38b8f2c844ae",
                 "locations": [
-                  "347d114a-55e7-44fe-ac89-b7c509ce2596"
+                  "df425699-8461-435f-a198-3b048f62ea05"
                 ],
                 "permissions": [
                   {
                     "possibility": 121,
                     "positions": [
                       {
-                        "position": "3b31020f-173d-4cc9-b75b-fdc2a04be9ab",
+                        "position": "d78f1bdf-ff3c-478d-8658-ac90a6d356bd",
                         "activeOnly": true
                       }
                     ],
@@ -1403,8 +1301,8 @@
                 "publishToMessagebus": false,
                 "singleUserTemplate": false,
                 "allowExternalUse": false,
-                "revisionUpdateTime": "2021-12-10T09:53:29.5739622Z",
-                "revisionUpdateTimeString": "2021-12-10T09:53:29.5739622Z",
+                "revisionUpdateTime": "2022-06-09T10:13:33.3456149Z",
+                "revisionUpdateTimeString": "2022-06-09T10:13:33.3456149Z",
                 "revision": 1,
                 "reoccurring": false,
                 "archiveChecklistsAfter": 1,
@@ -1415,13 +1313,13 @@
                 "preventFlowCreateByActiveRefId": null,
                 "discardReasons": [
                   {
-                    "id": "42f2a2b1-2a58-4ab5-b1c3-80f08ab7317d",
+                    "id": "854c2e29-f062-450c-9b1a-e700728cf0f6",
                     "name": "Discard reason 1",
                     "requireComment": false,
                     "default": true
                   },
                   {
-                    "id": "91ab3904-fd26-4b7d-9194-a2704175566b",
+                    "id": "ed783035-73e9-43c5-8bb5-d3b45d1ae326",
                     "name": "Discard reason 2",
                     "requireComment": true,
                     "default": false
@@ -1429,12 +1327,12 @@
                 ],
                 "commentTypes": [
                   {
-                    "id": "2961e147-db82-459f-a19d-1f5253614b50",
+                    "id": "7b0342f6-22c2-4778-af9b-1b1b54486e0e",
                     "name": "Comment type 1",
                     "requireComment": false
                   },
                   {
-                    "id": "92b3b036-2a69-4196-bcd3-d66a29dfee44",
+                    "id": "30c12ee5-8606-4275-86f2-517e0bce7b7d",
                     "name": "Comment type 2",
                     "requireComment": true
                   }
@@ -1454,20 +1352,20 @@
                         "description": "Comment webhook"
                       }
                     ],
-                    "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                    "templateId": "1271eada-16da-4a69-903c-38b8f2c844ae",
                     "metadata": null,
-                    "id": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
+                    "id": "cf40f2a8-dc7d-43e8-80f2-6a446a0634b3",
                     "taskTemplates": [
                       {
-                        "id": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
+                        "id": "d7b5c49d-b56b-4ca0-ace1-93bb3e88d276",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                        "templateId": "1271eada-16da-4a69-903c-38b8f2c844ae",
                         "name": "Task 1",
                         "documentation": [],
                         "order": 0,
-                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
+                        "sectionId": "cf40f2a8-dc7d-43e8-80f2-6a446a0634b3",
                         "control": {
                           "values": null,
                           "valueTitle": null,
@@ -1514,11 +1412,11 @@
                         "commentTypes": null
                       },
                       {
-                        "id": "cb3d4205-ec91-44ce-a492-f9396b7879cc",
+                        "id": "495800f3-94f9-44a0-bfee-ed47625df56c",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                        "templateId": "1271eada-16da-4a69-903c-38b8f2c844ae",
                         "name": "Task 2",
                         "documentation": [
                           {
@@ -1532,7 +1430,7 @@
                           }
                         ],
                         "order": 1,
-                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
+                        "sectionId": "cf40f2a8-dc7d-43e8-80f2-6a446a0634b3",
                         "control": {
                           "values": "",
                           "valueTitle": null,
@@ -1588,16 +1486,16 @@
                 ],
                 "rules": {
                   "hiddenByDefault": [
-                    "cb3d4205-ec91-44ce-a492-f9396b7879cc"
+                    "495800f3-94f9-44a0-bfee-ed47625df56c"
                   ],
                   "rules": [
                     {
                       "condition": "is not empty",
                       "effect": "show",
                       "effectedItems": [
-                        "cb3d4205-ec91-44ce-a492-f9396b7879cc"
+                        "495800f3-94f9-44a0-bfee-ed47625df56c"
                       ],
-                      "formField": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
+                      "formField": "d7b5c49d-b56b-4ca0-ace1-93bb3e88d276",
                       "values": null
                     }
                   ]
@@ -1607,7 +1505,7 @@
                     "displayAsSubHeading": false,
                     "type": 1,
                     "fillOnlyByAPI": false,
-                    "id": "b58879dd-e12c-472b-8638-016d865e7267",
+                    "id": "4f3357d4-0a1c-45e9-98bc-f67b6f98e434",
                     "dataRegister": null,
                     "name": "Title",
                     "value": null
@@ -1621,16 +1519,16 @@
                 "$ref": "#/components/schemas/NewTemplateApiModel"
               },
               "example": {
-                "id": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                "id": "1271eada-16da-4a69-903c-38b8f2c844ae",
                 "locations": [
-                  "347d114a-55e7-44fe-ac89-b7c509ce2596"
+                  "df425699-8461-435f-a198-3b048f62ea05"
                 ],
                 "permissions": [
                   {
                     "possibility": 121,
                     "positions": [
                       {
-                        "position": "3b31020f-173d-4cc9-b75b-fdc2a04be9ab",
+                        "position": "d78f1bdf-ff3c-478d-8658-ac90a6d356bd",
                         "activeOnly": true
                       }
                     ],
@@ -1655,8 +1553,8 @@
                 "publishToMessagebus": false,
                 "singleUserTemplate": false,
                 "allowExternalUse": false,
-                "revisionUpdateTime": "2021-12-10T09:53:29.5739622Z",
-                "revisionUpdateTimeString": "2021-12-10T09:53:29.5739622Z",
+                "revisionUpdateTime": "2022-06-09T10:13:33.3456149Z",
+                "revisionUpdateTimeString": "2022-06-09T10:13:33.3456149Z",
                 "revision": 1,
                 "reoccurring": false,
                 "archiveChecklistsAfter": 1,
@@ -1667,13 +1565,13 @@
                 "preventFlowCreateByActiveRefId": null,
                 "discardReasons": [
                   {
-                    "id": "42f2a2b1-2a58-4ab5-b1c3-80f08ab7317d",
+                    "id": "854c2e29-f062-450c-9b1a-e700728cf0f6",
                     "name": "Discard reason 1",
                     "requireComment": false,
                     "default": true
                   },
                   {
-                    "id": "91ab3904-fd26-4b7d-9194-a2704175566b",
+                    "id": "ed783035-73e9-43c5-8bb5-d3b45d1ae326",
                     "name": "Discard reason 2",
                     "requireComment": true,
                     "default": false
@@ -1681,12 +1579,12 @@
                 ],
                 "commentTypes": [
                   {
-                    "id": "2961e147-db82-459f-a19d-1f5253614b50",
+                    "id": "7b0342f6-22c2-4778-af9b-1b1b54486e0e",
                     "name": "Comment type 1",
                     "requireComment": false
                   },
                   {
-                    "id": "92b3b036-2a69-4196-bcd3-d66a29dfee44",
+                    "id": "30c12ee5-8606-4275-86f2-517e0bce7b7d",
                     "name": "Comment type 2",
                     "requireComment": true
                   }
@@ -1706,20 +1604,20 @@
                         "description": "Comment webhook"
                       }
                     ],
-                    "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                    "templateId": "1271eada-16da-4a69-903c-38b8f2c844ae",
                     "metadata": null,
-                    "id": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
+                    "id": "cf40f2a8-dc7d-43e8-80f2-6a446a0634b3",
                     "taskTemplates": [
                       {
-                        "id": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
+                        "id": "d7b5c49d-b56b-4ca0-ace1-93bb3e88d276",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                        "templateId": "1271eada-16da-4a69-903c-38b8f2c844ae",
                         "name": "Task 1",
                         "documentation": [],
                         "order": 0,
-                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
+                        "sectionId": "cf40f2a8-dc7d-43e8-80f2-6a446a0634b3",
                         "control": {
                           "values": null,
                           "valueTitle": null,
@@ -1766,11 +1664,11 @@
                         "commentTypes": null
                       },
                       {
-                        "id": "cb3d4205-ec91-44ce-a492-f9396b7879cc",
+                        "id": "495800f3-94f9-44a0-bfee-ed47625df56c",
                         "reminderHours": null,
                         "reminderMinutes": null,
                         "reminderTimeString": null,
-                        "templateId": "4ea6d8c2-4e58-4894-894c-2b8c5d659471",
+                        "templateId": "1271eada-16da-4a69-903c-38b8f2c844ae",
                         "name": "Task 2",
                         "documentation": [
                           {
@@ -1784,7 +1682,7 @@
                           }
                         ],
                         "order": 1,
-                        "sectionId": "e3b1d961-d041-4e63-8938-dcff6d27fbbc",
+                        "sectionId": "cf40f2a8-dc7d-43e8-80f2-6a446a0634b3",
                         "control": {
                           "values": "",
                           "valueTitle": null,
@@ -1840,16 +1738,16 @@
                 ],
                 "rules": {
                   "hiddenByDefault": [
-                    "cb3d4205-ec91-44ce-a492-f9396b7879cc"
+                    "495800f3-94f9-44a0-bfee-ed47625df56c"
                   ],
                   "rules": [
                     {
                       "condition": "is not empty",
                       "effect": "show",
                       "effectedItems": [
-                        "cb3d4205-ec91-44ce-a492-f9396b7879cc"
+                        "495800f3-94f9-44a0-bfee-ed47625df56c"
                       ],
-                      "formField": "8001f19a-aaa0-451e-b85d-0c484b187ce6",
+                      "formField": "d7b5c49d-b56b-4ca0-ace1-93bb3e88d276",
                       "values": null
                     }
                   ]
@@ -1859,7 +1757,7 @@
                     "displayAsSubHeading": false,
                     "type": 1,
                     "fillOnlyByAPI": false,
-                    "id": "b58879dd-e12c-472b-8638-016d865e7267",
+                    "id": "4f3357d4-0a1c-45e9-98bc-f67b6f98e434",
                     "dataRegister": null,
                     "name": "Title",
                     "value": null
@@ -1893,7 +1791,7 @@
                   "$ref": "#/components/schemas/IdApiModel"
                 },
                 "example": {
-                  "id": "05aa6505-0335-4088-a320-58c934c18f65"
+                  "id": "4a4f0a30-9ac5-4729-a192-a019aa638084"
                 }
               }
             }
@@ -1927,12 +1825,23 @@
         }
       }
     },
-    "/app/templates/SetTemplateThumbnail": {
-      "post": {
+    "/app/templates/templates/{templateId}/tasks/metadata": {
+      "put": {
         "tags": [
           "RestApi"
         ],
+        "summary": "Update metadata for specific template",
         "parameters": [
+          {
+            "name": "templateId",
+            "in": "path",
+            "description": "Template ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
           {
             "name": "api-version",
             "in": "query",
@@ -1949,49 +1858,70 @@
           }
         ],
         "requestBody": {
+          "description": "TemplateTaskMetadataApiModel object",
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/TemplateThumbnailApiModel"
+                "$ref": "#/components/schemas/TemplateTaskMetadataApiModel"
               },
               "example": {
-                "content": [],
-                "base64Content": null,
-                "urlContent": null,
-                "templateId": "c2c48f37-5c69-46ab-9baf-900e8fad8e1d"
+                "taskMetadata": [
+                  {
+                    "taskId": "74138eb9-cd06-411a-b37d-b1a92fa2b5b9",
+                    "metadata": {
+                      "title1": "value1",
+                      "title2": "value2"
+                    }
+                  }
+                ]
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TemplateThumbnailApiModel"
+                "$ref": "#/components/schemas/TemplateTaskMetadataApiModel"
               },
               "example": {
-                "content": [],
-                "base64Content": null,
-                "urlContent": null,
-                "templateId": "c2c48f37-5c69-46ab-9baf-900e8fad8e1d"
+                "taskMetadata": [
+                  {
+                    "taskId": "74138eb9-cd06-411a-b37d-b1a92fa2b5b9",
+                    "metadata": {
+                      "title1": "value1",
+                      "title2": "value2"
+                    }
+                  }
+                ]
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/TemplateThumbnailApiModel"
+                "$ref": "#/components/schemas/TemplateTaskMetadataApiModel"
               },
               "example": {
-                "content": [],
-                "base64Content": null,
-                "urlContent": null,
-                "templateId": "c2c48f37-5c69-46ab-9baf-900e8fad8e1d"
+                "taskMetadata": [
+                  {
+                    "taskId": "74138eb9-cd06-411a-b37d-b1a92fa2b5b9",
+                    "metadata": {
+                      "title1": "value1",
+                      "title2": "value2"
+                    }
+                  }
+                ]
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/TemplateThumbnailApiModel"
+                "$ref": "#/components/schemas/TemplateTaskMetadataApiModel"
               },
               "example": {
-                "content": [],
-                "base64Content": null,
-                "urlContent": null,
-                "templateId": "c2c48f37-5c69-46ab-9baf-900e8fad8e1d"
+                "taskMetadata": [
+                  {
+                    "taskId": "74138eb9-cd06-411a-b37d-b1a92fa2b5b9",
+                    "metadata": {
+                      "title1": "value1",
+                      "title2": "value2"
+                    }
+                  }
+                ]
               }
             }
           },
@@ -2027,11 +1957,379 @@
         }
       }
     },
-    "/app/templates/GetDiscardReasons": {
+    "/app/templates/templates/{id}/status": {
+      "patch": {
+        "tags": [
+          "RestApi"
+        ],
+        "summary": "Get status from a template",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeTemplateStatusApiModel"
+              },
+              "example": {
+                "status": 8,
+                "onlyIfStatus": null,
+                "comment": "Comment text"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeTemplateStatusApiModel"
+              },
+              "example": {
+                "status": 8,
+                "onlyIfStatus": null,
+                "comment": "Comment text"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeTemplateStatusApiModel"
+              },
+              "example": {
+                "status": 8,
+                "onlyIfStatus": null,
+                "comment": "Comment text"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeTemplateStatusApiModel"
+              },
+              "example": {
+                "status": 8,
+                "onlyIfStatus": null,
+                "comment": "Comment text"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                },
+                "example": {
+                  "message": "Result message"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                },
+                "example": {
+                  "message": "Result message"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/templates/echo": {
+      "get": {
+        "tags": [
+          "RestApi"
+        ],
+        "summary": "Echo",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                },
+                "example": {
+                  "message": "Result message"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                },
+                "example": {
+                  "message": "Result message"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/templates/securityKeys": {
       "post": {
         "tags": [
           "RestApi"
         ],
+        "summary": "Posting security key",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "SecurityKeyApiModel object",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SecurityKeyApiModel"
+              },
+              "example": {
+                "applicationName": "Checklist",
+                "applicationPublicKey": "e28be6471682add8b63ffeac7862c1ae4456eb77c85f7038b5cc50dcebf29224",
+                "previousInputPublicKey": "fb7cb538b9757473f803977f721a52739e9f551e68191a57b82971bb427e8361"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SecurityKeyApiModel"
+              },
+              "example": {
+                "applicationName": "Checklist",
+                "applicationPublicKey": "e28be6471682add8b63ffeac7862c1ae4456eb77c85f7038b5cc50dcebf29224",
+                "previousInputPublicKey": "fb7cb538b9757473f803977f721a52739e9f551e68191a57b82971bb427e8361"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SecurityKeyApiModel"
+              },
+              "example": {
+                "applicationName": "Checklist",
+                "applicationPublicKey": "e28be6471682add8b63ffeac7862c1ae4456eb77c85f7038b5cc50dcebf29224",
+                "previousInputPublicKey": "fb7cb538b9757473f803977f721a52739e9f551e68191a57b82971bb427e8361"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SecurityKeyApiModel"
+              },
+              "example": {
+                "applicationName": "Checklist",
+                "applicationPublicKey": "e28be6471682add8b63ffeac7862c1ae4456eb77c85f7038b5cc50dcebf29224",
+                "previousInputPublicKey": "fb7cb538b9757473f803977f721a52739e9f551e68191a57b82971bb427e8361"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                },
+                "example": {
+                  "message": "Result message"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SecurityKey"
+                },
+                "example": {
+                  "applicationName": "Checklist",
+                  "inputPublicKey": "859f96e3fd12b0bbdf9470b0820d89265824cd95d8787edef4e8d780ef368104"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/templates/templates/{id}/thumbnail": {
+      "put": {
+        "tags": [
+          "RestApi"
+        ],
+        "summary": "Update template thumbnail",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "TemplateThumbnailApiModel object",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TemplateThumbnailApiModel"
+              },
+              "example": {
+                "content": [],
+                "base64Content": null,
+                "urlContent": null
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TemplateThumbnailApiModel"
+              },
+              "example": {
+                "content": [],
+                "base64Content": null,
+                "urlContent": null
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TemplateThumbnailApiModel"
+              },
+              "example": {
+                "content": [],
+                "base64Content": null,
+                "urlContent": null
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TemplateThumbnailApiModel"
+              },
+              "example": {
+                "content": [],
+                "base64Content": null,
+                "urlContent": null
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                },
+                "example": {
+                  "message": "Result message"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                },
+                "example": {
+                  "message": "Result message"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/templates/discardReasons": {
+      "get": {
+        "tags": [
+          "RestApi"
+        ],
+        "summary": "Get discard reasons",
         "parameters": [
           {
             "name": "api-version",
@@ -2089,13 +2387,12 @@
             }
           }
         }
-      }
-    },
-    "/app/templates/SaveDiscardReason": {
+      },
       "post": {
         "tags": [
           "RestApi"
         ],
+        "summary": "Update discard reasons",
         "parameters": [
           {
             "name": "api-version",
@@ -2113,6 +2410,7 @@
           }
         ],
         "requestBody": {
+          "description": "",
           "content": {
             "application/json-patch+json": {
               "schema": {
@@ -2159,7 +2457,7 @@
                   "$ref": "#/components/schemas/IdApiModel"
                 },
                 "example": {
-                  "id": "05aa6505-0335-4088-a320-58c934c18f65"
+                  "id": "4a4f0a30-9ac5-4729-a192-a019aa638084"
                 }
               }
             }
@@ -2180,12 +2478,23 @@
         }
       }
     },
-    "/app/templates/DeleteDiscardReason": {
-      "post": {
+    "/app/templates/discardReasons/{id}": {
+      "delete": {
         "tags": [
           "RestApi"
         ],
+        "summary": "Delete specific discard reason",
         "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
           {
             "name": "api-version",
             "in": "query",
@@ -2201,59 +2510,9 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdApiModel"
-              },
-              "example": {
-                "id": "05aa6505-0335-4088-a320-58c934c18f65"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdApiModel"
-              },
-              "example": {
-                "id": "05aa6505-0335-4088-a320-58c934c18f65"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdApiModel"
-              },
-              "example": {
-                "id": "05aa6505-0335-4088-a320-58c934c18f65"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdApiModel"
-              },
-              "example": {
-                "id": "05aa6505-0335-4088-a320-58c934c18f65"
-              }
-            }
-          },
-          "required": true
-        },
         "responses": {
           "401": {
             "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiMessage"
-                },
-                "example": {
-                  "message": "Result message"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
@@ -2277,15 +2536,19 @@
                 }
               }
             }
+          },
+          "204": {
+            "description": "Success"
           }
         }
       }
     },
-    "/app/templates/GetCommentTypes": {
-      "post": {
+    "/app/templates/comments/types": {
+      "get": {
         "tags": [
           "RestApi"
         ],
+        "summary": "Get comment types",
         "parameters": [
           {
             "name": "api-version",
@@ -2343,13 +2606,12 @@
             }
           }
         }
-      }
-    },
-    "/app/templates/SaveCommentType": {
+      },
       "post": {
         "tags": [
           "RestApi"
         ],
+        "summary": "Update comment types",
         "parameters": [
           {
             "name": "api-version",
@@ -2367,25 +2629,26 @@
           }
         ],
         "requestBody": {
+          "description": "",
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/CommentType"
+                "$ref": "#/components/schemas/NewCommentTypeModel"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CommentType"
+                "$ref": "#/components/schemas/NewCommentTypeModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CommentType"
+                "$ref": "#/components/schemas/NewCommentTypeModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CommentType"
+                "$ref": "#/components/schemas/NewCommentTypeModel"
               }
             }
           },
@@ -2413,7 +2676,7 @@
                   "$ref": "#/components/schemas/IdApiModel"
                 },
                 "example": {
-                  "id": "05aa6505-0335-4088-a320-58c934c18f65"
+                  "id": "4a4f0a30-9ac5-4729-a192-a019aa638084"
                 }
               }
             }
@@ -2434,12 +2697,23 @@
         }
       }
     },
-    "/app/templates/DeleteCommentType": {
-      "post": {
+    "/app/templates/comments/types/{id}": {
+      "put": {
         "tags": [
           "RestApi"
         ],
+        "summary": "Update specific comment type",
         "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
           {
             "name": "api-version",
             "in": "query",
@@ -2456,37 +2730,26 @@
           }
         ],
         "requestBody": {
+          "description": "",
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/IdApiModel"
-              },
-              "example": {
-                "id": "05aa6505-0335-4088-a320-58c934c18f65"
+                "$ref": "#/components/schemas/CommentTypeModel"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/IdApiModel"
-              },
-              "example": {
-                "id": "05aa6505-0335-4088-a320-58c934c18f65"
+                "$ref": "#/components/schemas/CommentTypeModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/IdApiModel"
-              },
-              "example": {
-                "id": "05aa6505-0335-4088-a320-58c934c18f65"
+                "$ref": "#/components/schemas/CommentTypeModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/IdApiModel"
-              },
-              "example": {
-                "id": "05aa6505-0335-4088-a320-58c934c18f65"
+                "$ref": "#/components/schemas/CommentTypeModel"
               }
             }
           },
@@ -2511,6 +2774,19 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/IdApiModel"
+                },
+                "example": {
+                  "id": "4a4f0a30-9ac5-4729-a192-a019aa638084"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
                   "$ref": "#/components/schemas/ApiMessage"
                 },
                 "example": {
@@ -2518,6 +2794,56 @@
                 }
               }
             }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "RestApi"
+        ],
+        "summary": "Delete specific comment type",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                },
+                "example": {
+                  "message": "Result message"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Success"
           },
           "400": {
             "description": "Bad Request",
@@ -2550,15 +2876,10 @@
       },
       "ChangeTemplateStatusApiModel": {
         "required": [
-          "id",
           "status"
         ],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
           "status": {
             "$ref": "#/components/schemas/ChecklistTemplateStatus"
           },
@@ -2880,6 +3201,19 @@
         },
         "additionalProperties": false
       },
+      "CommentTypeModel": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "requireComment": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "DataRegisterControl": {
         "type": "object",
         "properties": {
@@ -3055,25 +3389,6 @@
         "description": "<br/>And = 0<br/> Or = 1",
         "format": "int32"
       },
-      "IdAndRefIdApiModel": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Id of template",
-            "format": "uuid",
-            "default": null,
-            "nullable": true
-          },
-          "refId": {
-            "type": "string",
-            "description": "RefId of template, should be passed if Id not passed",
-            "default": null,
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "IdApiModel": {
         "required": [
           "id"
@@ -3160,6 +3475,19 @@
         "type": "integer",
         "description": "<br/>Defined = 0<br/> Text = 1<br/> Number = 2<br/> Dropdown = 3<br/> Date = 4<br/> DateAndTime = 5",
         "format": "int32"
+      },
+      "NewCommentTypeModel": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "requireComment": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
       },
       "NewTemplateApiModel": {
         "type": "object",
@@ -3396,51 +3724,6 @@
         "type": "integer",
         "description": "<br/>NFC = 0<br/> QR = 1<br/> BarCode = 2",
         "format": "int32"
-      },
-      "SearchTemplatesApiModel": {
-        "type": "object",
-        "properties": {
-          "activeAndDraft": {
-            "type": "boolean",
-            "default": false
-          },
-          "deactivated": {
-            "type": "boolean",
-            "default": false
-          },
-          "archived": {
-            "type": "boolean",
-            "default": false
-          },
-          "searchString": {
-            "type": "string",
-            "default": null,
-            "nullable": true
-          },
-          "searchInTitle": {
-            "type": "boolean",
-            "default": false
-          },
-          "searchInRefId": {
-            "type": "boolean",
-            "default": false
-          },
-          "searchInMetadataTitle": {
-            "type": "boolean",
-            "default": false
-          },
-          "searchInMetadataValue": {
-            "type": "boolean",
-            "default": false
-          },
-          "location": {
-            "type": "string",
-            "format": "uuid",
-            "default": null,
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
       },
       "SectionTemplate": {
         "type": "object",
@@ -3838,10 +4121,6 @@
       "TemplateTaskMetadataApiModel": {
         "type": "object",
         "properties": {
-          "templateId": {
-            "type": "string",
-            "format": "uuid"
-          },
           "taskMetadata": {
             "type": "array",
             "items": {
@@ -3873,10 +4152,6 @@
             "type": "string",
             "description": "One of Content, Base64Content or UrlContent should be used",
             "nullable": true
-          },
-          "templateId": {
-            "type": "string",
-            "format": "uuid"
           }
         },
         "additionalProperties": false
