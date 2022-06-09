@@ -43,6 +43,6 @@ Features:
 
 - Possible to open incoming template confirmation window with backlog from notifications
 
-## 2.6.1
+## v2.6.1
 
 
