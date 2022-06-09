@@ -28,8 +28,8 @@ Sync            | Service  | [v1.2.2][sync-v1.2.2]
 
 [user-mgm-v2.1.16]: ./apps/user-management.md#v2116
 [launcher-v1.1.4]: ./apps/launcher.md#v114
-[flow-2.6.9]: ./apps/flow.md#269
-[template-2.6.9]: ./apps/template.md#269
+[flow-2.6.9]: ./apps/flow.md#v269
+[template-2.6.9]: ./apps/template.md#v269
 [doc-v3.0.8]: ./apps/documentation.md#v308
 [portal-v2.1.3]: ./apps/portal.md#v213
 [barrier-model-v2.1.10]: ./apps/barrier-model.md#v2110
@@ -39,8 +39,8 @@ Sync            | Service  | [v1.2.2][sync-v1.2.2]
 [api-gateway-v1.0.2]: ./services/api-gateway.md#v102
 [data-register-v2.0.3]: ./services/data-register.md#v203
 [monitor-v1.0.2]: ./services/monitoring.md#v102
-[notifications-1.0.2]: ./services/notifications.md#102
-[pdf-generator-2.2.2]: ./services/pdf-generator.md#222
+[notifications-1.0.2]: ./services/notifications.md#v102
+[pdf-generator-2.2.2]: ./services/pdf-generator.md#v222
 [remote-exec-v2.1.4]: ./services/remote-execution.md#v214
 [sync-v1.2.2]: ./services/sync.md#v122
 
@@ -69,8 +69,8 @@ Sync            | Service  | [v1.2.2][sync-v1.2.2]
 
 [user-mgm-v2.1.15]: ./apps/user-management.md#v2115
 [launcher-v1.1.3]: ./apps/launcher.md#v113
-[flow-2.6.8]: ./apps/flow.md#268
-[template-2.6.8]: ./apps/template.md#268
+[flow-2.6.8]: ./apps/flow.md#v268
+[template-2.6.8]: ./apps/template.md#v268
 [doc-v3.0.7]: ./apps/documentation.md#v307
 [portal-v2.1.3]: ./apps/portal.md#v213
 [barrier-model-v2.1.10]: ./apps/barrier-model.md#v2110
@@ -80,8 +80,8 @@ Sync            | Service  | [v1.2.2][sync-v1.2.2]
 [api-gateway-v1.0.2]: ./services/api-gateway.md#v102
 [data-register-v2.0.3]: ./services/data-register.md#v203
 [monitor-v1.0.2]: ./services/monitoring.md#v102
-[notifications-1.0.2]: ./services/notifications.md#102
-[pdf-generator-2.2.2]: ./services/pdf-generator.md#222
+[notifications-1.0.2]: ./services/notifications.md#v102
+[pdf-generator-2.2.2]: ./services/pdf-generator.md#v222
 [remote-exec-v2.1.4]: ./services/remote-execution.md#v214
 [sync-v1.2.2]: ./services/sync.md#v122
 
@@ -110,8 +110,8 @@ Sync            | Service  | [v1.2.1.0][sync-v1.2.1.0]
 
 [user-mgm-v2.1.12]: ./apps/user-management.md#v2112
 [launcher-v1.1.1]: ./apps/launcher.md#v111
-[flow-2.6.5]: ./apps/flow.md#265
-[template-2.6.5]: ./apps/template.md#265
+[flow-2.6.5]: ./apps/flow.md#v265
+[template-2.6.5]: ./apps/template.md#v265
 [doc-v3.0.6]: ./apps/documentation.md#v306
 [portal-v2.1.1]: ./apps/portal.md#v211
 [barrier-model-v2.1.8]: ./apps/barrier-model.md#v218
@@ -121,8 +121,8 @@ Sync            | Service  | [v1.2.1.0][sync-v1.2.1.0]
 [api-gateway-v1.0.1]: ./services/api-gateway.md#v101
 [data-register-v2.0.2]: ./services/data-register.md#v202
 [monitor-v1.0.1]: ./services/monitoring.md#v101
-[notifications-1.0.2]: ./services/notifications.md#102
-[pdf-generator-2.2.1]: ./services/pdf-generator.md#221
+[notifications-1.0.2]: ./services/notifications.md#v102
+[pdf-generator-2.2.1]: ./services/pdf-generator.md#v221
 [remote-exec-v2.1.3]: ./services/remote-execution.md#v213
 [sync-v1.2.1.0]: ./services/sync.md#v1210
 
@@ -150,8 +150,8 @@ Sync            | Service  | [v1.2.1.0][sync-v1.2.1.0]
 
 [user-mgm-v2.1.11]: ./apps/user-management.md#v2111
 [launcher-v1.1.0.6]: ./apps/launcher.md#v1106
-[flow-2.6.4]: ./apps/flow.md#264
-[template-2.6.4]: ./apps/template.md#264
+[flow-2.6.4]: ./apps/flow.md#v264
+[template-2.6.4]: ./apps/template.md#v264
 [doc-v3.0.5]: ./apps/documentation.md#v305
 [portal-v2.1.1]: ./apps/portal.md#v211
 [barrier-model-v2.1.8]: ./apps/barrier-model.md#v218
@@ -160,8 +160,8 @@ Sync            | Service  | [v1.2.1.0][sync-v1.2.1.0]
 [api-gateway-v1.0.0]: ./services/api-gateway.md#v100
 [data-register-v2.0.1]: ./services/data-register.md#v201
 [monitor-v1.0.0.2]: ./services/monitoring.md#v1002
-[notifications-1.0.1]: ./services/notifications.md#101
-[pdf-generator-2.2.1]: ./services/pdf-generator.md#221
+[notifications-1.0.1]: ./services/notifications.md#v101
+[pdf-generator-2.2.1]: ./services/pdf-generator.md#v221
 [remote-exec-v2.1.2.1]: ./services/remote-execution.md#v2121
 [sync-v1.2.1.0]: ./services/sync.md#v1210
 
@@ -186,8 +186,8 @@ Sync            | Service  | [v1.2.1.0][sync-v1.2.1.0]
 
 [user-mgm-v2.1.10]: ./apps/user-management.md#v2110
 [launcher-v1.1.0.5]: ./apps/launcher.md#v1105
-[flow-2.6.1]: ./apps/flow.md#261
-[template-2.6.1]: ./apps/template.md#261
+[flow-2.6.1]: ./apps/flow.md#v261
+[template-2.6.1]: ./apps/template.md#v261
 [doc-v3.0.4.1]: ./apps/documentation.md#v3041
 [portal-v2.1.0.8]: ./apps/portal.md#v2108
 [barrier-model-v2.1.1.7]: ./apps/barrier-model.md#v2117
@@ -195,7 +195,7 @@ Sync            | Service  | [v1.2.1.0][sync-v1.2.1.0]
 
 [data-register-v2.0.0.2]: ./services/data-register.md#v2002
 [monitor-v1.0.0.2]: ./services/monitoring.md#v1002
-[notifications-1.0.1]: ./services/notifications.md#101
-[pdf-generator-2.2.0]: ./services/pdf-generator.md#220
+[notifications-1.0.1]: ./services/notifications.md#v101
+[pdf-generator-2.2.0]: ./services/pdf-generator.md#v220
 [remote-exec-v2.1.2.1]: ./services/remote-execution.md#v2121
 [sync-v1.2.1.0]: ./services/sync.md#v1210
