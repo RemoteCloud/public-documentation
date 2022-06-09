@@ -324,13 +324,13 @@
             <a href="#oauth_v1-oauth" class="toc-h1 toc-link" data-title="OAuth">OAuth</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get__app_usermanagement_auth_authorize" class="toc-h2 toc-link" data-title="get__app_usermanagement_auth_Authorize">get__app_usermanagement_auth_Authorize</a>
+                    <a href="#create-authorization-token" class="toc-h2 toc-link" data-title="Create authorization token">Create authorization token</a>
                   </li>
                   <li>
-                    <a href="#post__app_usermanagement_auth_token" class="toc-h2 toc-link" data-title="post__app_usermanagement_auth_Token">post__app_usermanagement_auth_Token</a>
+                    <a href="#get-authorization-code" class="toc-h2 toc-link" data-title="Get authorization code">Get authorization code</a>
                   </li>
                   <li>
-                    <a href="#get__app_usermanagement_auth_me" class="toc-h2 toc-link" data-title="get__app_usermanagement_auth_Me">get__app_usermanagement_auth_Me</a>
+                    <a href="#get-the-profile-information" class="toc-h2 toc-link" data-title="Get the profile information">Get the profile information</a>
                   </li>
               </ul>
           </li>
@@ -379,7 +379,7 @@
 </ul>
 
 <h1 id="oauth_v1-oauth">OAuth</h1>
-<h2 id='get__app_usermanagement_auth_authorize'>get__app_usermanagement_auth_Authorize</h2>
+<h2 id='create-authorization-token'>Create authorization token</h2>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
@@ -518,7 +518,7 @@ api-version: string
 </code></pre></div>
 <p><code>GET /app/usermanagement/auth/Authorize</code></p>
 
-<h3 id="get__app_usermanagement_auth_authorize-parameters">Parameters</h3>
+<h3 id="create-authorization-token-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -597,7 +597,7 @@ api-version: string
   </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<h3 id="get__app_usermanagement_auth_authorize-responses">Responses</h3>
+<h3 id="create-authorization-token-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -619,7 +619,7 @@ api-version: string
 To perform this operation, you must be authenticated by means of one of the following methods:
 Bearer & Tenant
 </aside>
-<h2 id='post__app_usermanagement_auth_token'>post__app_usermanagement_auth_Token</h2>
+<h2 id='get-authorization-code'>Get authorization code</h2>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
@@ -770,7 +770,7 @@ api-version: string
 </code></pre></div>
 <p><code>POST /app/usermanagement/auth/Token</code></p>
 
-<h3 id="post__app_usermanagement_auth_token-parameters">Parameters</h3>
+<h3 id="get-authorization-code-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -814,7 +814,7 @@ api-version: string
   </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<h3 id="post__app_usermanagement_auth_token-responses">Responses</h3>
+<h3 id="get-authorization-code-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -836,7 +836,7 @@ api-version: string
 To perform this operation, you must be authenticated by means of one of the following methods:
 Bearer & Tenant
 </aside>
-<h2 id='get__app_usermanagement_auth_me'>get__app_usermanagement_auth_Me</h2>
+<h2 id='get-the-profile-information'>Get the profile information</h2>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
@@ -971,7 +971,7 @@ api-version: string
 </code></pre></div>
 <p><code>GET /app/usermanagement/auth/Me</code></p>
 
-<h3 id="get__app_usermanagement_auth_me-parameters">Parameters</h3>
+<h3 id="get-the-profile-information-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -1005,7 +1005,7 @@ api-version: string
 </tr>
 </tbody></table>
 
-<h3 id="get__app_usermanagement_auth_me-responses">Responses</h3>
+<h3 id="get-the-profile-information-responses">Responses</h3>
 
 <table><thead>
 <tr>

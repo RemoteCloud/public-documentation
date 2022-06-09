@@ -324,16 +324,16 @@
             <a href="#list-of-apis-for-remote-execution-service-api" class="toc-h1 toc-link" data-title="Api">Api</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#post__service_remote-execution_publishmessage" class="toc-h2 toc-link" data-title="post__service_remote-execution_PublishMessage">post__service_remote-execution_PublishMessage</a>
+                    <a href="#publishes-message-to-be-executed-on-current-or-remote-location" class="toc-h2 toc-link" data-title="Publishes message to be executed on current or remote location.">Publishes message to be executed on current or remote location.</a>
                   </li>
                   <li>
-                    <a href="#get__service_remote-execution_getlocations" class="toc-h2 toc-link" data-title="get__service_remote-execution_GetLocations">get__service_remote-execution_GetLocations</a>
+                    <a href="#retrieves-last-processed-messages" class="toc-h2 toc-link" data-title="Retrieves last processed messages.">Retrieves last processed messages.</a>
                   </li>
                   <li>
-                    <a href="#get__service_remote-execution_gethistory" class="toc-h2 toc-link" data-title="get__service_remote-execution_GetHistory">get__service_remote-execution_GetHistory</a>
+                    <a href="#retrieves-available-locations" class="toc-h2 toc-link" data-title="Retrieves available locations.">Retrieves available locations.</a>
                   </li>
                   <li>
-                    <a href="#get__service_remote-execution_getmessagestatus" class="toc-h2 toc-link" data-title="get__service_remote-execution_GetMessageStatus">get__service_remote-execution_GetMessageStatus</a>
+                    <a href="#retrieves-status-of-message-if-it-was-processed-or-not" class="toc-h2 toc-link" data-title="Retrieves status of message, if it was processed or not.">Retrieves status of message, if it was processed or not.</a>
                   </li>
               </ul>
           </li>
@@ -370,17 +370,17 @@
 </ul>
 
 <h1 id="list-of-apis-for-remote-execution-service-api">Api</h1>
-<h2 id='post__service_remote-execution_publishmessage'>post__service_remote-execution_PublishMessage</h2>
+<h2 id='publishes-message-to-be-executed-on-current-or-remote-location'>Publishes message to be executed on current or remote location.</h2>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> POST /service/remote-execution/PublishMessage <span class="se">\</span>
+curl <span class="nt">-X</span> POST /service/remote-execution/messages <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'api-version: string'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Tenant: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/service/remote-execution/PublishMessage</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/service/remote-execution/messages</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
 Content-Type: application/json
 
@@ -397,7 +397,7 @@ api-version: string
   <span class="dl">'</span><span class="s1">Tenant</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/service/remote-execution/PublishMessage</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/service/remote-execution/messages</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">inputBody</span><span class="p">,</span>
@@ -425,7 +425,7 @@ api-version: string
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'/service/remote-execution/PublishMessage'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'/service/remote-execution/messages'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -466,7 +466,7 @@ api-version: string
     <span class="c1">/// Make a dummy request</span>
     <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">MakePostRequest</span><span class="p">()</span>
     <span class="p">{</span>
-      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/service/remote-execution/PublishMessage"</span><span class="p">;</span>
+      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/service/remote-execution/messages"</span><span class="p">;</span>
 
       <span class="kt">string</span> <span class="n">json</span> <span class="p">=</span> <span class="s">@"{
   ""content"": ""string"",
@@ -512,7 +512,7 @@ api-version: string
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/service/remote-execution/PublishMessage"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/service/remote-execution/messages"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -527,7 +527,7 @@ api-version: string
 <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 
 </code></pre></div>
-<p><code>POST /service/remote-execution/PublishMessage</code></p>
+<p><code>POST /service/remote-execution/messages</code></p>
 
 <blockquote>
 <p>Body parameter</p>
@@ -538,7 +538,7 @@ api-version: string
   </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<h3 id="post__service_remote-execution_publishmessage-parameters">Parameters</h3>
+<h3 id="publishes-message-to-be-executed-on-current-or-remote-location.-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -568,11 +568,11 @@ api-version: string
 <td>body</td>
 <td><a href="#schemapublishmessagerequest">PublishMessageRequest</a></td>
 <td>true</td>
-<td>none</td>
+<td>Represents webhook request.</td>
 </tr>
 </tbody></table>
 
-<h3 id="post__service_remote-execution_publishmessage-responses">Responses</h3>
+<h3 id="publishes-message-to-be-executed-on-current-or-remote-location.-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -594,16 +594,16 @@ api-version: string
 To perform this operation, you must be authenticated by means of one of the following methods:
 Basic & Tenant
 </aside>
-<h2 id='get__service_remote-execution_getlocations'>get__service_remote-execution_GetLocations</h2>
+<h2 id='retrieves-last-processed-messages'>Retrieves last processed messages.</h2>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> GET /service/remote-execution/GetLocations <span class="se">\</span>
+curl <span class="nt">-X</span> GET /service/remote-execution/messages <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'api-version: string'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Tenant: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/service/remote-execution/GetLocations</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/service/remote-execution/messages</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
 api-version: string
 
@@ -613,7 +613,7 @@ api-version: string
   <span class="dl">'</span><span class="s1">Tenant</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/service/remote-execution/GetLocations</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/service/remote-execution/messages</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
 
@@ -640,7 +640,7 @@ api-version: string
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/service/remote-execution/GetLocations'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/service/remote-execution/messages'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -680,7 +680,7 @@ api-version: string
     <span class="c1">/// Make a dummy request</span>
     <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">MakeGetRequest</span><span class="p">()</span>
     <span class="p">{</span>
-      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/service/remote-execution/GetLocations"</span><span class="p">;</span>
+      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/service/remote-execution/messages"</span><span class="p">;</span>
       <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="nf">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -709,7 +709,7 @@ api-version: string
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/service/remote-execution/GetLocations"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/service/remote-execution/messages"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -724,190 +724,9 @@ api-version: string
 <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 
 </code></pre></div>
-<p><code>GET /service/remote-execution/GetLocations</code></p>
+<p><code>GET /service/remote-execution/messages</code></p>
 
-<h3 id="get__service_remote-execution_getlocations-parameters">Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>In</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>api-version</td>
-<td>query</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>api-version</td>
-<td>header</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-</tr>
-</tbody></table>
-
-<h3 id="get__service_remote-execution_getlocations-responses">Responses</h3>
-
-<table><thead>
-<tr>
-<th>Status</th>
-<th>Meaning</th>
-<th>Description</th>
-<th>Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
-<td>Success</td>
-<td>None</td>
-</tr>
-</tbody></table>
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-Basic & Tenant
-</aside>
-<h2 id='get__service_remote-execution_gethistory'>get__service_remote-execution_GetHistory</h2>
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> GET /service/remote-execution/GetHistory <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s1">'api-version: string'</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s1">'Tenant: API_KEY'</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/service/remote-execution/GetHistory</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-
-api-version: string
-
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="dl">'</span><span class="s1">api-version</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">string</span><span class="dl">'</span><span class="p">,</span>
-  <span class="dl">'</span><span class="s1">Tenant</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
-<span class="p">};</span>
-
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/service/remote-execution/GetHistory</span><span class="dl">'</span><span class="p">,</span>
-<span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
-
-  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
-<span class="p">});</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-
-<span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
-
-<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'api-version'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span><span class="p">,</span>
-    <span class="s1">'Tenant'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span><span class="p">,</span>
-<span class="p">);</span>
-
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="err">\</span><span class="nf">GuzzleHttp\Client</span><span class="p">();</span>
-
-<span class="c1">// Define array of request body.</span>
-<span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
-
-<span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/service/remote-execution/GetHistory'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
-        <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
-       <span class="p">)</span>
-    <span class="p">);</span>
-    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="nf">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">getContents</span><span class="p">());</span>
- <span class="p">}</span>
- <span class="k">catch</span> <span class="p">(</span><span class="err">\</span><span class="nc">GuzzleHttp\Exception\BadResponseException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// handle exception or api errors.</span>
-    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">());</span>
- <span class="p">}</span>
-
- <span class="c1">// ...</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Net.Http</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Net.Http.Headers</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">Newtonsoft.Json</span><span class="p">;</span>
-
-<span class="c1">/// &lt;&lt;summary&gt;&gt;</span>
-<span class="c1">/// Example of Http Client</span>
-<span class="c1">/// &lt;&lt;/summary&gt;&gt;</span>
-<span class="k">public</span> <span class="k">class</span> <span class="nc">HttpExample</span>
-<span class="p">{</span>
-    <span class="k">private</span> <span class="n">HttpClient</span> <span class="n">Client</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
-
-    <span class="c1">/// &lt;&lt;summary&gt;&gt;</span>
-    <span class="c1">/// Setup http client</span>
-    <span class="c1">/// &lt;&lt;/summary&gt;&gt;</span>
-    <span class="k">public</span> <span class="nf">HttpExample</span><span class="p">()</span>
-    <span class="p">{</span>
-      <span class="n">Client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">HttpClient</span><span class="p">();</span>
-    <span class="p">}</span>
-
-    <span class="c1">/// Make a dummy request</span>
-    <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">MakeGetRequest</span><span class="p">()</span>
-    <span class="p">{</span>
-      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/service/remote-execution/GetHistory"</span><span class="p">;</span>
-      <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="nf">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c1">/// Performs a GET Request</span>
-    <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">GetAsync</span><span class="p">(</span><span class="kt">string</span> <span class="n">url</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">//Start the request</span>
-        <span class="n">HttpResponseMessage</span> <span class="n">response</span> <span class="p">=</span> <span class="k">await</span> <span class="n">Client</span><span class="p">.</span><span class="nf">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
-
-        <span class="c1">//Validate result</span>
-        <span class="n">response</span><span class="p">.</span><span class="nf">EnsureSuccessStatusCode</span><span class="p">();</span>
-
-    <span class="p">}</span>
-
-
-
-
-    <span class="c1">/// Deserialize object from request response</span>
-    <span class="k">private</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">DeserializeObject</span><span class="p">(</span><span class="n">HttpResponseMessage</span> <span class="n">response</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">//Read body </span>
-        <span class="kt">string</span> <span class="n">responseBody</span> <span class="p">=</span> <span class="k">await</span> <span class="n">response</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="nf">ReadAsStringAsync</span><span class="p">();</span>
-
-        <span class="c1">//Deserialize Body to object</span>
-        <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="nf">DeserializeObject</span><span class="p">(</span><span class="n">responseBody</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/service/remote-execution/GetHistory"</span><span class="o">);</span>
-<span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
-<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
-<span class="nc">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span>
-    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
-<span class="nc">String</span> <span class="n">inputLine</span><span class="o">;</span>
-<span class="nc">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">();</span>
-<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
-<span class="o">}</span>
-<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
-
-</code></pre></div>
-<p><code>GET /service/remote-execution/GetHistory</code></p>
-
-<h3 id="get__service_remote-execution_gethistory-parameters">Parameters</h3>
+<h3 id="retrieves-last-processed-messages.-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -923,7 +742,7 @@ api-version: string
 <td>query</td>
 <td>integer(int32)</td>
 <td>false</td>
-<td>none</td>
+<td>Count of messages to retrieve.</td>
 </tr>
 <tr>
 <td>api-version</td>
@@ -941,7 +760,7 @@ api-version: string
 </tr>
 </tbody></table>
 
-<h3 id="get__service_remote-execution_gethistory-responses">Responses</h3>
+<h3 id="retrieves-last-processed-messages.-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -963,16 +782,16 @@ api-version: string
 To perform this operation, you must be authenticated by means of one of the following methods:
 Basic & Tenant
 </aside>
-<h2 id='get__service_remote-execution_getmessagestatus'>get__service_remote-execution_GetMessageStatus</h2>
+<h2 id='retrieves-available-locations'>Retrieves available locations.</h2>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> GET /service/remote-execution/GetMessageStatus <span class="se">\</span>
+curl <span class="nt">-X</span> GET /service/remote-execution/locations <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'api-version: string'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Tenant: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/service/remote-execution/GetMessageStatus</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/service/remote-execution/locations</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
 api-version: string
 
@@ -982,7 +801,7 @@ api-version: string
   <span class="dl">'</span><span class="s1">Tenant</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/service/remote-execution/GetMessageStatus</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/service/remote-execution/locations</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
 
@@ -1009,7 +828,7 @@ api-version: string
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/service/remote-execution/GetMessageStatus'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/service/remote-execution/locations'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -1049,7 +868,7 @@ api-version: string
     <span class="c1">/// Make a dummy request</span>
     <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">MakeGetRequest</span><span class="p">()</span>
     <span class="p">{</span>
-      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/service/remote-execution/GetMessageStatus"</span><span class="p">;</span>
+      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/service/remote-execution/locations"</span><span class="p">;</span>
       <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="nf">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -1078,7 +897,7 @@ api-version: string
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/service/remote-execution/GetMessageStatus"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/service/remote-execution/locations"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -1093,9 +912,190 @@ api-version: string
 <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 
 </code></pre></div>
-<p><code>GET /service/remote-execution/GetMessageStatus</code></p>
+<p><code>GET /service/remote-execution/locations</code></p>
 
-<h3 id="get__service_remote-execution_getmessagestatus-parameters">Parameters</h3>
+<h3 id="retrieves-available-locations.-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>api-version</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>api-version</td>
+<td>header</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<h3 id="retrieves-available-locations.-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Success</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+Basic & Tenant
+</aside>
+<h2 id='retrieves-status-of-message-if-it-was-processed-or-not'>Retrieves status of message, if it was processed or not.</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> GET /service/remote-execution/messages/<span class="o">{</span><span class="nb">id</span><span class="o">}</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'api-version: string'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Tenant: API_KEY'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/service/remote-execution/messages/{id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+
+api-version: string
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">api-version</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">string</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">Tenant</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/service/remote-execution/messages/{id}</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'api-version'</span> <span class="o">=&gt;</span> <span class="s1">'string'</span><span class="p">,</span>
+    <span class="s1">'Tenant'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="err">\</span><span class="nf">GuzzleHttp\Client</span><span class="p">();</span>
+
+<span class="c1">// Define array of request body.</span>
+<span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/service/remote-execution/messages/{id}'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
+        <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
+       <span class="p">)</span>
+    <span class="p">);</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="nf">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">getContents</span><span class="p">());</span>
+ <span class="p">}</span>
+ <span class="k">catch</span> <span class="p">(</span><span class="err">\</span><span class="nc">GuzzleHttp\Exception\BadResponseException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// handle exception or api errors.</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">());</span>
+ <span class="p">}</span>
+
+ <span class="c1">// ...</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight csharp tab-csharp"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Net.Http</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Net.Http.Headers</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Newtonsoft.Json</span><span class="p">;</span>
+
+<span class="c1">/// &lt;&lt;summary&gt;&gt;</span>
+<span class="c1">/// Example of Http Client</span>
+<span class="c1">/// &lt;&lt;/summary&gt;&gt;</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">HttpExample</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="n">HttpClient</span> <span class="n">Client</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="c1">/// &lt;&lt;summary&gt;&gt;</span>
+    <span class="c1">/// Setup http client</span>
+    <span class="c1">/// &lt;&lt;/summary&gt;&gt;</span>
+    <span class="k">public</span> <span class="nf">HttpExample</span><span class="p">()</span>
+    <span class="p">{</span>
+      <span class="n">Client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">HttpClient</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="c1">/// Make a dummy request</span>
+    <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">MakeGetRequest</span><span class="p">()</span>
+    <span class="p">{</span>
+      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/service/remote-execution/messages/{id}"</span><span class="p">;</span>
+      <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="nf">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">/// Performs a GET Request</span>
+    <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">GetAsync</span><span class="p">(</span><span class="kt">string</span> <span class="n">url</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//Start the request</span>
+        <span class="n">HttpResponseMessage</span> <span class="n">response</span> <span class="p">=</span> <span class="k">await</span> <span class="n">Client</span><span class="p">.</span><span class="nf">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+
+        <span class="c1">//Validate result</span>
+        <span class="n">response</span><span class="p">.</span><span class="nf">EnsureSuccessStatusCode</span><span class="p">();</span>
+
+    <span class="p">}</span>
+
+
+
+
+    <span class="c1">/// Deserialize object from request response</span>
+    <span class="k">private</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">DeserializeObject</span><span class="p">(</span><span class="n">HttpResponseMessage</span> <span class="n">response</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//Read body </span>
+        <span class="kt">string</span> <span class="n">responseBody</span> <span class="p">=</span> <span class="k">await</span> <span class="n">response</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="nf">ReadAsStringAsync</span><span class="p">();</span>
+
+        <span class="c1">//Deserialize Body to object</span>
+        <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="nf">DeserializeObject</span><span class="p">(</span><span class="n">responseBody</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/service/remote-execution/messages/{id}"</span><span class="o">);</span>
+<span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="nc">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="nc">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="nc">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+</code></pre></div>
+<p><code>GET /service/remote-execution/messages/{id}</code></p>
+
+<h3 id="retrieves-status-of-message,-if-it-was-processed-or-not.-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -1108,10 +1108,10 @@ api-version: string
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>query</td>
+<td>path</td>
 <td>string(uuid)</td>
-<td>false</td>
-<td>none</td>
+<td>true</td>
+<td>trackingId that was retieved after message push.</td>
 </tr>
 <tr>
 <td>api-version</td>
@@ -1129,7 +1129,7 @@ api-version: string
 </tr>
 </tbody></table>
 
-<h3 id="get__service_remote-execution_getmessagestatus-responses">Responses</h3>
+<h3 id="retrieves-status-of-message,-if-it-was-processed-or-not.-responses">Responses</h3>
 
 <table><thead>
 <tr>
