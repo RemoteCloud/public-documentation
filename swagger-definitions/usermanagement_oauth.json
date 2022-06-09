@@ -11,6 +11,7 @@
         "tags": [
           "OAuth"
         ],
+        "summary": "Create authorization token",
         "parameters": [
           {
             "name": "client_id",
@@ -88,6 +89,7 @@
         "tags": [
           "OAuth"
         ],
+        "summary": "Get authorization code",
         "parameters": [
           {
             "name": "api-version",
@@ -123,10 +125,12 @@
         "tags": [
           "OAuth"
         ],
+        "summary": "Get the profile information",
         "parameters": [
           {
             "name": "access_token",
             "in": "query",
+            "description": "",
             "schema": {
               "type": "string"
             }
