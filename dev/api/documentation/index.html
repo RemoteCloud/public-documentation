@@ -330,10 +330,10 @@
                     <a href="#create-new-page" class="toc-h2 toc-link" data-title="Create new Page">Create new Page</a>
                   </li>
                   <li>
-                    <a href="#get-a-single" class="toc-h2 toc-link" data-title="Get a single">Get a single</a>
+                    <a href="#get-a-single-page" class="toc-h2 toc-link" data-title="Get a single Page">Get a single Page</a>
                   </li>
                   <li>
-                    <a href="#creates-relation-with-external-item-in-page" class="toc-h2 toc-link" data-title="Creates relation with external item in Page">Creates relation with external item in Page</a>
+                    <a href="#create-relation-with-external-item-in-page" class="toc-h2 toc-link" data-title="Create relation with external item in Page">Create relation with external item in Page</a>
                   </li>
                   <li>
                     <a href="#remove-relation-to-external-item-in-page" class="toc-h2 toc-link" data-title="Remove relation to external item in page">Remove relation to external item in page</a>
@@ -462,13 +462,13 @@
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> GET /external/api/pages <span class="se">\</span>
+curl <span class="nt">-X</span> GET /app/documentation/pages <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'api-version: string'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Authorization: API_KEY'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Tenant: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/external/api/pages</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/app/documentation/pages</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
 Accept: application/json
 api-version: string
@@ -481,7 +481,7 @@ api-version: string
   <span class="dl">'</span><span class="s1">Tenant</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/external/api/pages</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/app/documentation/pages</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
 
@@ -510,7 +510,7 @@ api-version: string
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/external/api/pages'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/app/documentation/pages'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -550,7 +550,7 @@ api-version: string
     <span class="c1">/// Make a dummy request</span>
     <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">MakeGetRequest</span><span class="p">()</span>
     <span class="p">{</span>
-      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/external/api/pages"</span><span class="p">;</span>
+      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/app/documentation/pages"</span><span class="p">;</span>
       <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="nf">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -579,7 +579,7 @@ api-version: string
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/external/api/pages"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/app/documentation/pages"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -594,7 +594,7 @@ api-version: string
 <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 
 </code></pre></div>
-<p><code>GET /external/api/pages</code></p>
+<p><code>GET /app/documentation/pages</code></p>
 
 <h3 id="get-all-pages-parameters">Parameters</h3>
 
@@ -678,14 +678,14 @@ Bearer & Tenant
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> POST /external/api/pages <span class="se">\</span>
+curl <span class="nt">-X</span> POST /app/documentation/pages <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json-patch+json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'api-version: string'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Authorization: API_KEY'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Tenant: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/external/api/pages</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/app/documentation/pages</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
 Content-Type: application/json-patch+json
 Accept: application/json
@@ -710,7 +710,7 @@ api-version: string
   <span class="dl">'</span><span class="s1">Tenant</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/external/api/pages</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/app/documentation/pages</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">inputBody</span><span class="p">,</span>
@@ -740,7 +740,7 @@ api-version: string
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'/external/api/pages'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'/app/documentation/pages'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -781,7 +781,7 @@ api-version: string
     <span class="c1">/// Make a dummy request</span>
     <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">MakePostRequest</span><span class="p">()</span>
     <span class="p">{</span>
-      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/external/api/pages"</span><span class="p">;</span>
+      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/app/documentation/pages"</span><span class="p">;</span>
 
       <span class="kt">string</span> <span class="n">json</span> <span class="p">=</span> <span class="s">@"{
   ""title"": ""string"",
@@ -833,7 +833,7 @@ api-version: string
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/external/api/pages"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/app/documentation/pages"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -848,7 +848,7 @@ api-version: string
 <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 
 </code></pre></div>
-<p><code>POST /external/api/pages</code></p>
+<p><code>POST /app/documentation/pages</code></p>
 
 <blockquote>
 <p>Body parameter</p>
@@ -980,18 +980,18 @@ api-version: string
 To perform this operation, you must be authenticated by means of one of the following methods:
 Bearer & Tenant
 </aside>
-<h2 id='get-a-single'>Get a single</h2>
+<h2 id='get-a-single-page'>Get a single Page</h2>
 <blockquote>
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> GET /external/api/pages/<span class="o">{</span><span class="nb">id</span><span class="o">}</span> <span class="se">\</span>
+curl <span class="nt">-X</span> GET /app/documentation/pages/<span class="o">{</span><span class="nb">id</span><span class="o">}</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'api-version: string'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Authorization: API_KEY'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Tenant: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/external/api/pages/{id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/app/documentation/pages/{id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
 Accept: application/json
 api-version: string
@@ -1004,7 +1004,7 @@ api-version: string
   <span class="dl">'</span><span class="s1">Tenant</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/external/api/pages/{id}</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/app/documentation/pages/{id}</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
 
@@ -1033,7 +1033,7 @@ api-version: string
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/external/api/pages/{id}'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/app/documentation/pages/{id}'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -1073,7 +1073,7 @@ api-version: string
     <span class="c1">/// Make a dummy request</span>
     <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">MakeGetRequest</span><span class="p">()</span>
     <span class="p">{</span>
-      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/external/api/pages/{id}"</span><span class="p">;</span>
+      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/app/documentation/pages/{id}"</span><span class="p">;</span>
       <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="nf">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -1102,7 +1102,7 @@ api-version: string
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/external/api/pages/{id}"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/app/documentation/pages/{id}"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -1117,9 +1117,9 @@ api-version: string
 <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 
 </code></pre></div>
-<p><code>GET /external/api/pages/{id}</code></p>
+<p><code>GET /app/documentation/pages/{id}</code></p>
 
-<h3 id="get-a-single-parameters">Parameters</h3>
+<h3 id="get-a-single-page-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -1194,7 +1194,7 @@ api-version: string
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<h3 id="get-a-single-responses">Responses</h3>
+<h3 id="get-a-single-page-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -1234,21 +1234,21 @@ api-version: string
 To perform this operation, you must be authenticated by means of one of the following methods:
 Bearer & Tenant
 </aside>
-<h2 id='creates-relation-with-external-item-in-page'>Creates relation with external item in Page</h2>
+<h2 id='create-relation-with-external-item-in-page'>Create relation with external item in Page</h2>
 <p>Used in TemplatesApp</p>
 
 <blockquote>
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> POST /external/api/pages/<span class="o">{</span><span class="nb">id</span><span class="o">}</span>/references <span class="se">\</span>
+curl <span class="nt">-X</span> POST /app/documentation/pages/<span class="o">{</span><span class="nb">id</span><span class="o">}</span>/references <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json-patch+json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'api-version: string'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Authorization: API_KEY'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Tenant: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/external/api/pages/{id}/references</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/app/documentation/pages/{id}/references</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
 Content-Type: application/json-patch+json
 Accept: application/json
@@ -1271,7 +1271,7 @@ api-version: string
   <span class="dl">'</span><span class="s1">Tenant</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/external/api/pages/{id}/references</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/app/documentation/pages/{id}/references</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">body</span><span class="p">:</span> <span class="nx">inputBody</span><span class="p">,</span>
@@ -1301,7 +1301,7 @@ api-version: string
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'/external/api/pages/{id}/references'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'/app/documentation/pages/{id}/references'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -1342,7 +1342,7 @@ api-version: string
     <span class="c1">/// Make a dummy request</span>
     <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">MakePostRequest</span><span class="p">()</span>
     <span class="p">{</span>
-      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/external/api/pages/{id}/references"</span><span class="p">;</span>
+      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/app/documentation/pages/{id}/references"</span><span class="p">;</span>
 
       <span class="kt">string</span> <span class="n">json</span> <span class="p">=</span> <span class="s">@"{
   ""knownApplication"": 0,
@@ -1392,7 +1392,7 @@ api-version: string
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/external/api/pages/{id}/references"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/app/documentation/pages/{id}/references"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -1407,7 +1407,7 @@ api-version: string
 <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 
 </code></pre></div>
-<p><code>POST /external/api/pages/{id}/references</code></p>
+<p><code>POST /app/documentation/pages/{id}/references</code></p>
 
 <blockquote>
 <p>Body parameter</p>
@@ -1422,7 +1422,7 @@ api-version: string
   </span><span class="nl">"itemId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f11b669d-7201-4c21-88af-d85092f0c005"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<h3 id="creates-relation-with-external-item-in-page
+<h3 id="create-relation-with-external-item-in-page
 used-in-templatesapp-parameters">Parameters</h3>
 
 <table><thead>
@@ -1476,7 +1476,7 @@ used-in-templatesapp-parameters">Parameters</h3>
   </span><span class="nl">"relativeUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<h3 id="creates-relation-with-external-item-in-page
+<h3 id="create-relation-with-external-item-in-page
 used-in-templatesapp-responses">Responses</h3>
 
 <table><thead>
@@ -1522,13 +1522,13 @@ Bearer & Tenant
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> DELETE /external/api/pages/<span class="o">{</span><span class="nb">id</span><span class="o">}</span>/references/<span class="o">{</span>externalItemId<span class="o">}</span> <span class="se">\</span>
+curl <span class="nt">-X</span> DELETE /app/documentation/pages/<span class="o">{</span><span class="nb">id</span><span class="o">}</span>/references/<span class="o">{</span>externalItemId<span class="o">}</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'api-version: string'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Authorization: API_KEY'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Tenant: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">/external/api/pages/{id}/references/{externalItemId}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">DELETE</span> <span class="nn">/app/documentation/pages/{id}/references/{externalItemId}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
 Accept: application/json
 api-version: string
@@ -1541,7 +1541,7 @@ api-version: string
   <span class="dl">'</span><span class="s1">Tenant</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/external/api/pages/{id}/references/{externalItemId}</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/app/documentation/pages/{id}/references/{externalItemId}</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">DELETE</span><span class="dl">'</span><span class="p">,</span>
 
@@ -1570,7 +1570,7 @@ api-version: string
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'DELETE'</span><span class="p">,</span><span class="s1">'/external/api/pages/{id}/references/{externalItemId}'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'DELETE'</span><span class="p">,</span><span class="s1">'/app/documentation/pages/{id}/references/{externalItemId}'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -1614,7 +1614,7 @@ api-version: string
     <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">MakeDeleteRequest</span><span class="p">()</span>
     <span class="p">{</span>
       <span class="kt">int</span> <span class="n">id</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
-      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/external/api/pages/{id}/references/{externalItemId}"</span><span class="p">;</span>
+      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/app/documentation/pages/{id}/references/{externalItemId}"</span><span class="p">;</span>
 
       <span class="k">await</span> <span class="nf">DeleteAsync</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">url</span><span class="p">);</span>
     <span class="p">}</span>
@@ -1640,7 +1640,7 @@ api-version: string
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/external/api/pages/{id}/references/{externalItemId}"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/app/documentation/pages/{id}/references/{externalItemId}"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"DELETE"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -1655,7 +1655,7 @@ api-version: string
 <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 
 </code></pre></div>
-<p><code>DELETE /external/api/pages/{id}/references/{externalItemId}</code></p>
+<p><code>DELETE /app/documentation/pages/{id}/references/{externalItemId}</code></p>
 
 <h3 id="remove-relation-to-external-item-in-page-parameters">Parameters</h3>
 
@@ -1752,13 +1752,13 @@ Bearer & Tenant
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> GET /external/api/search?Query<span class="o">=</span>string <span class="se">\</span>
+curl <span class="nt">-X</span> GET /app/documentation/search?Query<span class="o">=</span>string <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'api-version: string'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Authorization: API_KEY'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Tenant: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/external/api/search?Query=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/app/documentation/search?Query=string</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
 Accept: application/json
 api-version: string
@@ -1771,7 +1771,7 @@ api-version: string
   <span class="dl">'</span><span class="s1">Tenant</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/external/api/search?Query=string</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/app/documentation/search?Query=string</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
 
@@ -1800,7 +1800,7 @@ api-version: string
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/external/api/search'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/app/documentation/search'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -1840,7 +1840,7 @@ api-version: string
     <span class="c1">/// Make a dummy request</span>
     <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">MakeGetRequest</span><span class="p">()</span>
     <span class="p">{</span>
-      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/external/api/search"</span><span class="p">;</span>
+      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/app/documentation/search"</span><span class="p">;</span>
       <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="nf">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -1869,7 +1869,7 @@ api-version: string
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/external/api/search?Query=string"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/app/documentation/search?Query=string"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -1884,7 +1884,7 @@ api-version: string
 <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 
 </code></pre></div>
-<p><code>GET /external/api/search</code></p>
+<p><code>GET /app/documentation/search</code></p>
 
 <h3 id="get-all-pages-available-for-user-parameters">Parameters</h3>
 
@@ -2018,13 +2018,13 @@ Bearer & Tenant
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> GET /external/api/shelves/<span class="o">{</span><span class="nb">id</span><span class="o">}</span> <span class="se">\</span>
+curl <span class="nt">-X</span> GET /app/documentation/shelves/<span class="o">{</span><span class="nb">id</span><span class="o">}</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'api-version: string'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Authorization: API_KEY'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Tenant: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/external/api/shelves/{id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/app/documentation/shelves/{id}</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
 Accept: application/json
 api-version: string
@@ -2037,7 +2037,7 @@ api-version: string
   <span class="dl">'</span><span class="s1">Tenant</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/external/api/shelves/{id}</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/app/documentation/shelves/{id}</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
 
@@ -2066,7 +2066,7 @@ api-version: string
 <span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 
 <span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/external/api/shelves/{id}'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="nf">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/app/documentation/shelves/{id}'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
         <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
        <span class="p">)</span>
@@ -2106,7 +2106,7 @@ api-version: string
     <span class="c1">/// Make a dummy request</span>
     <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span> <span class="nf">MakeGetRequest</span><span class="p">()</span>
     <span class="p">{</span>
-      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/external/api/shelves/{id}"</span><span class="p">;</span>
+      <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="s">"/app/documentation/shelves/{id}"</span><span class="p">;</span>
       <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="nf">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
     <span class="p">}</span>
 
@@ -2135,7 +2135,7 @@ api-version: string
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/external/api/shelves/{id}"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/app/documentation/shelves/{id}"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -2150,7 +2150,7 @@ api-version: string
 <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
 
 </code></pre></div>
-<p><code>GET /external/api/shelves/{id}</code></p>
+<p><code>GET /app/documentation/shelves/{id}</code></p>
 
 <h3 id="get-a-single-shelf-parameters">Parameters</h3>
 
