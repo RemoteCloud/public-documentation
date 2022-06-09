@@ -11,7 +11,7 @@
         "tags": [
           "Notification"
         ],
-        "summary": "Post notification that will be sent to environment",
+        "summary": "Create Notification",
         "parameters": [
           {
             "name": "api-version",
