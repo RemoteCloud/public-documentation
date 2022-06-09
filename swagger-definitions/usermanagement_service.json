@@ -1,20 +1,22 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "serviceapi_v1",
+    "title": "externalapi_v1",
     "description": "",
     "version": "1.0"
   },
   "paths": {
-    "/app/usermanagement/Category/GetAll": {
+    "/app/usermanagement/categories": {
       "get": {
         "tags": [
-          "Categories"
+          "CategoriesExternal"
         ],
+        "summary": "Returns a list of Categories",
         "parameters": [
           {
             "name": "onlyActive",
             "in": "query",
+            "description": "Show only active records - true, show all records - false",
             "schema": {
               "type": "boolean"
             }
@@ -38,12 +40,19 @@
           "200": {
             "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryIEnumerableApiResponse"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Category"
-                  }
+                  "$ref": "#/components/schemas/CategoryIEnumerableApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryIEnumerableApiResponse"
                 }
               }
             }
@@ -51,11 +60,81 @@
         }
       }
     },
-    "/app/usermanagement/Location/GetAllMetaData": {
+    "/app/usermanagement/locations": {
+      "post": {
+        "tags": [
+          "LocationsExternal"
+        ],
+        "summary": "Send data to a location",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Location object to create",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Location"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Location"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Location"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Location"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
       "get": {
         "tags": [
-          "Locations"
+          "LocationsExternal"
         ],
+        "summary": "Get data from all locations",
         "parameters": [
           {
             "name": "api-version",
@@ -76,15 +155,19 @@
           "200": {
             "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationForApiIEnumerableApiResponse"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/LocationForApiIEnumerableApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationForApiIEnumerableApiResponse"
                 }
               }
             }
@@ -92,15 +175,151 @@
         }
       }
     },
-    "/app/usermanagement/Location/GetMetadataById": {
-      "get": {
+    "/app/usermanagement/locations/{locationId}": {
+      "patch": {
         "tags": [
-          "Locations"
+          "LocationsExternal"
         ],
+        "summary": "Updates the specified location",
         "parameters": [
           {
             "name": "locationId",
+            "in": "path",
+            "description": "ID of location to update",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
             "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Location object to update",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Location"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Location"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Location"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Location"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "LocationsExternal"
+        ],
+        "summary": "Deletes a location",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "path",
+            "description": "ID of location to remove",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "LocationsExternal"
+        ],
+        "summary": "Return data from a specific location",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "path",
+            "description": "ID of location to get",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -125,12 +344,19 @@
           "200": {
             "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationForApiApiResponse"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "string"
-                  }
+                  "$ref": "#/components/schemas/LocationForApiApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationForApiApiResponse"
                 }
               }
             }
@@ -138,382 +364,12 @@
         }
       }
     },
-    "/app/usermanagement/Location/CreateMetaData": {
-      "post": {
-        "tags": [
-          "Locations"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateLocationMetaData"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateLocationMetaData"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateLocationMetaData"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateLocationMetaData"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/app/usermanagement/Location/UpdateMetaData": {
-      "post": {
-        "tags": [
-          "Locations"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateLocationMetaData"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateLocationMetaData"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateLocationMetaData"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateLocationMetaData"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/app/usermanagement/Location/RemoveMetaData": {
-      "post": {
-        "tags": [
-          "Locations"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RemovedLocationMetaData"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RemovedLocationMetaData"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RemovedLocationMetaData"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RemovedLocationMetaData"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/app/usermanagement/Location/GetRouteId": {
-      "post": {
-        "tags": [
-          "Locations"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/app/usermanagement/Location/SetRouteId": {
-      "post": {
-        "tags": [
-          "Locations"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LocationRoute"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LocationRoute"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LocationRoute"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LocationRoute"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/app/usermanagement/Location/RemoveRouteId": {
-      "post": {
-        "tags": [
-          "Locations"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/app/usermanagement/Location/GetById": {
-      "post": {
-        "tags": [
-          "Locations"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LocationForApi"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/app/usermanagement/Location/GetAllLocations": {
+    "/app/usermanagement/locations/available": {
       "get": {
         "tags": [
-          "Locations"
+          "LocationsExternal"
         ],
+        "summary": "Return data form available location",
         "parameters": [
           {
             "name": "api-version",
@@ -534,12 +390,19 @@
           "200": {
             "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationShortGeneralIEnumerableApiResponse"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LocationForApi"
-                  }
+                  "$ref": "#/components/schemas/LocationShortGeneralIEnumerableApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationShortGeneralIEnumerableApiResponse"
                 }
               }
             }
@@ -547,11 +410,104 @@
         }
       }
     },
-    "/app/usermanagement/Location/Save": {
+    "/app/usermanagement/locations/current": {
+      "get": {
+        "tags": [
+          "LocationsExternal"
+        ],
+        "summary": "Return info about the current position",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationGeneralIEnumerableApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationGeneralIEnumerableApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationGeneralIEnumerableApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/usermanagement/locations/primary": {
+      "get": {
+        "tags": [
+          "LocationsExternal"
+        ],
+        "summary": "Return info from fixed position",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationGeneralApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationGeneralApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationGeneralApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/usermanagement/locations/batch": {
       "post": {
         "tags": [
-          "Locations"
+          "LocationsExternal"
         ],
+        "summary": "Create info about multiple locations",
         "parameters": [
           {
             "name": "api-version",
@@ -569,25 +525,38 @@
           }
         ],
         "requestBody": {
+          "description": "Array of location objects to create",
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/Location"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Location"
+                }
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Location"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Location"
+                }
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Location"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Location"
+                }
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Location"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Location"
+                }
               }
             }
           }
@@ -596,9 +565,19 @@
           "200": {
             "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationCreateManyItemsResponseApiResponse"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Location"
+                  "$ref": "#/components/schemas/LocationCreateManyItemsResponseApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationCreateManyItemsResponseApiResponse"
                 }
               }
             }
@@ -606,11 +585,12 @@
         }
       }
     },
-    "/app/usermanagement/Location/CreateMany": {
-      "post": {
+    "/app/usermanagement/locations/metadata": {
+      "get": {
         "tags": [
-          "Locations"
+          "LocationsExternal"
         ],
+        "summary": "Retrieves metadata from all locations",
         "parameters": [
           {
             "name": "api-version",
@@ -627,106 +607,41 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Location"
-                }
-              }
-            },
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Location"
-                }
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Location"
-                }
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Location"
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidStringStringDictionaryDictionaryApiResponse"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LocationCreateManyItemsResponse"
+                  "$ref": "#/components/schemas/GuidStringStringDictionaryDictionaryApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuidStringStringDictionaryDictionaryApiResponse"
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "/app/usermanagement/Location/Remove": {
-      "post": {
-        "tags": [
-          "Locations"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
           },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
+          "404": {
+            "description": "Not Found",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
               "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ApiMessage"
                 }
@@ -736,15 +651,627 @@
         }
       }
     },
-    "/app/usermanagement/Organisation/GetAll": {
+    "/app/usermanagement/locations/{locationId}/metadata": {
       "get": {
         "tags": [
-          "Organisations"
+          "LocationsExternal"
         ],
+        "summary": "Retrieves metadata from a specific location",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "path",
+            "description": "ID of location to get metadata",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringStringDictionaryApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringStringDictionaryApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringStringDictionaryApiResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "LocationsExternal"
+        ],
+        "summary": "Create location specified metadata",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Metadata object to add",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLocationMetaData"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLocationMetaData"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLocationMetaData"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateLocationMetaData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/usermanagement/locations/currentLocation/metadata": {
+      "patch": {
+        "tags": [
+          "LocationsExternal"
+        ],
+        "summary": "Update metadata on current location",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Location metadata update model",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateLocationMetaData"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateLocationMetaData"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateLocationMetaData"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateLocationMetaData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/usermanagement/locations/{locationId}/metadata/remove": {
+      "patch": {
+        "tags": [
+          "LocationsExternal"
+        ],
+        "summary": "Remove metadata from a specific location",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "path",
+            "description": "ID of location to remove metadata",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Object with list of metadata to remove",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemovedLocationMetaData"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemovedLocationMetaData"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemovedLocationMetaData"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemovedLocationMetaData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/usermanagement/locations/{locationId}/route": {
+      "get": {
+        "tags": [
+          "LocationsExternal"
+        ],
+        "summary": "Return the route to a specific location",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "path",
+            "description": "ID of location to get route",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "LocationsExternal"
+        ],
+        "summary": "Create a route to a specific location",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Route of location to create",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LocationRoute"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LocationRoute"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LocationRoute"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LocationRoute"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "LocationsExternal"
+        ],
+        "summary": "Delete route for a specific location",
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "path",
+            "description": "ID of location to delete route",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/usermanagement/organisations/{organisationId}": {
+      "get": {
+        "tags": [
+          "OrganisationsExternal"
+        ],
+        "summary": "Retrieve an organisation",
+        "parameters": [
+          {
+            "name": "organisationId",
+            "in": "path",
+            "description": "ID of organisation to get",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganisationApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganisationApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganisationApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/usermanagement/organisations": {
+      "get": {
+        "tags": [
+          "OrganisationsExternal"
+        ],
+        "summary": "Retrieve a list of all organisations",
         "parameters": [
           {
             "name": "onlyActive",
             "in": "query",
+            "description": "Show only active records - true, show all records - false",
             "schema": {
               "type": "boolean"
             }
@@ -768,12 +1295,19 @@
           "200": {
             "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganisationIEnumerableApiResponse"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Organisation"
-                  }
+                  "$ref": "#/components/schemas/OrganisationIEnumerableApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganisationIEnumerableApiResponse"
                 }
               }
             }
@@ -781,244 +1315,17 @@
         }
       }
     },
-    "/app/usermanagement/Organisation/Get": {
-      "post": {
-        "tags": [
-          "Organisations"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Organisation"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/app/usermanagement/Person/Create": {
-      "post": {
-        "tags": [
-          "Persons"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreatePerson"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreatePerson"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreatePerson"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreatePerson"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Person"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/app/usermanagement/Person/Update": {
-      "post": {
-        "tags": [
-          "Persons"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdatePerson"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdatePerson"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdatePerson"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdatePerson"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Person"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/app/usermanagement/Person/SetPosition": {
-      "post": {
-        "tags": [
-          "Persons"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PersonPosition"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PersonPosition"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PersonPosition"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PersonPosition"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/app/usermanagement/Person/GetAll": {
+    "/app/usermanagement/persons": {
       "get": {
         "tags": [
-          "Persons"
+          "PersonsExternal"
         ],
+        "summary": "Retrieves a list of all persons",
         "parameters": [
           {
             "name": "onlyActive",
             "in": "query",
+            "description": "Show only active records - true, show all records - false",
             "schema": {
               "type": "boolean"
             }
@@ -1042,24 +1349,30 @@
           "200": {
             "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonIEnumerableApiResponse"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Person"
-                  }
+                  "$ref": "#/components/schemas/PersonIEnumerableApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonIEnumerableApiResponse"
                 }
               }
             }
           }
         }
-      }
-    },
-    "/app/usermanagement/Person/Remove": {
+      },
       "post": {
         "tags": [
-          "Persons"
+          "PersonsExternal"
         ],
+        "summary": "Create a new person",
         "parameters": [
           {
             "name": "api-version",
@@ -1077,25 +1390,26 @@
           }
         ],
         "requestBody": {
+          "description": "Person object to create",
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/IdModel"
+                "$ref": "#/components/schemas/CreatePerson"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/IdModel"
+                "$ref": "#/components/schemas/CreatePerson"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/IdModel"
+                "$ref": "#/components/schemas/CreatePerson"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/IdModel"
+                "$ref": "#/components/schemas/CreatePerson"
               }
             }
           }
@@ -1104,7 +1418,204 @@
           "200": {
             "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonApiResponse"
+                }
+              },
               "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/usermanagement/persons/{personId}": {
+      "get": {
+        "tags": [
+          "PersonsExternal"
+        ],
+        "summary": "Retrieves info from a specific person",
+        "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "PersonsExternal"
+        ],
+        "summary": "Update info about a specific person",
+        "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "description": "ID of person to update",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Person object to update",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePerson"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePerson"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePerson"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePerson"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PersonsExternal"
+        ],
+        "summary": "Delete a specific person",
+        "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ApiMessage"
                 }
@@ -1114,12 +1625,23 @@
         }
       }
     },
-    "/app/usermanagement/Person/Get": {
-      "post": {
+    "/app/usermanagement/persons/{personId}/position": {
+      "patch": {
         "tags": [
-          "Persons"
+          "PersonsExternal"
         ],
+        "summary": "Update position for a specific person",
         "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "description": "ID of person to set position",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
           {
             "name": "api-version",
             "in": "query",
@@ -1136,36 +1658,47 @@
           }
         ],
         "requestBody": {
+          "description": "Person position object",
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/IdModel"
+                "$ref": "#/components/schemas/PersonPosition"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/IdModel"
+                "$ref": "#/components/schemas/PersonPosition"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/IdModel"
+                "$ref": "#/components/schemas/PersonPosition"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/IdModel"
+                "$ref": "#/components/schemas/PersonPosition"
               }
             }
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "204": {
+            "description": "No Content",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Person"
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
                 }
               }
             }
@@ -1173,15 +1706,17 @@
         }
       }
     },
-    "/app/usermanagement/Position/GetShortList": {
+    "/app/usermanagement/positions": {
       "get": {
         "tags": [
-          "Positions"
+          "PositionsExternal"
         ],
+        "summary": "Retrieves a list of all positions",
         "parameters": [
           {
             "name": "allLocations",
             "in": "query",
+            "description": "Show only active records - true, show all records - false",
             "schema": {
               "type": "boolean",
               "default": true
@@ -1206,12 +1741,88 @@
           "200": {
             "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PositionGeneralIEnumerableApiResponse"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PositionGeneral"
-                  }
+                  "$ref": "#/components/schemas/PositionGeneralIEnumerableApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PositionGeneralIEnumerableApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PositionsExternal"
+        ],
+        "summary": "Create a list of all positions",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Position object to create",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Position"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Position"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Position"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Position"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PositionApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PositionApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PositionApiResponse"
                 }
               }
             }
@@ -1219,15 +1830,18 @@
         }
       }
     },
-    "/app/usermanagement/Position/GetPositionsByLocation": {
+    "/app/usermanagement/positions/locations/{locationId}": {
       "get": {
         "tags": [
-          "Positions"
+          "PositionsExternal"
         ],
+        "summary": "Retrieves positions",
         "parameters": [
           {
             "name": "locationId",
-            "in": "query",
+            "in": "path",
+            "description": "ID of location to get",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -1252,12 +1866,19 @@
           "200": {
             "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PositionIEnumerableApiResponse"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Position"
-                  }
+                  "$ref": "#/components/schemas/PositionIEnumerableApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PositionIEnumerableApiResponse"
                 }
               }
             }
@@ -1265,12 +1886,23 @@
         }
       }
     },
-    "/app/usermanagement/Position/Save": {
-      "post": {
+    "/app/usermanagement/positions/{positionId}": {
+      "patch": {
         "tags": [
-          "Positions"
+          "PositionsExternal"
         ],
+        "summary": "Updates position",
         "parameters": [
+          {
+            "name": "positionId",
+            "in": "path",
+            "description": "ID of position to update",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
           {
             "name": "api-version",
             "in": "query",
@@ -1287,6 +1919,7 @@
           }
         ],
         "requestBody": {
+          "description": "Position object to create",
           "content": {
             "application/json-patch+json": {
               "schema": {
@@ -1314,22 +1947,40 @@
           "200": {
             "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PositionApiResponse"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Position"
+                  "$ref": "#/components/schemas/PositionApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PositionApiResponse"
                 }
               }
             }
           }
         }
-      }
-    },
-    "/app/usermanagement/Position/CreateMany": {
-      "post": {
+      },
+      "delete": {
         "tags": [
-          "Positions"
+          "PositionsExternal"
         ],
+        "summary": "Delete a position",
         "parameters": [
+          {
+            "name": "positionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
           {
             "name": "api-version",
             "in": "query",
@@ -1345,106 +1996,21 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Position"
-                }
-              }
-            },
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Position"
-                }
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Position"
-                }
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Position"
-                }
-              }
-            }
-          }
-        },
         "responses": {
-          "200": {
-            "description": "Success",
+          "204": {
+            "description": "No Content",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiMessage"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PositionCreateManyItemsResponse"
+                  "$ref": "#/components/schemas/ApiMessage"
                 }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/app/usermanagement/Position/Remove": {
-      "post": {
-        "tags": [
-          "Positions"
-        ],
-        "parameters": [
-          {
-            "name": "api-version",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "api-version",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/IdModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
+              },
+              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ApiMessage"
                 }
@@ -1454,15 +2020,100 @@
         }
       }
     },
-    "/app/usermanagement/PositionTeam/GetAll": {
+    "/app/usermanagement/positions/batch": {
+      "post": {
+        "tags": [
+          "PositionsExternal"
+        ],
+        "summary": "Create a list of multiple positions",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-version",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Array of positions to create",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Position"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Position"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Position"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Position"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PositionCreateManyItemsResponseApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PositionCreateManyItemsResponseApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PositionCreateManyItemsResponseApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/usermanagement/positionTeams": {
       "get": {
         "tags": [
-          "PositionTeams"
+          "PositionTeamsExternal"
         ],
+        "summary": "Retrieves a list of Position Teams",
         "parameters": [
           {
             "name": "onlyActive",
             "in": "query",
+            "description": "Show only active records - true, show all records - false",
             "schema": {
               "type": "boolean"
             }
@@ -1486,12 +2137,19 @@
           "200": {
             "description": "Success",
             "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PositionTeamIEnumerableApiResponse"
+                }
+              },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/PositionTeam"
-                  }
+                  "$ref": "#/components/schemas/PositionTeamIEnumerableApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PositionTeamIEnumerableApiResponse"
                 }
               }
             }
@@ -1578,6 +2236,19 @@
         },
         "additionalProperties": false
       },
+      "CategoryIEnumerableApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Category"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateLocationMetaData": {
         "type": "object",
         "properties": {
@@ -1587,10 +2258,6 @@
               "$ref": "#/components/schemas/LocationMetadata"
             },
             "nullable": true
-          },
-          "locationId": {
-            "type": "string",
-            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -1643,12 +2310,19 @@
         },
         "additionalProperties": false
       },
-      "IdModel": {
+      "GuidStringStringDictionaryDictionaryApiResponse": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
+          "data": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1730,6 +2404,15 @@
         },
         "additionalProperties": false
       },
+      "LocationApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Location"
+          }
+        },
+        "additionalProperties": false
+      },
       "LocationCreateManyItemsError": {
         "type": "object",
         "properties": {
@@ -1765,6 +2448,15 @@
             },
             "nullable": true,
             "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationCreateManyItemsResponseApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/LocationCreateManyItemsResponse"
           }
         },
         "additionalProperties": false
@@ -1832,7 +2524,110 @@
           "metaData": {
             "type": "object",
             "additionalProperties": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationForApiApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/LocationForApi"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationForApiIEnumerableApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocationForApi"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationGeneral": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/LocationType"
+          },
+          "licencePlate": {
+            "type": "string",
+            "nullable": true
+          },
+          "imoNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "mmsiNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "globalId": {
+            "type": "string",
+            "nullable": true
+          },
+          "routeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "metaData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocationMetadata"
+            },
+            "nullable": true
+          },
+          "primary": {
+            "type": "boolean"
+          },
+          "timeZone": {
+            "type": "string",
+            "nullable": true
+          },
+          "isVirtual": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationGeneralApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/LocationGeneral"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationGeneralIEnumerableApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocationGeneral"
             },
             "nullable": true
           }
@@ -1886,10 +2681,46 @@
           "routeId": {
             "type": "string",
             "nullable": true
-          },
-          "locationId": {
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationShortGeneral": {
+        "type": "object",
+        "properties": {
+          "id": {
             "type": "string",
             "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/LocationType"
+          },
+          "primary": {
+            "type": "boolean"
+          },
+          "isVirtual": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationShortGeneralIEnumerableApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocationShortGeneral"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1942,6 +2773,28 @@
           },
           "description": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrganisationApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Organisation"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OrganisationIEnumerableApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Organisation"
+            },
             "nullable": true
           }
         },
@@ -2036,6 +2889,28 @@
         },
         "additionalProperties": false
       },
+      "PersonApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Person"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PersonIEnumerableApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Person"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "PersonLastActivity": {
         "type": "object",
         "properties": {
@@ -2067,10 +2942,6 @@
         "type": "object",
         "properties": {
           "locationId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "personId": {
             "type": "string",
             "format": "uuid"
           },
@@ -2133,6 +3004,15 @@
           },
           "allowMultipleActiveAssigns": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PositionApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Position"
           }
         },
         "additionalProperties": false
@@ -2234,6 +3114,15 @@
         },
         "additionalProperties": false
       },
+      "PositionCreateManyItemsResponseApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PositionCreateManyItemsResponse"
+          }
+        },
+        "additionalProperties": false
+      },
       "PositionGeneral": {
         "type": "object",
         "properties": {
@@ -2243,6 +3132,32 @@
           },
           "name": {
             "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PositionGeneralIEnumerableApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PositionGeneral"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PositionIEnumerableApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Position"
+            },
             "nullable": true
           }
         },
@@ -2286,6 +3201,19 @@
         },
         "additionalProperties": false
       },
+      "PositionTeamIEnumerableApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PositionTeam"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "RemovedLocationMetaData": {
         "type": "object",
         "properties": {
@@ -2295,10 +3223,6 @@
               "type": "string"
             },
             "nullable": true
-          },
-          "locationId": {
-            "type": "string",
-            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -2342,6 +3266,30 @@
         "type": "integer",
         "description": "<br/>Active = 0<br/> Deactivated = 1<br/> Removed = 2",
         "format": "int32"
+      },
+      "StringApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StringStringDictionaryApiResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "UpdateLocationMetaData": {
         "type": "object",
@@ -2414,10 +3362,6 @@
               "$ref": "#/components/schemas/AliasName"
             },
             "nullable": true
-          },
-          "id": {
-            "type": "string",
-            "format": "uuid"
           }
         },
         "additionalProperties": false
