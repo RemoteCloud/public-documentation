@@ -1,5 +1,10 @@
 title: User Management
 
+## v2.1.17
+
+- Tennant token in id
+- Bugfix in organization UI
+
 ## v2.1.16
 
 - Login screen UI fix for mobile
