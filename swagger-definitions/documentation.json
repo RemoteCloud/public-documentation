@@ -6,7 +6,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/external/api/pages": {
+    "/app/documentation/pages": {
       "get": {
         "tags": [
           "ExternalApi"
@@ -141,12 +141,12 @@
         }
       }
     },
-    "/external/api/pages/{id}": {
+    "/app/documentation/pages/{id}": {
       "get": {
         "tags": [
           "ExternalApi"
         ],
-        "summary": "Get a single",
+        "summary": "Get a single Page",
         "parameters": [
           {
             "name": "id",
@@ -217,12 +217,12 @@
         }
       }
     },
-    "/external/api/pages/{id}/references": {
+    "/app/documentation/pages/{id}/references": {
       "post": {
         "tags": [
           "ExternalApi"
         ],
-        "summary": "Creates relation with external item in Page\r\nUsed in TemplatesApp",
+        "summary": "Create relation with external item in Page\r\nUsed in TemplatesApp",
         "parameters": [
           {
             "name": "id",
@@ -318,7 +318,7 @@
         }
       }
     },
-    "/external/api/pages/{id}/references/{externalItemId}": {
+    "/app/documentation/pages/{id}/references/{externalItemId}": {
       "delete": {
         "tags": [
           "ExternalApi"
@@ -404,7 +404,7 @@
         }
       }
     },
-    "/external/api/search": {
+    "/app/documentation/search": {
       "get": {
         "tags": [
           "ExternalApi"
@@ -472,7 +472,7 @@
         }
       }
     },
-    "/external/api/shelves/{id}": {
+    "/app/documentation/shelves/{id}": {
       "get": {
         "tags": [
           "ExternalApi"
@@ -953,7 +953,7 @@
             "nullable": true
           }
         },
-        "additionalProperties": { }
+        "additionalProperties": {}
       },
       "SearchFieldOption": {
         "enum": [
@@ -1025,8 +1025,8 @@
   },
   "security": [
     {
-      "Bearer": [ ],
-      "Tenant": [ ]
+      "Bearer": [],
+      "Tenant": []
     }
   ]
 }
