@@ -1,8 +1,11 @@
 ## v2.6.9
 
+**Bug-fixes and improvements:**
+
 - Offline improvements to picture upload
 - API updates
 - Bugfixes
+- [Very high] Can’t set due time on checklist start (mobile)
 
 ## v2.6.8
 
