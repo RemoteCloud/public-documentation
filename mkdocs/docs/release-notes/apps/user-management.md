@@ -2,8 +2,11 @@ title: User Management
 
 ## v2.1.17
 
+**Bugs and Changes**
+
 - Tennant token in id
 - Bugfix in organization UI
+- [Very high] Adding a new organisation fails
 
 ## v2.1.16
 
