@@ -1,7 +1,10 @@
 ## v2.6.9
 
+**Bug-fixes and improvements:**
+
 - API updates
 - Bugfixes
+- [Very High] Template metadata & comment definitions wipe out
 
 ## v2.6.8
 
