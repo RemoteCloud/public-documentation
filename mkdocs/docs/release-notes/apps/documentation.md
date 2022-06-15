@@ -1,8 +1,13 @@
 ## v3.0.8
 
+**Bug-fixes and improvements**
+
 - Lib updates
 - Image resize fix
-- Improved search experience on mobile
+- [medium] Improved search experience on mobile
+- [medium] Fixed creating page via Pages/POST/api/pages creates the page that is impossible to open bug
+- [low] Improved image resize changes image properties and proportions
+- [low] Improved metadata duplication error
 
 ## v3.0.7
 
