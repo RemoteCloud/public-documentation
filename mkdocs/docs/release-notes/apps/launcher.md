@@ -2,7 +2,8 @@
 
 **Bug-fixes and improvements:**
 
-- Back button added to modal
+- [medium] Back button added to mobile
+- [medium] Fixed issue where screen for select workspace dont work on iPhone 
 - Workspace name is now case insensitive
 - Lib updates
 

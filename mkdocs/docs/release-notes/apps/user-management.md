@@ -6,7 +6,8 @@ title: User Management
 
 - Tennant token in id
 - Bugfix in organization UI
-- [Very high] Adding a new organisation fails
+- [Very high] Fixed adding a new organisation fails bug
+- [high] Fixed issue where user is unable to Request password reset
 
 ## v2.1.16
 
