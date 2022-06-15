@@ -1,5 +1,7 @@
 ## v1.1.4
 
+**Bug-fixes and improvements:**
+
 - Back button added to modal
 - Workspace name is now case insensitive
 - Lib updates
