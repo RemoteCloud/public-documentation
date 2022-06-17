@@ -8,6 +8,8 @@ title: User Management
 - Bugfix in organization UI
 - [Very high] Fixed adding a new organisation fails bug
 - [high] Fixed issue where user is unable to Request password reset
+- [medium] Refactor Position Types and Position Teams page layout
+- [medium] Change Edit and Delete button appearance in table of entities
 
 ## v2.1.16
 

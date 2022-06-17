@@ -3,9 +3,9 @@
 **Bug-fixes and improvements**
 
 - Lib updates
-- Image resize fix
 - [medium] Improved search experience on mobile
 - [medium] Fixed creating page via Pages/POST/api/pages creates the page that is impossible to open bug
+- [low] Added book list & shelf list dynamical loaders
 - [low] Improved image resize changes image properties and proportions
 - [low] Improved metadata duplication error
 
