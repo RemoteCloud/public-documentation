@@ -6,6 +6,8 @@
 - API updates
 - Bugfixes
 - [Very high] Can’t set due time on checklist start (mobile)
+- [Very high] Additional task details are added in json response
+- [Medium] Set values on Date/Time controls with swipe
 
 ## v2.6.8
 

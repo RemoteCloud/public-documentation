@@ -4,7 +4,7 @@
 
 - [medium] Back button added to mobile
 - [medium] Fixed issue where screen for select workspace dont work on iPhone 
-- Workspace name is now case insensitive
+- [medium] Workspace name is now case insensitive
 - Lib updates
 
 ## v1.1.3
