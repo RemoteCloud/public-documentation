@@ -5,8 +5,9 @@
 - Offline improvements to picture upload
 - API updates
 - Bugfixes
-- [Very high] Can’t set due time on checklist start (mobile)
+- [Very high] Fixed set due time on checklist start (mobile) bug
 - [Very high] Additional task details are added in json response
+- [Very high] Fixed adding picture process is stuck in Flow
 - [Medium] Set values on Date/Time controls with swipe
 
 ## v2.6.8
