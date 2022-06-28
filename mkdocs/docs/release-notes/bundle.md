@@ -13,7 +13,7 @@ User Management | App      | [v2.1.18][user-mgm-v2.1.18]
 Launcher        | App      | [v1.1.4][launcher-v1.1.4]
 Flow            | App      | [v2.7.0][flow-2.7.0]
 Template        | App      | [v2.7.0][template-2.7.0]
-Documentation   | App      | [v3.0.8][doc-v3.0.9]
+Documentation   | App      | [v3.0.9][doc-v3.0.9]
 Portal          | App      | [v2.1.3][portal-v2.1.3]
 Barrier Model   | App      | [v2.1.10][barrier-model-v2.1.10]
 Automation      | App      | [nightly][automation-nightly]
@@ -25,12 +25,24 @@ Notifications   | Service  | [v1.0.2][notifications-1.0.2]
 PDF Generator   | Service  | [v2.2.2][pdf-generator-2.2.2]
 RemoteExecution | Service  | [v2.1.4][remote-exec-v2.1.4]
 Sync            | Service  | [v1.2.2][sync-v1.2.2]
+
 [user-mgm-v2.1.18]: ./apps/user-management.md#v2118
 [launcher-v1.1.4]: ./apps/launcher.md#v114
 [flow-2.7.0]: ./apps/flow.md#v270
 [template-2.7.0]: ./apps/template.md#v270
 [doc-v3.0.9]: ./apps/documentation.md#v309
 [portal-v2.1.3]: ./apps/portal.md#v213
+[barrier-model-v2.1.10]: ./apps/barrier-model.md#v2110
+[automation-nightly]: ./apps/automation.md#nightly
+
+[app-store-v1.0.4]: ./services/app-store.md#v104
+[api-gateway-v1.0.2]: ./services/api-gateway.md#v102
+[data-register-v2.0.3]: ./services/data-register.md#v203
+[monitor-v1.0.2]: ./services/monitoring.md#v102
+[notifications-1.0.2]: ./services/notifications.md#v102
+[pdf-generator-2.2.2]: ./services/pdf-generator.md#v222
+[remote-exec-v2.1.4]: ./services/remote-execution.md#v214
+[sync-v1.2.2]: ./services/sync.md#v122
 
 ## V1.0.5
 
