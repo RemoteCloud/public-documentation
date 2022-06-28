@@ -1,5 +1,11 @@
 title: User Management
 
+
+## v2.1.18
+- API description update
+- UI improvements
+- Bugfixes
+
 ## v2.1.17
 
 **Bugs and Changes**

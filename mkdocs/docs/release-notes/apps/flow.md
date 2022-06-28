@@ -1,3 +1,10 @@
+## v2.7.0
+
+- API description updates
+- New API to clear task
+- UI improvements
+- Bugfixes
+
 ## v2.6.9
 
 **Bug-fixes and improvements:**
