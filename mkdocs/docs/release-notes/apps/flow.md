@@ -5,6 +5,7 @@
 - UI improvements
 - [Very high] Fixed with slow network pictures and signs are not always displayed and Webhook is sent, but check box is unchecked bug
 - [Very high] Fixed working two users in flow app bug
+- [Very high] Fixed Webhook is not sent on its own, if Checkbox have multiple options bug
 - [High] Make task requests with file upload connection independent
 - [High] Fixed lickering when two users work in the same checklist bug
 - [Medium] Fixed offline comment pictures are not uploaded bug
