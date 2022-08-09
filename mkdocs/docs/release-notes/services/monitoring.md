@@ -1,3 +1,6 @@
+## v1.0.3
+- Package updates
+
 ## v1.0.2
 
 - [low] Automatic bug reporting endpoint changed

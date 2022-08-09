@@ -20,7 +20,7 @@ Automation      | App      | [nightly][automation-nightly]
 App Store       | Service  | [v1.1.0][app-store-v1.1.0]
 API Gateway     | Service  | [v1.0.3][api-gateway-v1.0.3]
 Data Register   | Service  | [v2.0.4][data-register-v2.0.4]
-Monitoring      | Service  | [v1.0.2][monitor-v1.0.2]
+Monitoring      | Service  | [v1.0.3][monitor-v1.0.3]
 Notifications   | Service  | [v1.0.2][notifications-1.0.2]
 PDF Generator   | Service  | [v2.2.2][pdf-generator-2.2.2]
 RemoteExecution | Service  | [v2.1.4][remote-exec-v2.1.4]
@@ -38,7 +38,7 @@ Sync            | Service  | [v1.2.2][sync-v1.2.2]
 [app-store-v1.1.0]: ./services/app-store.md#v110
 [api-gateway-v1.0.3]: ./services/api-gateway.md#v103
 [data-register-v2.0.4]: ./services/data-register.md#v204
-[monitor-v1.0.2]: ./services/monitoring.md#v102
+[monitor-v1.0.3]: ./services/monitoring.md#v103
 [notifications-1.0.2]: ./services/notifications.md#v102
 [pdf-generator-2.2.2]: ./services/pdf-generator.md#v222
 [remote-exec-v2.1.4]: ./services/remote-execution.md#v214
