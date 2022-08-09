@@ -3,6 +3,47 @@ title: Deployment Bundles
 Deployment bundles represent a collection of all applications with a specific version. The specific app versions in a bundle are validated to play nice together. A bundle does not represent a complete list of applications that are deployed. Depending on the customer and use case only a subset of applications might be deployed. However when adding additional applications to a deployment they will use the version specified in the deployed bundle version.
 
 
+## V1.0.7
+
+**Note**: 
+
+Application     | Type     | Version
+:-------------- | :------- | ------------:
+User Management | App      | [v2.1.19][user-mgm-v2.1.19]
+Launcher        | App      | [v1.2.0][launcher-v1.2.0]
+Flow            | App      | [v2.8.5][flow-2.8.5]
+Template        | App      | [v2.8.5][template-2.8.5]
+Documentation   | App      | [v3.0.10][doc-v3.0.10]
+Portal          | App      | [v2.1.4][portal-v2.1.4]
+Barrier Model   | App      | [v2.1.10][barrier-model-v2.1.10]
+Automation      | App      | [nightly][automation-nightly]
+App Store       | Service  | [v1.1.0][app-store-v1.1.0]
+API Gateway     | Service  | [v1.0.3][api-gateway-v1.0.3]
+Data Register   | Service  | [v2.0.4][data-register-v2.0.4]
+Monitoring      | Service  | [v1.0.2][monitor-v1.0.2]
+Notifications   | Service  | [v1.0.2][notifications-1.0.2]
+PDF Generator   | Service  | [v2.2.2][pdf-generator-2.2.2]
+RemoteExecution | Service  | [v2.1.4][remote-exec-v2.1.4]
+Sync            | Service  | [v1.2.2][sync-v1.2.2]
+
+[user-mgm-v2.1.19]: ./apps/user-management.md#v2119
+[launcher-v1.2.0]: ./apps/launcher.md#v120
+[flow-2.8.5]: ./apps/flow.md#v285
+[template-2.8.5]: ./apps/template.md#v285
+[doc-v3.0.10]: ./apps/documentation.md#v3010
+[portal-v2.1.4]: ./apps/portal.md#v214
+[barrier-model-v2.1.10]: ./apps/barrier-model.md#v2110
+[automation-nightly]: ./apps/automation.md#nightly
+
+[app-store-v1.1.0]: ./services/app-store.md#v110
+[api-gateway-v1.0.3]: ./services/api-gateway.md#v103
+[data-register-v2.0.4]: ./services/data-register.md#v204
+[monitor-v1.0.2]: ./services/monitoring.md#v102
+[notifications-1.0.2]: ./services/notifications.md#v102
+[pdf-generator-2.2.2]: ./services/pdf-generator.md#v222
+[remote-exec-v2.1.4]: ./services/remote-execution.md#v214
+[sync-v1.2.2]: ./services/sync.md#v122
+
 ## V1.0.6
 
 **Note**: Low connectivity improvements

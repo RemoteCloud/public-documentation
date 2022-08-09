@@ -1,3 +1,7 @@
+## v2.1.4
+- External library updates
+- AppStore SDK update
+
 ## v2.1.3
 
 - [low] Automatic bug reporting endpoint changed

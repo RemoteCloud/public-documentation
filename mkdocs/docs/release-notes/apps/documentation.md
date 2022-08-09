@@ -1,3 +1,6 @@
+## v3.0.10
+- AppStore SDK update
+
 ## v3.0.9
 - API description update
 

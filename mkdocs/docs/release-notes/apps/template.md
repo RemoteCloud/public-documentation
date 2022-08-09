@@ -1,3 +1,7 @@
+## v2.8.5
+- Option to toggle override reasons when swiping left
+- AppStore SDK update
+
 ## v2.7.0
 
 - API description updates

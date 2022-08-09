@@ -1,6 +1,9 @@
 title: Data Register
 
 ## v2.0.3
+- AppStore SDK update
+
+## v2.0.3
 
 - [low] Automatic bug reporting endpoint changed
 

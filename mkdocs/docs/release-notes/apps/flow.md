@@ -1,3 +1,16 @@
+## v2.8.5
+
+**Major feature: Low connectivity support**
+
+- Low connectivity mode (small events, event caching, smart connection loss recovery)
+- Get override reasons when swipe left
+- Named parameters in API calls
+- Section complete webhook
+- Send text before and text after in webhooks
+- Removed: Auto collapse of sections
+- AppStore SDK update
+- Bugfixes
+
 ## v2.7.0
 
 - API description updates

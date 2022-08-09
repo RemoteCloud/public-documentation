@@ -1,5 +1,11 @@
 title: App Store
 
+## v1.1.0
+**Breaking DB changes**
+
+- Permission scope support
+- App categories (is default, platform, .. app)
+
 ## v1.0.4
 
 - Introduction of technical name for registered apps

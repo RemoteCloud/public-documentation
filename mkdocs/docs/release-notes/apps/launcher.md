@@ -1,3 +1,7 @@
+## v1.2.0
+- Removed: User invite option 
+- AppStore SDK update
+
 ## v1.1.4
 
 **Bug-fixes and improvements:**

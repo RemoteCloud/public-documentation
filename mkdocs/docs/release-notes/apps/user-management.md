@@ -1,6 +1,10 @@
 title: User Management
 
 
+## v2.1.19
+- Websocket improvements
+- AppStore SDK update
+
 ## v2.1.18
 - API description update
 - UI improvements
