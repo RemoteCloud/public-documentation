@@ -13,21 +13,21 @@
         <meta name="author" content="Maranics Development Team">
       
       
-        <link rel="canonical" href="https://development.maranics.com/dev/general-information/templates/message-bus/">
+        <link rel="canonical" href="https://development.maranics.com/dev/examples/notifications-sdk/">
       
-      <link rel="icon" href="../../../assets/images/maranics-logo-white.png">
+      <link rel="icon" href="../../assets/images/maranics-logo-white.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
     
     
       
-        <title>Message bus - Maranics Developer Documentation</title>
+        <title>Notifications SDK - Maranics Developer Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.a57b2b03.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -42,7 +42,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../assets/css/extra.css">
+      <link rel="stylesheet" href="../../assets/css/extra.css">
     
     
       
@@ -63,7 +63,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -71,6 +71,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#maranicsnotificationssdk" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -83,9 +88,9 @@
 
 <header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Maranics Developer Documentation" class="md-header__button md-logo" aria-label="Maranics Developer Documentation" data-md-component="logo">
+    <a href="../.." title="Maranics Developer Documentation" class="md-header__button md-logo" aria-label="Maranics Developer Documentation" data-md-component="logo">
       
-  <img src="../../../assets/images/maranics-logo-white.png" alt="logo">
+  <img src="../../assets/images/maranics-logo-white.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -101,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Message bus
+              Notifications SDK
             
           </span>
         </div>
@@ -191,15 +196,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../general-information/" class="md-tabs__link">
         General Information
       </a>
     </li>
@@ -209,13 +212,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../../examples/" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Examples
       </a>
     </li>
@@ -231,7 +236,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../api/" class="md-tabs__link">
+      <a href="../../api/" class="md-tabs__link">
         API Documentation
       </a>
     </li>
@@ -247,7 +252,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../release-notes/" class="md-tabs__link">
+      <a href="../../release-notes/" class="md-tabs__link">
         Release Notes
       </a>
     </li>
@@ -260,7 +265,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../about/" class="md-tabs__link">
+    <a href="../../about/" class="md-tabs__link">
       About
     </a>
   </li>
@@ -293,9 +298,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Maranics Developer Documentation" class="md-nav__button md-logo" aria-label="Maranics Developer Documentation" data-md-component="logo">
+    <a href="../.." title="Maranics Developer Documentation" class="md-nav__button md-logo" aria-label="Maranics Developer Documentation" data-md-component="logo">
       
-  <img src="../../../assets/images/maranics-logo-white.png" alt="logo">
+  <img src="../../assets/images/maranics-logo-white.png" alt="logo">
 
     </a>
     Maranics Developer Documentation
@@ -322,14 +327,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" data-md-state="indeterminate" type="checkbox" id="__nav_1" checked>
       
       
       
@@ -359,7 +362,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../">General Information</a>
+          <a href="../../general-information/">General Information</a>
           
             <label for="__nav_1">
               <span class="md-nav__icon md-icon"></span>
@@ -383,7 +386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../authorization/" class="md-nav__link">
+      <a href="../../general-information/authorization/" class="md-nav__link">
         Authorization
       </a>
     </li>
@@ -397,7 +400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../flow/" class="md-nav__link">
+      <a href="../../general-information/flow/" class="md-nav__link">
         Flow
       </a>
     </li>
@@ -411,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../multitenancy/" class="md-nav__link">
+      <a href="../../general-information/multitenancy/" class="md-nav__link">
         Multitenancy
       </a>
     </li>
@@ -425,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../syncronization/" class="md-nav__link">
+      <a href="../../general-information/syncronization/" class="md-nav__link">
         Syncronization
       </a>
     </li>
@@ -439,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../versioning/" class="md-nav__link">
+      <a href="../../general-information/versioning/" class="md-nav__link">
         Versioning
       </a>
     </li>
@@ -474,7 +477,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../documentation/">Documentation</a>
+          <a href="../../general-information/documentation/">Documentation</a>
           
             <label for="__nav_1_7">
               <span class="md-nav__icon md-icon"></span>
@@ -498,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/permissions/" class="md-nav__link">
+      <a href="../../general-information/documentation/permissions/" class="md-nav__link">
         Permissions
       </a>
     </li>
@@ -512,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/validation/" class="md-nav__link">
+      <a href="../../general-information/documentation/validation/" class="md-nav__link">
         Validation
       </a>
     </li>
@@ -531,14 +534,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_8" type="checkbox" id="__nav_1_8" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_8" data-md-state="indeterminate" type="checkbox" id="__nav_1_8" checked>
       
       
       
@@ -562,7 +563,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../">Templates</a>
+          <a href="../../general-information/templates/">Templates</a>
           
             <label for="__nav_1_8">
               <span class="md-nav__icon md-icon"></span>
@@ -586,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../approval/" class="md-nav__link">
+      <a href="../../general-information/templates/approval/" class="md-nav__link">
         Approval
       </a>
     </li>
@@ -598,19 +599,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../general-information/templates/message-bus/" class="md-nav__link">
         Message bus
       </a>
-      
     </li>
   
 
@@ -622,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../permissions/" class="md-nav__link">
+      <a href="../../general-information/templates/permissions/" class="md-nav__link">
         Permissions
       </a>
     </li>
@@ -636,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../synchronization/" class="md-nav__link">
+      <a href="../../general-information/templates/synchronization/" class="md-nav__link">
         Synchronization
       </a>
     </li>
@@ -650,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../webhooks/" class="md-nav__link">
+      <a href="../../general-information/templates/webhooks/" class="md-nav__link">
         Webhooks
       </a>
     </li>
@@ -696,7 +689,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../user-management/">User management</a>
+          <a href="../../general-information/user-management/">User management</a>
           
             <label for="__nav_1_9">
               <span class="md-nav__icon md-icon"></span>
@@ -720,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-management/locations/" class="md-nav__link">
+      <a href="../../general-information/user-management/locations/" class="md-nav__link">
         Locations
       </a>
     </li>
@@ -734,7 +727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-management/permissions/" class="md-nav__link">
+      <a href="../../general-information/user-management/permissions/" class="md-nav__link">
         Permissions
       </a>
     </li>
@@ -748,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-management/position/" class="md-nav__link">
+      <a href="../../general-information/user-management/position/" class="md-nav__link">
         Position
       </a>
     </li>
@@ -762,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-management/user/" class="md-nav__link">
+      <a href="../../general-information/user-management/user/" class="md-nav__link">
         User
       </a>
     </li>
@@ -789,12 +782,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -814,7 +809,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../examples/">Examples</a>
+          <a href="../">Examples</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -838,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/app-store-sdk/" class="md-nav__link">
+      <a href="../app-store-sdk/" class="md-nav__link">
         App Store SDK
       </a>
     </li>
@@ -852,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../examples/authentication/" class="md-nav__link">
+      <a href="../authentication/" class="md-nav__link">
         Authentication
       </a>
     </li>
@@ -864,11 +859,67 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../examples/notifications-sdk/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Notifications SDK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Notifications SDK
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    Initialization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notification-sending" class="md-nav__link">
+    Notification sending
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-and-receive-notifications" class="md-nav__link">
+    Subscribe and receive notifications
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -921,7 +972,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../api/">API Documentation</a>
+          <a href="../../api/">API Documentation</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -945,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api/usermanagement_service" target="_blank" class="md-nav__link">
+      <a href="../../api/usermanagement_service" target="_blank" class="md-nav__link">
         User Management
       </a>
     </li>
@@ -959,7 +1010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api/usermanagement_oauth" target="_blank" class="md-nav__link">
+      <a href="../../api/usermanagement_oauth" target="_blank" class="md-nav__link">
         OAuth
       </a>
     </li>
@@ -973,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api/documentation" target="_blank" class="md-nav__link">
+      <a href="../../api/documentation" target="_blank" class="md-nav__link">
         Documentation
       </a>
     </li>
@@ -987,7 +1038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api/flows" target="_blank" class="md-nav__link">
+      <a href="../../api/flows" target="_blank" class="md-nav__link">
         Flows
       </a>
     </li>
@@ -1001,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api/templates" target="_blank" class="md-nav__link">
+      <a href="../../api/templates" target="_blank" class="md-nav__link">
         Templates
       </a>
     </li>
@@ -1015,7 +1066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api/pdf-generator" target="_blank" class="md-nav__link">
+      <a href="../../api/pdf-generator" target="_blank" class="md-nav__link">
         PDF Generator
       </a>
     </li>
@@ -1029,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api/notifications" target="_blank" class="md-nav__link">
+      <a href="../../api/notifications" target="_blank" class="md-nav__link">
         Notifications
       </a>
     </li>
@@ -1043,7 +1094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api/remote-execution" target="_blank" class="md-nav__link">
+      <a href="../../api/remote-execution" target="_blank" class="md-nav__link">
         Remote Execution
       </a>
     </li>
@@ -1088,7 +1139,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../../../release-notes/">Release Notes</a>
+          <a href="../../release-notes/">Release Notes</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1112,7 +1163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/bundle/" class="md-nav__link">
+      <a href="../../release-notes/bundle/" class="md-nav__link">
         Deployment Bundles
       </a>
     </li>
@@ -1170,7 +1221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/apps/user-management/" class="md-nav__link">
+      <a href="../../release-notes/apps/user-management/" class="md-nav__link">
         User Management
       </a>
     </li>
@@ -1184,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/apps/launcher/" class="md-nav__link">
+      <a href="../../release-notes/apps/launcher/" class="md-nav__link">
         Launcher
       </a>
     </li>
@@ -1198,7 +1249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/apps/flow/" class="md-nav__link">
+      <a href="../../release-notes/apps/flow/" class="md-nav__link">
         Flow
       </a>
     </li>
@@ -1212,7 +1263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/apps/template/" class="md-nav__link">
+      <a href="../../release-notes/apps/template/" class="md-nav__link">
         Template
       </a>
     </li>
@@ -1226,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/apps/documentation/" class="md-nav__link">
+      <a href="../../release-notes/apps/documentation/" class="md-nav__link">
         Documentation
       </a>
     </li>
@@ -1240,7 +1291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/apps/portal/" class="md-nav__link">
+      <a href="../../release-notes/apps/portal/" class="md-nav__link">
         Portal
       </a>
     </li>
@@ -1254,7 +1305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/apps/barrier-model/" class="md-nav__link">
+      <a href="../../release-notes/apps/barrier-model/" class="md-nav__link">
         Barrier Model
       </a>
     </li>
@@ -1268,7 +1319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/apps/automation/" class="md-nav__link">
+      <a href="../../release-notes/apps/automation/" class="md-nav__link">
         Automation (Elsa)
       </a>
     </li>
@@ -1333,7 +1384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/services/api-gateway/" class="md-nav__link">
+      <a href="../../release-notes/services/api-gateway/" class="md-nav__link">
         API Gateway
       </a>
     </li>
@@ -1347,7 +1398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/services/app-store/" class="md-nav__link">
+      <a href="../../release-notes/services/app-store/" class="md-nav__link">
         App Store
       </a>
     </li>
@@ -1361,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/services/data-register/" class="md-nav__link">
+      <a href="../../release-notes/services/data-register/" class="md-nav__link">
         Data Register
       </a>
     </li>
@@ -1375,7 +1426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/services/monitoring/" class="md-nav__link">
+      <a href="../../release-notes/services/monitoring/" class="md-nav__link">
         Monitoring
       </a>
     </li>
@@ -1389,7 +1440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/services/notifications/" class="md-nav__link">
+      <a href="../../release-notes/services/notifications/" class="md-nav__link">
         Notifications
       </a>
     </li>
@@ -1403,7 +1454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/services/pdf-generator/" class="md-nav__link">
+      <a href="../../release-notes/services/pdf-generator/" class="md-nav__link">
         PDF Generator
       </a>
     </li>
@@ -1417,7 +1468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/services/remote-execution/" class="md-nav__link">
+      <a href="../../release-notes/services/remote-execution/" class="md-nav__link">
         Remote Execution
       </a>
     </li>
@@ -1431,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/services/sync/" class="md-nav__link">
+      <a href="../../release-notes/services/sync/" class="md-nav__link">
         Sync
       </a>
     </li>
@@ -1460,7 +1511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -1474,19 +1525,229 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#initialization" class="md-nav__link">
+    Initialization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notification-sending" class="md-nav__link">
+    Notification sending
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-and-receive-notifications" class="md-nav__link">
+    Subscribe and receive notifications
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/RemoteCloud/public-documentation/edit/dev/mkdocs/docs/general-information/templates/message-bus.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/RemoteCloud/public-documentation/edit/dev/mkdocs/docs/examples/notifications-sdk.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Message bus</h1>
+                <h1 id="maranicsnotificationssdk">Maranics.Notifications.SDK<a class="headerlink" href="#maranicsnotificationssdk" title="Permanent link">&para;</a></h1>
+<p>This SDK offers methods to send and receive notifications to/from any application which is registered in App store.</p>
+<p><a href="https://github.com/RemoteCloud/Notifications.SDK.Demo"><strong>Demo</strong></a> | <a href="https://developer.maranics.com/dev/examples/notifications-sdk/"><strong>Documentation</strong></a> | <a href="https://www.nuget.org/packages/Maranics.Notifications.SDK/"><strong>Nuget Feed</strong></a> | <a href="https://github.com/RemoteCloud/NotificationService"><strong>Git Repository</strong></a></p>
+<hr />
+<h3 id="initialization">Initialization<a class="headerlink" href="#initialization" title="Permanent link">&para;</a></h3>
+<p>You can add notifications functionality in any service via dependency injection.</p>
+<pre><code class="language-csharp">using Maranics.AppStore.SDK;
+
+public IConfiguration Configuration { get; }
+
+public Startup(IConfiguration configuration)
+{
+    Configuration = configuration;
+}
+
+public void ConfigureServices(IServiceCollection services)
+{
+    services.ConfigureAppStore(Configuration);
+    services.AddNotifications(configuration, serviceProvider =&gt;
+    {
+        var tokenProvider = serviceProvider.GetService&lt;IAccessTokenProvider&gt;();
+        return tokenProvider!.GetTokenAsync();
+    });
+}
+
+public void Configure(IApplicationBuilder app)
+{
+    app.UseAppStore();
+}
+</code></pre>
+<p><strong>Note:</strong> <code>AppSettings.json</code> requires the following section for the auto configuration.</p>
+<pre><code class="language-json">&quot;AppStoreSettings&quot;: {
+   &quot;ClientId&quot;: &quot;key&quot;,
+   &quot;ClientSecret&quot;: &quot;secretKey&quot;,
+   &quot;AppStoreUrl&quot;: &quot;url&quot;
+},
+&quot;NotificationServiceEndpoint&quot;: {
+    &quot;BaseUrl&quot;: &quot;notification_service_base_url&quot;,
+    &quot;ApiBasePath&quot;: &quot;/api&quot;,
+    &quot;NotificationsHubPath&quot;: &quot;/hub/notifications&quot;
+}
+</code></pre>
+<h3 id="notification-sending">Notification sending<a class="headerlink" href="#notification-sending" title="Permanent link">&para;</a></h3>
+<p>The example uses a background service to send notification to single recipient each 5 seconds. Injected INotificationsManager instance is used to send, retrieve and mark as read.</p>
+<pre><code class="language-csharp">using Maranics.Notifications.SDK;
+
+namespace Notifications.SDK.Demo
+{
+    public class NotificationSenderService : BackgroundService
+    {
+        private readonly INotificationsManager _notificationsManager;
+        private readonly ILogger&lt;NotificationSenderService&gt; _logger;
+
+        public NotificationSenderService(INotificationsManager notificationsManager, ILogger&lt;NotificationSenderService&gt; logger)
+        {
+            _notificationsManager = notificationsManager;
+            _logger = logger;
+        }
+
+        protected override async Task ExecuteAsync(CancellationToken cancellationToken)
+        {
+            const string tenant = &quot;Development&quot;;
+            Notification notification;
+            int currentMessageIndex = 1;
+            var request = new DispatchNotificationRequest()
+            {
+                Source = new NotificationSource()
+                {
+                    SenderId = Guid.NewGuid().ToString(),
+                    SenderName = Constants.AppName
+                },
+                Content = new NotificationContent()
+                {
+                    Type = NotificationType.Information,
+                },
+                RecipientFilters = new List&lt;NotificationRecipientFilter&gt;()
+                {
+                     new NotificationRecipientFilter(){ Scope = Constants.AppName, LocationId = Guid.NewGuid(), Users = new List&lt;Guid&gt;(){ Guid.NewGuid() } }
+                }
+            };
+
+            while (cancellationToken.IsCancellationRequested == false)
+            {
+                request.Content.Body = $&quot;Message #{currentMessageIndex}&quot;;
+                DispatchNotificationResponse response = await _notificationsManager.DispatchNotificationAsync(tenant, body: request);
+                foreach (var notificationId in response.NotificationIds)
+                {
+                    notification = _notificationsManager.GetNotification(notificationId, tenant);
+                    _logger.LogInformation($&quot;Notification (id: {notification.NotificationId}) sent to user {notification.UserId}.&quot;);
+                }
+                currentMessageIndex++;
+                await Task.Delay(TimeSpan.FromSeconds(5));
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="subscribe-and-receive-notifications">Subscribe and receive notifications<a class="headerlink" href="#subscribe-and-receive-notifications" title="Permanent link">&para;</a></h3>
+<p>The example uses a background service to subscribe and receive notifications in real time. ProcessSubscription and ProcessNewNotification are passed as delegates to NotificationsListener.Subscribe method. Subscriber application name should be provided as well.</p>
+<pre><code class="language-csharp">using Maranics.Notifications.SDK;
+using Maranics.Notifications.SDK.Models;
+using Notifications.SDK.Demo;
+
+public class NotificationListenerService : IHostedService
+{
+    private readonly NotificationsListener _notificationListener;
+    private readonly ILogger&lt;NotificationListenerService&gt; _logger;
+
+    public NotificationListenerService(NotificationsListener notificationListener, ILogger&lt;NotificationListenerService&gt; logger)
+    {
+        _notificationListener = notificationListener;
+        _logger = logger;
+    }
+
+    public async Task StartAsync(CancellationToken cancellationToken)
+    {
+        _logger.LogInformation(&quot;Notification Listener Service is starting.&quot;);
+
+        await _notificationListener.Subscribe(new SubscribeToNotificationsRequest
+        {
+            ApplicationName = Constants.AppName
+        },
+        ProcessNewNotification, ProcessSubscription, cancellationToken);
+
+        _logger.LogInformation(&quot;Notification Listener Service is running.&quot;);
+    }
+
+    public Task StopAsync(CancellationToken cancellationToken)
+    {
+        _logger.LogInformation(&quot;Notification Listener Service is stopping.&quot;);
+
+        return Task.CompletedTask;
+    }
+
+    private Task ProcessNewNotification(ReceiveNotificationMessage notificationMessage)
+    {
+        _logger.LogInformation(@$&quot;New notification received from notification service:
+            Notification Id: {notificationMessage.NotificationId}
+            Notification created on: {notificationMessage.CreatedOn}
+            Notification content: {notificationMessage.Content}&quot;);
+
+        return Task.CompletedTask;
+    }
+
+
+    private Task ProcessSubscription(SubscribeToNotificationsResponse subscription)
+    {
+        if (!string.IsNullOrEmpty(subscription.Result?.ApplicationName))
+        {
+            foreach (var tenant in subscription.Result.TenantNames ?? Enumerable.Empty&lt;string&gt;())
+            {
+                _logger.LogInformation($&quot;Application '{Constants.AppName}':  Tenant {tenant} is connected to listen notifications.&quot;);
+            }
+        }
+        else
+        {
+            _logger.LogWarning($&quot;Application '{Constants.AppName}': Failed to subscribe - {subscription.Error?.Message}&quot;);
+        }
+
+        return Task.CompletedTask;
+    }
+}
+</code></pre>
                 
-                
+                  
                 
               
               
@@ -1511,7 +1772,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../approval/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Approval" rel="prev">
+        <a href="../authentication/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Authentication" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1520,20 +1781,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Approval
+              Authentication
             </div>
           </div>
         </a>
       
       
         
-        <a href="../permissions/" class="md-footer__link md-footer__link--next" aria-label="Next: Permissions" rel="next">
+        <a href="../../api/" class="md-footer__link md-footer__link--next" aria-label="Next: API Documentation" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Permissions
+              API Documentation
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1559,10 +1820,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.indexes", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.indexes", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.b1047164.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
       
     
   </body>
