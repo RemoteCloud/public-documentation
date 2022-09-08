@@ -896,6 +896,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#initialization" class="md-nav__link">
     Initialization
   </a>
@@ -912,6 +919,20 @@
         <li class="md-nav__item">
   <a href="#subscribe-and-receive-notifications" class="md-nav__link">
     Subscribe and receive notifications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vapid-voluntary-application-server-identity-key-retrieval" class="md-nav__link">
+    VAPID (Voluntary Application Server Identity) key retrieval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#push-notification-subscription-registration-and-removal" class="md-nav__link">
+    Push notification subscription registration and removal
   </a>
   
 </li>
@@ -1546,6 +1567,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#initialization" class="md-nav__link">
     Initialization
   </a>
@@ -1562,6 +1590,20 @@
         <li class="md-nav__item">
   <a href="#subscribe-and-receive-notifications" class="md-nav__link">
     Subscribe and receive notifications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vapid-voluntary-application-server-identity-key-retrieval" class="md-nav__link">
+    VAPID (Voluntary Application Server Identity) key retrieval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#push-notification-subscription-registration-and-removal" class="md-nav__link">
+    Push notification subscription registration and removal
   </a>
   
 </li>
@@ -1587,6 +1629,17 @@
 <p>This SDK offers methods to send and receive notifications to/from any application which is registered in App store.</p>
 <p><a href="https://github.com/RemoteCloud/Notifications.SDK.Demo"><strong>Demo</strong></a> | <a href="https://developer.maranics.com/dev/examples/notifications-sdk/"><strong>Documentation</strong></a> | <a href="https://www.nuget.org/packages/Maranics.Notifications.SDK/"><strong>Nuget Feed</strong></a> | <a href="https://github.com/RemoteCloud/NotificationService"><strong>Git Repository</strong></a></p>
 <hr />
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<p>To be able to send and receive notifications following conditions should be implemented:</p>
+<ul>
+<li>Application has to be registered in AppStore and client credentials configured</li>
+<li>Following permissions has to be granted for application in AppStore:</li>
+<li>"Subscribe to receive new notifications and confirm delivery." (notification-service/notifications/subscribe) - to be able to subscribe and receive regular notifications</li>
+<li>"Send new notifications to destination." (notification-service/notifications/send)  - to be able to send notifications</li>
+<li>"View (retrieve) notifications." (notification-service/notifications/view) - to be able to retrieve notifications</li>
+<li>"Change notification status as read." (notification-service/notifications/mark-as-read) - to be able to mark notification as read</li>
+<li>"Manage push notification subscriptions (e.g. register, delete)." (notification-service/push-notification-subscriptions/manage) - to be able to register push notification subscriptions</li>
+</ul>
 <h3 id="initialization">Initialization<a class="headerlink" href="#initialization" title="Permanent link">&para;</a></h3>
 <p>You can add notifications functionality in any service via dependency injection.</p>
 <pre><code class="language-csharp">using Maranics.AppStore.SDK;
@@ -1626,7 +1679,7 @@ public void Configure(IApplicationBuilder app)
 }
 </code></pre>
 <h3 id="notification-sending">Notification sending<a class="headerlink" href="#notification-sending" title="Permanent link">&para;</a></h3>
-<p>The example uses a background service to send notification to single recipient each 5 seconds. Injected INotificationsManager instance is used to send, retrieve and mark as read.</p>
+<p>The example uses a background service to send notification (regular and push notifications) to single recipient each 5 seconds. Injected INotificationsManager instance is used to send, retrieve and mark as read.</p>
 <pre><code class="language-csharp">using Maranics.Notifications.SDK;
 
 namespace Notifications.SDK.Demo
@@ -1745,6 +1798,33 @@ public class NotificationListenerService : IHostedService
         return Task.CompletedTask;
     }
 }
+</code></pre>
+<h3 id="vapid-voluntary-application-server-identity-key-retrieval">VAPID (Voluntary Application Server Identity) key retrieval<a class="headerlink" href="#vapid-voluntary-application-server-identity-key-retrieval" title="Permanent link">&para;</a></h3>
+<p>The example shows how to retrieve VAPID key needed for push notification subscription creation in browser.</p>
+<pre><code class="language-csharp">app.MapGet(&quot;/subscriptions/vapid&quot;, ([FromServices] IPushNotificationSubscriptionsManager pushNotificationSubscriptionsManager) =&gt; { return pushNotificationSubscriptionsManager.GetVapidPublicKey(tenant); });
+</code></pre>
+<h3 id="push-notification-subscription-registration-and-removal">Push notification subscription registration and removal<a class="headerlink" href="#push-notification-subscription-registration-and-removal" title="Permanent link">&para;</a></h3>
+<p>Once push notification subscription is made, it should be registered in Notification service using SDK to be able to send push notification to corresponding users. 
+Push notification subscription registration using IPushNotificationSubscriptionsManager.RegisterPushNotificationSubscription example:</p>
+<pre><code class="language-csharp">app.MapPost(&quot;/subscriptions&quot;, (Subscription subscription, [FromServices] IPushNotificationSubscriptionsManager pushNotificationSubscriptionsManager) =&gt;
+{
+    var pushNotificationSubscription = new PushNotificationSubscription()
+    {
+        Endpoint = subscription.Endpoint,
+        PublicKey = subscription.PublicKey,
+        AuthKey = subscription.AuthKey,
+        ApplicationServerKey = subscription.Vapid,
+        Scope = subscription.AppName,
+        UserId = subscription.UserId
+    };
+    return pushNotificationSubscriptionsManager.RegisterPushNotificationSubscription(tenant, body: pushNotificationSubscription);
+});
+</code></pre>
+<p>Push notification subscription removal (should be called once unsubscribe) using IPushNotificationSubscriptionsManager.RemovePushNotificationSubscription example:</p>
+<pre><code class="language-csharp">app.MapDelete(&quot;subscriptions&quot;, ([FromQuery(Name = &quot;endpoint&quot;)] string endpoint, [FromServices] IPushNotificationSubscriptionsManager pushNotificationSubscriptionsManager) =&gt;
+{
+    pushNotificationSubscriptionsManager.RemovePushNotificationSubscription(endpoint, tenant);
+});
 </code></pre>
                 
                   
