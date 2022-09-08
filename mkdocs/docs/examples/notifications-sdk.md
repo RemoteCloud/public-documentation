@@ -8,6 +8,17 @@ This SDK offers methods to send and receive notifications to/from any applicatio
 
 ---
 
+### Prerequisites 
+To be able to send and receive notifications following conditions should be implemented:
+
+* Application has to be registered in AppStore and client credentials configured
+* Following permissions has to be granted for application in AppStore:
+   * "Subscribe to receive new notifications and confirm delivery." (notification-service/notifications/subscribe) - to be able to subscribe and receive regular notifications
+   * "Send new notifications to destination." (notification-service/notifications/send)  - to be able to send notifications
+   * "View (retrieve) notifications." (notification-service/notifications/view) - to be able to retrieve notifications
+   * "Change notification status as read." (notification-service/notifications/mark-as-read) - to be able to mark notification as read
+   *  "Manage push notification subscriptions (e.g. register, delete)." (notification-service/push-notification-subscriptions/manage) - to be able to register push notification subscriptions
+
 ### Initialization
 You can add notifications functionality in any service via dependency injection.
 
@@ -53,7 +64,7 @@ public void Configure(IApplicationBuilder app)
 ```
 
 ### Notification sending
-The example uses a background service to send notification to single recipient each 5 seconds. Injected INotificationsManager instance is used to send, retrieve and mark as read.
+The example uses a background service to send notification (regular and push notifications) to single recipient each 5 seconds. Injected INotificationsManager instance is used to send, retrieve and mark as read.
 
 ```csharp
 using Maranics.Notifications.SDK;
@@ -177,4 +188,38 @@ public class NotificationListenerService : IHostedService
         return Task.CompletedTask;
     }
 }
+```
+### VAPID (Voluntary Application Server Identity) key retrieval
+The example shows how to retrieve VAPID key needed for push notification subscription creation in browser.
+
+```csharp
+app.MapGet("/subscriptions/vapid", ([FromServices] IPushNotificationSubscriptionsManager pushNotificationSubscriptionsManager) => { return pushNotificationSubscriptionsManager.GetVapidPublicKey(tenant); });
+```
+
+### Push notification subscription registration and removal
+Once push notification subscription is made, it should be registered in Notification service using SDK to be able to send push notification to corresponding users. 
+Push notification subscription registration using IPushNotificationSubscriptionsManager.RegisterPushNotificationSubscription example:
+
+```csharp
+app.MapPost("/subscriptions", (Subscription subscription, [FromServices] IPushNotificationSubscriptionsManager pushNotificationSubscriptionsManager) =>
+{
+    var pushNotificationSubscription = new PushNotificationSubscription()
+    {
+        Endpoint = subscription.Endpoint,
+        PublicKey = subscription.PublicKey,
+        AuthKey = subscription.AuthKey,
+        ApplicationServerKey = subscription.Vapid,
+        Scope = subscription.AppName,
+        UserId = subscription.UserId
+    };
+    return pushNotificationSubscriptionsManager.RegisterPushNotificationSubscription(tenant, body: pushNotificationSubscription);
+});
+```
+
+Push notification subscription removal (should be called once unsubscribe) using IPushNotificationSubscriptionsManager.RemovePushNotificationSubscription example:
+```csharp
+app.MapDelete("subscriptions", ([FromQuery(Name = "endpoint")] string endpoint, [FromServices] IPushNotificationSubscriptionsManager pushNotificationSubscriptionsManager) =>
+{
+    pushNotificationSubscriptionsManager.RemovePushNotificationSubscription(endpoint, tenant);
+});
 ```
