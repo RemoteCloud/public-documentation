@@ -1,6 +1,6 @@
 title: Event Sync Service SDK
 
-# Maranics.EventSyncService.SDK.
+# Maranics.EventSyncService.SDK
 
 Maranics.EventSyncService.SDK is a general purpose Event Sync Service client for .NET. 
 
