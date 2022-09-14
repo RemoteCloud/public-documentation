@@ -20,7 +20,7 @@
     
     
       
-        <title>Maranics.EventSyncService.SDK. - Maranics Developer Documentation</title>
+        <title>Event Sync Service SDK - Maranics Developer Documentation</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Maranics.EventSyncService.SDK.
+              Event Sync Service SDK
             
           </span>
         </div>
@@ -873,12 +873,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Maranics.EventSyncService.SDK.
+          Event Sync Service SDK
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Maranics.EventSyncService.SDK.
+        Event Sync Service SDK
       </a>
       
         
@@ -1692,7 +1692,7 @@
 - Register event handler, if you would like to receive new events from another location.
 - Register status handler, if you would like to receive updates on sent events.
 - It is also possible to connect your logger provider, use extensions method <code>ConfigureLogging</code>.</p>
-<pre><code>var subscriber = new EventSyncConnectionBuilder()
+<pre><code class="language-csharp">var subscriber = new EventSyncConnectionBuilder()
         .WithCredentials(opt =&gt;
         {
             opt.AccessTokenProvider = async () =&gt; await tokenProvider.GetTokenAsync();
@@ -1710,7 +1710,7 @@
 <h2 id="connecting-to-service">Connecting to service<a class="headerlink" href="#connecting-to-service" title="Permanent link">&para;</a></h2>
 <p>In order to send or receive events, subscriber should connect to the service. 
 Simply call <code>Connect()</code> method.</p>
-<pre><code>SubscriptionResult result = await subscriber.Connect();
+<pre><code class="language-csharp">SubscriptionResult result = await subscriber.Connect();
 </code></pre>
 <p><code>Connect()</code> will retrieve name of a connected application and list of connected tenants, if subscription was successful.\
 Otherwise it will throw an <code>ConnectionException</code> exception.</p>
@@ -1728,11 +1728,11 @@ If you would like to send event from edge to cloud, you should provide:
 - event name - name of your event, any arbitrary string. It is best to use it to map events during consumption;
 - target tenant's name - to which tenant event will be sent;
 - <strong>destination id</strong> - specify location id to which you would like to send an event.</p>
-<pre><code>Guid eventId = await subscriber.SendEvent(new { EventName = &quot;EventName&quot; }, &quot;nameOfTheEvent&quot;, &quot;TenantName&quot;, new Guid(&quot;06e853d2-4dbe-442e-b17b-2e4e525acea9&quot;));
+<pre><code class="language-csharp">Guid eventId = await subscriber.SendEvent(new { EventName = &quot;EventName&quot; }, &quot;nameOfTheEvent&quot;, &quot;TenantName&quot;, new Guid(&quot;06e853d2-4dbe-442e-b17b-2e4e525acea9&quot;));
 </code></pre>
 <p>As soon as event was sent, it will have <code>Acknowledged</code> status.
 It is possible to register delegate using:</p>
-<pre><code>public static IEventSyncConnectionBuilder WithEventStatusHandler(this IEventSyncConnectionBuilder? eventSyncConnectionBuilder, Func&lt;EventStatusMessage, Task&gt; statusHandler)
+<pre><code class="language-csharp">public static IEventSyncConnectionBuilder WithEventStatusHandler(this IEventSyncConnectionBuilder? eventSyncConnectionBuilder, Func&lt;EventStatusMessage, Task&gt; statusHandler)
 </code></pre>
 <p>This delegate will be triggered, when event has reached destination and was consumed by subscriber.</p>
 <p><strong>Possible statuses</strong>:
@@ -1745,7 +1745,7 @@ It is possible to register delegate using:</p>
 <h3 id="receiving-events">Receiving events<a class="headerlink" href="#receiving-events" title="Permanent link">&para;</a></h3>
 <p>SDK utilizes <a href="https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?WT.mc_id=dotnet-35129-website&amp;view=aspnetcore-6.0#what-is-signalr">SignalR</a> for the consumption of events.
 It is possible to register a delegate to handle incoming new events:</p>
-<pre><code>public static IEventSyncConnectionBuilder WithEventHandler(this IEventSyncConnectionBuilder? eventSyncConnectionBuilder, Func&lt;EventMessage, Task&gt; newEventHandler, bool autoComplete = true)
+<pre><code class="language-csharp">public static IEventSyncConnectionBuilder WithEventHandler(this IEventSyncConnectionBuilder? eventSyncConnectionBuilder, Func&lt;EventMessage, Task&gt; newEventHandler, bool autoComplete = true)
 </code></pre>
 <p><code>EventMessage</code> class represents an incoming event, it has following properties:
 * EventId - Unique Event Id;
@@ -1760,6 +1760,8 @@ It is possible to register a delegate to handle incoming new events:</p>
 <p>It is possible to post events from both Edge and Cloud instances and to receive from both Edge and Cloud instances.
 Source code of the <a href="https://github.com/RemoteCloud/EventSync.SDK.Demo">demo app contains publishing event from Edge to Cloud</a>.
 Demo uses <a href="https://developer.maranics.com/dev/examples/app-store-sdk/">AppStore SDK</a> to pass an access token provider.</p>
+                
+                  
                 
               
               
