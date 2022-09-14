@@ -1,3 +1,5 @@
+title: Event Sync Service SDK
+
 # Maranics.EventSyncService.SDK.
 
 Maranics.EventSyncService.SDK is a general purpose Event Sync Service client for .NET. 
@@ -36,7 +38,7 @@ In order to create client(subscriber), SDK offers builder:
 - Register status handler, if you would like to receive updates on sent events.
 - It is also possible to connect your logger provider, use extensions method `ConfigureLogging`.
 
-```
+```csharp
 var subscriber = new EventSyncConnectionBuilder()
         .WithCredentials(opt =>
         {
@@ -57,7 +59,7 @@ var subscriber = new EventSyncConnectionBuilder()
 In order to send or receive events, subscriber should connect to the service. 
 Simply call `Connect()` method.
 
-```
+```csharp
 SubscriptionResult result = await subscriber.Connect();
 ```
 `Connect()` will retrieve name of a connected application and list of connected tenants, if subscription was successful.\
@@ -80,13 +82,13 @@ If you would like to send an event from cloud to edge, you should provide:
 - target tenant's name - to which tenant event will be sent;
 - **destination id** - specify location id to which you would like to send an event.
 
-```
+```csharp
 Guid eventId = await subscriber.SendEvent(new { EventName = "EventName" }, "nameOfTheEvent", "TenantName", new Guid("06e853d2-4dbe-442e-b17b-2e4e525acea9"));
 ```
 
 As soon as event was sent, it will have `Acknowledged` status.
 It is possible to register delegate using:
-```
+```csharp
 public static IEventSyncConnectionBuilder WithEventStatusHandler(this IEventSyncConnectionBuilder? eventSyncConnectionBuilder, Func<EventStatusMessage, Task> statusHandler)
 ```
 This delegate will be triggered, when event has reached destination and was consumed by subscriber.
@@ -104,7 +106,7 @@ This delegate will be triggered, when event has reached destination and was cons
 
 SDK utilizes [SignalR](https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?WT.mc_id=dotnet-35129-website&view=aspnetcore-6.0#what-is-signalr) for the consumption of events.
 It is possible to register a delegate to handle incoming new events:
-```
+```csharp
 public static IEventSyncConnectionBuilder WithEventHandler(this IEventSyncConnectionBuilder? eventSyncConnectionBuilder, Func<EventMessage, Task> newEventHandler, bool autoComplete = true)
 ```
 
