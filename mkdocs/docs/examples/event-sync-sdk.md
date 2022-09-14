@@ -102,7 +102,7 @@ This delegate will be triggered, when event has reached destination and was cons
 - `Unknown` - Unknown message id / no status information.
 
 
-### Receiving events
+## Receiving events
 
 SDK utilizes [SignalR](https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?WT.mc_id=dotnet-35129-website&view=aspnetcore-6.0#what-is-signalr) for the consumption of events.
 It is possible to register a delegate to handle incoming new events:
