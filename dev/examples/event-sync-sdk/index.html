@@ -930,18 +930,12 @@
     Sending an event to the destination
   </a>
   
-    <nav class="md-nav" aria-label="Sending an event to the destination">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#receiving-events" class="md-nav__link">
     Receiving events
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1628,18 +1622,12 @@
     Sending an event to the destination
   </a>
   
-    <nav class="md-nav" aria-label="Sending an event to the destination">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#receiving-events" class="md-nav__link">
     Receiving events
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1742,7 +1730,7 @@ It is possible to register delegate using:</p>
 - <code>Finished</code> - message delivery confirmed by the client. All related processes to the event are finished.
 - <code>Subscriber is missing</code> - message was delivered to the destination but no active subscription was present to process the event.
 - <code>Unknown</code> - Unknown message id / no status information.</p>
-<h3 id="receiving-events">Receiving events<a class="headerlink" href="#receiving-events" title="Permanent link">&para;</a></h3>
+<h2 id="receiving-events">Receiving events<a class="headerlink" href="#receiving-events" title="Permanent link">&para;</a></h2>
 <p>SDK utilizes <a href="https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?WT.mc_id=dotnet-35129-website&amp;view=aspnetcore-6.0#what-is-signalr">SignalR</a> for the consumption of events.
 It is possible to register a delegate to handle incoming new events:</p>
 <pre><code class="language-csharp">public static IEventSyncConnectionBuilder WithEventHandler(this IEventSyncConnectionBuilder? eventSyncConnectionBuilder, Func&lt;EventMessage, Task&gt; newEventHandler, bool autoComplete = true)
