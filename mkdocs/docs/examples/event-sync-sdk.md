@@ -4,7 +4,7 @@ title: Event Sync Service SDK
 
 Maranics.EventSyncService.SDK is a general purpose Event Sync Service client for .NET. 
 
-SDK has `netstandard2.1` target.
+SDK has `netstandard 2.1` target.
 
 The client is developed by (and used-by) Maranics.
 
@@ -20,18 +20,20 @@ PM> Install-Package Maranics.EventSyncService.SDK
 ```
 
 ## Prerequisites 
-To be able to send and receive events, following conditions should be in place:
-* If an application is deployed on the Cloud/HQ location, then it should know location destination id(s);
-* An application has to be registered in the AppStore and client credentials should be configured;
+To be able to send and receive events, following conditions have to be in place:
+
+* If an application is deployed on the Cloud/HQ location, then it needs to know location destination id(s);
+* An application has to be registered in the AppStore and client credentials need to be configured;
 * The following permissions has to be granted for an application in the AppStore:
-   * _"event-sync/events/receive"_ - Should allow receive new events and confirm delivery;
-   * _"event-sync/events/send"_ - Should allow send new event to destination;
-   * _"event-sync/events/subscribe"_ - Should allow subscribe to events.
+   * _"event-sync/events/receive"_ - Allow receive new events and confirm delivery;
+   * _"event-sync/events/send"_ - Allow send new event to destination;
+   * _"event-sync/events/subscribe"_ - Allow subscribe to events.
 
 
 ## Initialization
 
 In order to create client(subscriber), SDK offers builder:
+
 - Use `EventSyncConnectionBuilder` to configure subscriber.
 - Specify Event Sync Service base URL, register AccessTokenProvider delegate.
 - Register event handler, if you would like to receive new events from another location.
@@ -62,11 +64,11 @@ Simply call `Connect()` method.
 ```csharp
 SubscriptionResult result = await subscriber.Connect();
 ```
-`Connect()` will retrieve name of a connected application and list of connected tenants, if subscription was successful.\
+`Connect()` will retrieve name of a connected application and list of connected tenants, if subscription was successful.
 Otherwise it will throw an `ConnectionException` exception.
 
 ## Sending an event to the destination
-In order to start working with the Event Sync, to send and listen events, you need to create a subscription first.
+In order to start working with the Event Sync, to send and listen to events, you need to create a subscription first.
 Afterwards you can send a new event so it will be synced to the Cloud/Edge instance, SDK will utilize HTTP protocol to send events. 
 Response will contain id of the posted event.
 
@@ -77,6 +79,7 @@ If you would like to send event from edge to cloud, you should provide:
 - target tenant's name.
 
 If you would like to send an event from cloud to edge, you should provide:
+
 - event object - the event itself you are trying to send to the destination;
 - event name - name of your event, any arbitrary string. It is best to use it to map events during consumption;
 - target tenant's name - to which tenant event will be sent;
@@ -87,6 +90,7 @@ Guid eventId = await subscriber.SendEvent(new { EventName = "EventName" }, "name
 ```
 
 As soon as event was sent, it will have `Acknowledged` status.
+
 It is possible to register delegate using:
 ```csharp
 public static IEventSyncConnectionBuilder WithEventStatusHandler(this IEventSyncConnectionBuilder? eventSyncConnectionBuilder, Func<EventStatusMessage, Task> statusHandler)
@@ -94,6 +98,7 @@ public static IEventSyncConnectionBuilder WithEventStatusHandler(this IEventSync
 This delegate will be triggered, when event has reached destination and was consumed by subscriber.
 
 **Possible statuses**:
+
 - `Acknowledged` - message received by sync engine.
 - `In transit` - message was sent to the destination but not yet delivered.
 - `Delivered` - destination accepted an event.
@@ -105,12 +110,14 @@ This delegate will be triggered, when event has reached destination and was cons
 ## Receiving events
 
 SDK utilizes [SignalR](https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?WT.mc_id=dotnet-35129-website&view=aspnetcore-6.0#what-is-signalr) for the consumption of events.
+
 It is possible to register a delegate to handle incoming new events:
 ```csharp
 public static IEventSyncConnectionBuilder WithEventHandler(this IEventSyncConnectionBuilder? eventSyncConnectionBuilder, Func<EventMessage, Task> newEventHandler, bool autoComplete = true)
 ```
 
 `EventMessage` class represents an incoming event, it has following properties:
+
 * EventId - Unique Event Id;
 * EventContent - Serialized event body;
 * EventName - Event name;
