@@ -1655,9 +1655,9 @@
                   </a>
                 
                 
-                <h1 id="maranicseventsyncservicesdk">Maranics.EventSyncService.SDK.<a class="headerlink" href="#maranicseventsyncservicesdk" title="Permanent link">&para;</a></h1>
+                <h1 id="maranicseventsyncservicesdk">Maranics.EventSyncService.SDK<a class="headerlink" href="#maranicseventsyncservicesdk" title="Permanent link">&para;</a></h1>
 <p>Maranics.EventSyncService.SDK is a general purpose Event Sync Service client for .NET. </p>
-<p>SDK has <code>netstandard2.1</code> target.</p>
+<p>SDK has <code>netstandard 2.1</code> target.</p>
 <p>The client is developed by (and used-by) Maranics.</p>
 <p>This SDK offers methods to send and receive events from edge/cloud to cloud/edge instances.</p>
 <p><a href="https://github.com/RemoteCloud/EventSync.SDK.Demo"><strong>Demo</strong></a> | <a href="https://developer.maranics.com/dev/examples/event-sync-sdk/"><strong>Documentation</strong></a> | <a href="https://www.nuget.org/packages/Maranics.EventSyncService.SDK/"><strong>Nuget Feed</strong></a> | <a href="https://github.com/RemoteCloud/EventSyncApp"><strong>Git Repository</strong></a></p>
@@ -1666,20 +1666,24 @@
 <pre><code>PM&gt; Install-Package Maranics.EventSyncService.SDK
 </code></pre>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>To be able to send and receive events, following conditions should be in place:
-* If an application is deployed on the Cloud/HQ location, then it should know location destination id(s);
-* An application has to be registered in the AppStore and client credentials should be configured;
-* The following permissions has to be granted for an application in the AppStore:
-   * <em>"event-sync/events/receive"</em> - Should allow receive new events and confirm delivery;
-   * <em>"event-sync/events/send"</em> - Should allow send new event to destination;
-   * <em>"event-sync/events/subscribe"</em> - Should allow subscribe to events.</p>
+<p>To be able to send and receive events, following conditions have to be in place:</p>
+<ul>
+<li>If an application is deployed on the Cloud/HQ location, then it needs to know location destination id(s);</li>
+<li>An application has to be registered in the AppStore and client credentials need to be configured;</li>
+<li>The following permissions has to be granted for an application in the AppStore:</li>
+<li><em>"event-sync/events/receive"</em> - Allow receive new events and confirm delivery;</li>
+<li><em>"event-sync/events/send"</em> - Allow send new event to destination;</li>
+<li><em>"event-sync/events/subscribe"</em> - Allow subscribe to events.</li>
+</ul>
 <h2 id="initialization">Initialization<a class="headerlink" href="#initialization" title="Permanent link">&para;</a></h2>
-<p>In order to create client(subscriber), SDK offers builder:
-- Use <code>EventSyncConnectionBuilder</code> to configure subscriber.
-- Specify Event Sync Service base URL, register AccessTokenProvider delegate.
-- Register event handler, if you would like to receive new events from another location.
-- Register status handler, if you would like to receive updates on sent events.
-- It is also possible to connect your logger provider, use extensions method <code>ConfigureLogging</code>.</p>
+<p>In order to create client(subscriber), SDK offers builder:</p>
+<ul>
+<li>Use <code>EventSyncConnectionBuilder</code> to configure subscriber.</li>
+<li>Specify Event Sync Service base URL, register AccessTokenProvider delegate.</li>
+<li>Register event handler, if you would like to receive new events from another location.</li>
+<li>Register status handler, if you would like to receive updates on sent events.</li>
+<li>It is also possible to connect your logger provider, use extensions method <code>ConfigureLogging</code>.</li>
+</ul>
 <pre><code class="language-csharp">var subscriber = new EventSyncConnectionBuilder()
         .WithCredentials(opt =&gt;
         {
@@ -1700,10 +1704,10 @@
 Simply call <code>Connect()</code> method.</p>
 <pre><code class="language-csharp">SubscriptionResult result = await subscriber.Connect();
 </code></pre>
-<p><code>Connect()</code> will retrieve name of a connected application and list of connected tenants, if subscription was successful.\
+<p><code>Connect()</code> will retrieve name of a connected application and list of connected tenants, if subscription was successful.
 Otherwise it will throw an <code>ConnectionException</code> exception.</p>
 <h2 id="sending-an-event-to-the-destination">Sending an event to the destination<a class="headerlink" href="#sending-an-event-to-the-destination" title="Permanent link">&para;</a></h2>
-<p>In order to start working with the Event Sync, to send and listen events, you need to create a subscription first.
+<p>In order to start working with the Event Sync, to send and listen to events, you need to create a subscription first.
 Afterwards you can send a new event so it will be synced to the Cloud/Edge instance, SDK will utilize HTTP protocol to send events. 
 Response will contain id of the posted event.</p>
 <p>Use the <code>subscriber</code> instance to send events to destination.
@@ -1711,39 +1715,45 @@ If you would like to send event from edge to cloud, you should provide:
 - event object;
 - event name;
 - target tenant's name.</p>
-<p>If you would like to send an event from cloud to edge, you should provide:
-- event object - the event itself you are trying to send to the destination;
-- event name - name of your event, any arbitrary string. It is best to use it to map events during consumption;
-- target tenant's name - to which tenant event will be sent;
-- <strong>destination id</strong> - specify location id to which you would like to send an event.</p>
+<p>If you would like to send an event from cloud to edge, you should provide:</p>
+<ul>
+<li>event object - the event itself you are trying to send to the destination;</li>
+<li>event name - name of your event, any arbitrary string. It is best to use it to map events during consumption;</li>
+<li>target tenant's name - to which tenant event will be sent;</li>
+<li><strong>destination id</strong> - specify location id to which you would like to send an event.</li>
+</ul>
 <pre><code class="language-csharp">Guid eventId = await subscriber.SendEvent(new { EventName = &quot;EventName&quot; }, &quot;nameOfTheEvent&quot;, &quot;TenantName&quot;, new Guid(&quot;06e853d2-4dbe-442e-b17b-2e4e525acea9&quot;));
 </code></pre>
-<p>As soon as event was sent, it will have <code>Acknowledged</code> status.
-It is possible to register delegate using:</p>
+<p>As soon as event was sent, it will have <code>Acknowledged</code> status.</p>
+<p>It is possible to register delegate using:</p>
 <pre><code class="language-csharp">public static IEventSyncConnectionBuilder WithEventStatusHandler(this IEventSyncConnectionBuilder? eventSyncConnectionBuilder, Func&lt;EventStatusMessage, Task&gt; statusHandler)
 </code></pre>
 <p>This delegate will be triggered, when event has reached destination and was consumed by subscriber.</p>
-<p><strong>Possible statuses</strong>:
-- <code>Acknowledged</code> - message received by sync engine.
-- <code>In transit</code> - message was sent to the destination but not yet delivered.
-- <code>Delivered</code> - destination accepted an event.
-- <code>Finished</code> - message delivery confirmed by the client. All related processes to the event are finished.
-- <code>Subscriber is missing</code> - message was delivered to the destination but no active subscription was present to process the event.
-- <code>Unknown</code> - Unknown message id / no status information.</p>
+<p><strong>Possible statuses</strong>:</p>
+<ul>
+<li><code>Acknowledged</code> - message received by sync engine.</li>
+<li><code>In transit</code> - message was sent to the destination but not yet delivered.</li>
+<li><code>Delivered</code> - destination accepted an event.</li>
+<li><code>Finished</code> - message delivery confirmed by the client. All related processes to the event are finished.</li>
+<li><code>Subscriber is missing</code> - message was delivered to the destination but no active subscription was present to process the event.</li>
+<li><code>Unknown</code> - Unknown message id / no status information.</li>
+</ul>
 <h2 id="receiving-events">Receiving events<a class="headerlink" href="#receiving-events" title="Permanent link">&para;</a></h2>
-<p>SDK utilizes <a href="https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?WT.mc_id=dotnet-35129-website&amp;view=aspnetcore-6.0#what-is-signalr">SignalR</a> for the consumption of events.
-It is possible to register a delegate to handle incoming new events:</p>
+<p>SDK utilizes <a href="https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?WT.mc_id=dotnet-35129-website&amp;view=aspnetcore-6.0#what-is-signalr">SignalR</a> for the consumption of events.</p>
+<p>It is possible to register a delegate to handle incoming new events:</p>
 <pre><code class="language-csharp">public static IEventSyncConnectionBuilder WithEventHandler(this IEventSyncConnectionBuilder? eventSyncConnectionBuilder, Func&lt;EventMessage, Task&gt; newEventHandler, bool autoComplete = true)
 </code></pre>
-<p><code>EventMessage</code> class represents an incoming event, it has following properties:
-* EventId - Unique Event Id;
-* EventContent - Serialized event body;
-* EventName - Event name;
-* CreatedOn - Date of when an event was created on a destination location;
-* RegisteredOn - Date of when an event was registed on a source location;
-* IsEventFromEdge - Represents whether event is from edge. If <code>false</code> then from Cloud/HQ;
-* SourceLocationId - Source location id. If <code>null</code> then source is Cloud/HQ;
-* TenantName - Tenant name to which belongs event.</p>
+<p><code>EventMessage</code> class represents an incoming event, it has following properties:</p>
+<ul>
+<li>EventId - Unique Event Id;</li>
+<li>EventContent - Serialized event body;</li>
+<li>EventName - Event name;</li>
+<li>CreatedOn - Date of when an event was created on a destination location;</li>
+<li>RegisteredOn - Date of when an event was registed on a source location;</li>
+<li>IsEventFromEdge - Represents whether event is from edge. If <code>false</code> then from Cloud/HQ;</li>
+<li>SourceLocationId - Source location id. If <code>null</code> then source is Cloud/HQ;</li>
+<li>TenantName - Tenant name to which belongs event.</li>
+</ul>
 <h2 id="demo">Demo<a class="headerlink" href="#demo" title="Permanent link">&para;</a></h2>
 <p>It is possible to post events from both Edge and Cloud instances and to receive from both Edge and Cloud instances.
 Source code of the <a href="https://github.com/RemoteCloud/EventSync.SDK.Demo">demo app contains publishing event from Edge to Cloud</a>.
