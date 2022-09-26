@@ -1,5 +1,9 @@
 title: User Management
 
+## v2.1.21
+
+- Switch to new .NET SDK
+
 
 ## v2.1.19
 - Websocket improvements
