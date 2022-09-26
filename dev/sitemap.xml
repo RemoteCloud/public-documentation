@@ -2,232 +2,232 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://development.maranics.com/dev/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/about/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/api/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/examples/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/examples/app-store-sdk/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/examples/authentication/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/examples/event-sync-sdk/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/examples/notifications-sdk/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/authorization/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/flow/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/multitenancy/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/syncronization/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/versioning/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/documentation/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/documentation/permissions/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/documentation/validation/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/templates/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/templates/approval/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/templates/message-bus/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/templates/permissions/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/templates/synchronization/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/templates/webhooks/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/user-management/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/user-management/locations/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/user-management/permissions/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/user-management/position/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/general-information/user-management/user/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/bundle/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/apps/automation/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/apps/barrier-model/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/apps/documentation/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/apps/flow/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/apps/launcher/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/apps/portal/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/apps/template/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/apps/user-management/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/services/api-gateway/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/services/app-store/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/services/data-register/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/services/monitoring/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/services/notifications/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/services/pdf-generator/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/services/remote-execution/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://development.maranics.com/dev/release-notes/services/sync/</loc>
-         <lastmod>2022-09-15</lastmod>
+         <lastmod>2022-09-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
