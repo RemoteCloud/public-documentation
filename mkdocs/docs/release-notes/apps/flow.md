@@ -1,3 +1,7 @@
+## v2.8.8
+
+- Bugfixes and stability improvements
+
 ## v2.8.5
 
 **Major feature: Low connectivity support**
@@ -55,8 +59,6 @@
 - [Very high] Implemented the asynchronous mode that allows users to work in in conditions of poor internet signal.
 - [Very high] Added indicators to show task upload process to improve usability.
 
-
-
 ## v2.6.7
 
 **Bug-fixes and improvements:**
@@ -94,13 +96,12 @@ Bug-fixes and improvements:
 - [medium] When switching between sections, user will always see the first item in the section
 - [medium] It is now possible to select current date and time for date and time controls on the Android phones
 - [medium] Improved long text control diplay in the flow view
-- [low] Fixed item scrolling in sections 
+- [low] Fixed item scrolling in sections
 
 Features:
-- [very high] Date and time control was built into the layout and now is more responsive
 
+- [very high] Date and time control was built into the layout and now is more responsive
 
 ## v2.6.1
 
 - ...
-

@@ -1,6 +1,13 @@
 title: App Store
 
+## v1.1.1
+
+- Added notification service
+- Added data sync app
+- Bugfixes
+
 ## v1.1.0
+
 **Breaking DB changes**
 
 - Permission scope support
