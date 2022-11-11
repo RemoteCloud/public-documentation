@@ -1,4 +1,4 @@
-## v2.
+## Latest
 - Improved Metadata options in Template settings
 - Moved app related setting from User managment to appropriate app
 
