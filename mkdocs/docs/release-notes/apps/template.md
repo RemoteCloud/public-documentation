@@ -1,5 +1,6 @@
 ## v2.
 - Improved Metadata options in Template settings
+- Moved app related setting from User managment to appropriate app
 
 ## v2.8.5
 - Option to toggle override reasons when swiping left
