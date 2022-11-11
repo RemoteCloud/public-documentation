@@ -1,3 +1,6 @@
+## v2.
+- Improved Metadata options in Template settings
+
 ## v2.8.5
 - Option to toggle override reasons when swiping left
 - AppStore SDK update
