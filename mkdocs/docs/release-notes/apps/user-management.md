@@ -1,5 +1,9 @@
 title: User Management
 
+## v2.
+
+- Improved permissions 
+
 ## v2.1.21
 
 - Switch to new .NET SDK
