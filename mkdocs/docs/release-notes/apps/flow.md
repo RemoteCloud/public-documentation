@@ -1,3 +1,6 @@
+## v2.
+- Moved app related setting from User managment to appropriate app
+
 ## v2.8.8
 
 - Bugfixes and stability improvements
