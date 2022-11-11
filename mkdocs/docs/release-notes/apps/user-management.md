@@ -1,6 +1,6 @@
 title: User Management
 
-## v2.
+## Latest
 
 - Improved permissions 
 
