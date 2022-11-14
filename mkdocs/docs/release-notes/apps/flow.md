@@ -1,5 +1,6 @@
 ## Latest
 - Moved app related setting from User managment to appropriate app
+- Added System list item to Form task
 
 ## v2.8.8
 
