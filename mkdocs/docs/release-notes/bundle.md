@@ -9,15 +9,15 @@ clear/drop secrets collection in automation app database before deployment
 
 | Application     | Type    |                          Version |
 | :-------------- | :------ | -------------------------------: |
-| User Management | App     |      [v2.2.2][user-mgm-v2.2.2] |
+| User Management | App     |        [v2.2.2][user-mgm-v2.2.2] |
 | Launcher        | App     |        [v1.2.1][launcher-v1.2.1] |
 | Flow            | App     |             [v2.9.2][flow-2.9.2] |
 | Template        | App     |         [v2.9.2][template-2.9.2] |
-| Documentation   | App     |           [v3.1.1][doc-v3.1.1] |
+| Documentation   | App     |             [v3.1.1][doc-v3.1.1] | 
 | Portal          | App     |          [v2.2.1][portal-v2.2.1] |
 | Barrier Model   | App     | [v2.1.10][barrier-model-v2.1.10] |
 | Automation      | App     |      [v1.1.8][automation-v1.1.8] |
-| App Store       | Service |       [v1.4][app-store-v1.1.4] |
+| App Store       | Service |         [v1.4][app-store-v1.1.4] |
 | API Gateway     | Service |     [v1.0.3][api-gateway-v1.0.3] |
 | Data Register   | Service |   [v2.1.1][data-register-v2.1.1] |
 | Monitoring      | Service |         [v1.0.3][monitor-v1.0.3] |
@@ -26,7 +26,7 @@ clear/drop secrets collection in automation app database before deployment
 | RemoteExecution | Service |     [v2.1.4][remote-exec-v2.1.4] |
 | Sync            | Service |            [v1.2.4][sync-v1.2.4] |
 
-[user-mgm-v2.1.24]: ./apps/user-management.md#v222
+[user-mgm-v2.2.2]: ./apps/user-management.md#v222
 [launcher-v1.2.1]: ./apps/launcher.md#v121
 [flow-2.9.2]: ./apps/flow.md#v292
 [template-2.9.2]: ./apps/template.md#v292
