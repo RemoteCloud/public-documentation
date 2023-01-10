@@ -1,3 +1,6 @@
+## v1.2.1
+- Updated mail library
+
 ## v1.2.0
 - Removed: User invite option 
 - AppStore SDK update

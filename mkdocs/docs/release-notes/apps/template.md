@@ -1,8 +1,9 @@
-## Latest
+## v2.9.2
 - Improved Metadata options in Template settings
 - Moved app related setting from User managment to appropriate app
 - Added System list and Rich text item to Form task
 - Fixed template Export data function
+- Improved permissions
 
 ## v2.8.5
 - Option to toggle override reasons when swiping left

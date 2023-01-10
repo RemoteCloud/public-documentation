@@ -1,6 +1,8 @@
-## Latest
+## v2.9.2
+- Improved permissions
 - Moved app related setting from User managment to appropriate app
 - Added System list and Rich text item to Form task
+- CreatedBy and LastEditedBy fields
 - Bugfixes and stability improvements
 
 ## v2.8.8

@@ -2,6 +2,47 @@ title: Deployment Bundles
 
 Deployment bundles represent a collection of all applications with a specific version. The specific app versions in a bundle are validated to play nice together. A bundle does not represent a complete list of applications that are deployed. Depending on the customer and use case only a subset of applications might be deployed. However when adding additional applications to a deployment they will use the version specified in the deployed bundle version.
 
+## V1.1.1
+
+**Note**:
+clear/drop secrets collection in automation app database before deployment
+
+| Application     | Type    |                          Version |
+| :-------------- | :------ | -------------------------------: |
+| User Management | App     |      [v2.2.2][user-mgm-v2.2.2] |
+| Launcher        | App     |        [v1.2.1][launcher-v1.2.1] |
+| Flow            | App     |             [v2.9.2][flow-2.9.2] |
+| Template        | App     |         [v2.9.2][template-2.9.2] |
+| Documentation   | App     |           [v3.1.1][doc-v3.1.1] |
+| Portal          | App     |          [v2.2.1][portal-v2.2.1] |
+| Barrier Model   | App     | [v2.1.10][barrier-model-v2.1.10] |
+| Automation      | App     |      [v1.1.8][automation-v1.1.8] |
+| App Store       | Service |       [v1.4][app-store-v1.1.4] |
+| API Gateway     | Service |     [v1.0.3][api-gateway-v1.0.3] |
+| Data Register   | Service |   [v2.1.1][data-register-v2.1.1] |
+| Monitoring      | Service |         [v1.0.3][monitor-v1.0.3] |
+| Notifications   | Service |    [v2.1.1][notifications-2.1.1] |
+| PDF Generator   | Service |    [v2.2.2][pdf-generator-2.2.2] |
+| RemoteExecution | Service |     [v2.1.4][remote-exec-v2.1.4] |
+| Sync            | Service |            [v1.2.4][sync-v1.2.4] |
+
+[user-mgm-v2.1.24]: ./apps/user-management.md#v222
+[launcher-v1.2.1]: ./apps/launcher.md#v121
+[flow-2.9.2]: ./apps/flow.md#v292
+[template-2.9.2]: ./apps/template.md#v292
+[doc-v3.1.1]: ./apps/documentation.md#v311
+[portal-v2.2.1]: ./apps/portal.md#v221
+[barrier-model-v2.1.10]: ./apps/barrier-model.md#v2110
+[automation-v1.1.8]: ./apps/automation.md#v118
+[app-store-v1.1.4]: ./services/app-store.md#v114
+[api-gateway-v1.0.3]: ./services/api-gateway.md#v103
+[data-register-v2.1.1]: ./services/data-register.md#v211
+[monitor-v1.0.3]: ./services/monitoring.md#v103
+[notifications-2.1.1]: ./services/notifications.md#v211
+[pdf-generator-2.2.2]: ./services/pdf-generator.md#v222
+[remote-exec-v2.1.4]: ./services/remote-execution.md#v214
+[sync-v1.2.4]: ./services/sync.md#v124
+
 ## V1.0.12
 
 **Note**:

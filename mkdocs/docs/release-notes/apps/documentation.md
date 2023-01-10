@@ -1,3 +1,7 @@
+## v3.1.1
+- Improved permissions
+- Bugfixes and stability improvements
+
 ## v3.0.10
 - AppStore SDK update
 

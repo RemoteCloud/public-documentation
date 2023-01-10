@@ -1,5 +1,10 @@
 title: App Store
 
+## v1.1.4
+- Improved permissions
+- Fixed issue with adding new tenant
+- Stability improvements
+
 ## v1.1.1
 
 - Added notification service

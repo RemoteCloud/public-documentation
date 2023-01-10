@@ -1,3 +1,6 @@
+## v1.2.4
+- Imporoved connectivity
+
 ## v1.2.2
 
 - [low] Automatic bug reporting endpoint changed

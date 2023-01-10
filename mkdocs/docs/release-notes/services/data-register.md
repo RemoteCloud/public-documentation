@@ -1,5 +1,9 @@
 title: Data Register
 
+## v2.1.1
+- Improved Permissions
+
+
 ## v2.0.3
 - AppStore SDK update
 

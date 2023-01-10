@@ -1,3 +1,8 @@
+## v2.2.1
+- Improved permissions
+- Updated libraries
+
+
 ## v2.1.4
 - External library updates
 - AppStore SDK update
