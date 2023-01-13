@@ -1,5 +1,8 @@
 title: User Management
 
+## v2.2.3
+- Bugfixes
+
 ## v2.2.2
 - Improved permissions 
 - API token expiration issue fix
