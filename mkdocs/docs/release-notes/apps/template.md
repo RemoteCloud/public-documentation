@@ -1,3 +1,9 @@
+## v2.9.4
+- Various bug fixes
+- UI improvements
+- Define section order in API
+- Added metrics
+
 ## v2.9.2
 - Improved Metadata options in Template settings
 - Moved app related setting from User managment to appropriate app

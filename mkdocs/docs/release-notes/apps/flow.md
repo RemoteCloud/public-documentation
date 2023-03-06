@@ -1,3 +1,10 @@
+## v2.9.4
+- Various bug fixes
+- UI improvements
+- Start application when offline (fix)
+- Confirm API populated items via swipe gesture
+- Added metrics
+
 ## v2.9.2
 - Improved permissions
 - Moved app related setting from User managment to appropriate app

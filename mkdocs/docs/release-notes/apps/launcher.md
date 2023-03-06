@@ -1,3 +1,6 @@
+## v1.2.4
+- Small bug fixes
+
 ## v1.2.1
 - Updated mail library
 

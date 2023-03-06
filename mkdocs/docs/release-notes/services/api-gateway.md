@@ -1,5 +1,8 @@
 title: API Gateway
 
+## v1.0.4
+- Fix validation issue
+
 ## v1.0.3
 - AppStore SDK update
 

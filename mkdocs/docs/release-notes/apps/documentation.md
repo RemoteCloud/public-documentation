@@ -1,3 +1,8 @@
+## v3.1.3
+- Speed improvements
+- Various bug fixes
+- Add metrics endpoint
+
 ## v3.1.1
 - Improved permissions
 - Bugfixes and stability improvements

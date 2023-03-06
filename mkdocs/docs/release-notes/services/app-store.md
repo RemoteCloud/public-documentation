@@ -1,5 +1,11 @@
 title: App Store
 
+## v1.1.6
+- New metrics endpoint
+- Additional notification service scopes
+- Support of new roles for template app
+- Lib updates
+
 ## v1.1.4
 - Improved permissions
 - Fixed issue with adding new tenant

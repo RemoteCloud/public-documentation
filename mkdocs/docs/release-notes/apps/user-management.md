@@ -1,5 +1,14 @@
 title: User Management
 
+## v2.2.6
+- Multi factor authentication support for super users
+- Various security improvements
+- Small bugfixes
+- Force login via dedicated authentication provider
+- User invitation option
+- Remove sysadmin account
+- Add metrics endpoint
+
 ## v2.2.3
 - Bugfixes
 

@@ -1,5 +1,12 @@
 title: Automation (Elsa)
 
+## v1.1.15
+- Stability improvements
+- Various bug fixes
+- Small UI improvements
+- Metrics endpoint
+- URL placeholder for tenant name
+
 ## v1.1.8
 
 - New Workflow Designer UI
