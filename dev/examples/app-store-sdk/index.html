@@ -884,8 +884,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-allowed-tenants-list" class="md-nav__link">
-    Get allowed tenants list
+  <a href="#tenant-provider" class="md-nav__link">
+    Tenant provider
+  </a>
+  
+    <nav class="md-nav" aria-label="Tenant provider">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tenant-provider-interface" class="md-nav__link">
+    Tenant provider interface
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notifications" class="md-nav__link">
+    Notifications
   </a>
   
 </li>
@@ -1608,8 +1628,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-allowed-tenants-list" class="md-nav__link">
-    Get allowed tenants list
+  <a href="#tenant-provider" class="md-nav__link">
+    Tenant provider
+  </a>
+  
+    <nav class="md-nav" aria-label="Tenant provider">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tenant-provider-interface" class="md-nav__link">
+    Tenant provider interface
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notifications" class="md-nav__link">
+    Notifications
   </a>
   
 </li>
@@ -1699,28 +1739,96 @@ public void OnAuthorization(AuthorizationFilterContext context)
   &quot;Permissions&quot;: [ &quot;GUID&quot;, &quot;GUID&quot; ],
 }
 </code></pre>
-<h3 id="get-allowed-tenants-list">Get allowed tenants list<a class="headerlink" href="#get-allowed-tenants-list" title="Permanent link">&para;</a></h3>
+<p>Tenant validation also can be included here. To include tenant validation add this lines to code above</p>
+<pre><code class="language-csharp">using Maranics.AppStore.SDK.Interfaces;
+</code></pre>
+<pre><code class="language-csharp">var tenantProvider = context.HttpContext.RequestServices.GetService(typeof(ITenantProvider)) as ITenantProvider
+</code></pre>
+<pre><code class="language-csharp">bool isTenantEnabled = AsyncHelper.RunSync(() =&gt; tenantProvider.IsTenantEnabledAsync(tenant));
+if (!isTenantEnabled)
+{
+    ... 
+}
+</code></pre>
+<h3 id="tenant-provider">Tenant provider<a class="headerlink" href="#tenant-provider" title="Permanent link">&para;</a></h3>
 <p>As an example we use a service that is added to the DI container at startup. </p>
+<h4 id="tenant-provider-interface">Tenant provider interface<a class="headerlink" href="#tenant-provider-interface" title="Permanent link">&para;</a></h4>
+<p>Tenant provider is singleton class that stored in DI container by calling ConfigureAppStore() method.</p>
+<p><code>GetAvailableTenantsAsync()</code> - If tenants have not been loaded before, it loads the tenants into the provider, then returns the loaded list. If the tenants were loaded earlier, it returns the list contained in the provider.</p>
+<p><code>ReloadAvailableTenantsAsync()</code> - Updates the list of tenants stored in the provider.</p>
+<p><code>IsTenantEnabledAsync(string tenant)</code> - Checks the availability of the tenant. If the list of tenants has not been loaded before, it loads the list.</p>
 <pre><code class="language-csharp">using Maranics.AppStore.SDK.Models;
-using Maranics.AppStore.SDK.Services;
+using Maranics.AppStore.SDK.Interfaces;
 
 public class MyCustomService : IMyCustomService
 {
-    private IConnectivityService _service;
-    private AccessTokenData _tokenData;
+    private ITenantProvider _provider;
 
-    public MyCustomService(IConnectivityService service, AccessTokenData tokenData)
+    public MyCustomService(ITenantProvider provider)
     {
-        _service = service;
-    _tokenData = tokenData;
+        _provider = provider;
     }
 
-    public async Task&lt;List&lt;TenantAccess&gt;&gt; GetAllowedTenantList()
+    public async Task&lt;List&lt;TenantAccess&gt;&gt; GetTenantsAsync()
     {
-        var response = await _service.GetAllowedTenants(_tokenData.Token);
-    if (response != null &amp;&amp; response.HasError == false)
-            return response.Data;
-        return new List&lt;TenantAccess&gt;();
+        List&lt;AvailableTenant&gt; tenants = await _provider.GetAvailableTenantsAsync();
+        return tenants;
+    }
+
+    public async Task&lt;bool&gt; IsTenantEnabledAsync(string tenant)
+    {
+        return await _provider.IsTenantEnabledAsync(tenant);
+    }
+
+    public async Task UpdateTenantsListAsync()
+    {
+        await _provider.ReloadAvailableTenantsAsync();
+    }
+}
+</code></pre>
+<h3 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permanent link">&para;</a></h3>
+<p>AppStore has the ability to send notifications to applications registered in it. 
+The notification system includes retries logic in case of failure, as well as calling the methods of the SDK corresponding to the received notification - contains built-in acknowledgement logic (e.g If application get "tenants" notification and then process it by calling TenantProvider.ReloadAvailableTenantsAsync() notification will be acknowledged. If notification not acknowledged - AppStore will retry sending every hour).</p>
+<p>To receive notifications your application url (e.g exampleApplicationDomain.com/) must be stored in AppStore</p>
+<p>As an example we use a controller which fully complies with the requirements for receiving notifications.</p>
+<pre><code class="language-csharp">using Maranics.AppStore.SDK.Enums;
+using Maranics.AppStore.SDK.Interfaces;
+
+namespace Example
+{
+    [Route(&quot;appStore/notifications&quot;)]
+    public class AppStoreNotificationController
+    {
+        private readonly ITenantProvider _tenantsProvider;
+
+        public AppStoreNotificationController(ITenantProvider tenantsProvider)
+        {
+            _tenantsProvider = tenantsProvider;
+        }
+
+        [HttpGet()]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task&lt;IActionResult&gt; NotificationTrigger([FromQuery][Required] NotificationType type)
+        {
+            switch (type)
+            {
+                case NotificationType.Cors:
+                    break;
+                case NotificationType.Tenants:
+                    await _tenantsProvider.ReloadAvailableTenantsAsync();
+                    break;
+                case NotificationType.Restart:
+                    await _tenantsProvider.ReloadAvailableTenantsAsync();
+                    break;
+                case NotificationType.NewApplication:
+                    break;
+                default:
+                    return BadRequest(&quot;Unknown notification type&quot;);
+            }
+
+            return NoContent();
+        }
     }
 }
 </code></pre>
