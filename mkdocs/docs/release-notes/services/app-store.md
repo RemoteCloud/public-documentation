@@ -1,5 +1,8 @@
 title: App Store
 
+## v1.1.7
+- Improvements in tenant setup
+
 ## v1.1.6
 - New metrics endpoint
 - Additional notification service scopes

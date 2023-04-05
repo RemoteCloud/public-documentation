@@ -1,3 +1,12 @@
+## v2.9.5
+
+- Event trigger fix
+- Prevent picture access for unauthenticated users
+- Fix draft flow creation
+- Support horizontal scaling
+- Update libraries
+- Bugfixes
+
 ## v2.9.4
 - Various bug fixes
 - UI improvements

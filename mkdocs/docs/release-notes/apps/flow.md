@@ -1,3 +1,14 @@
+## v2.9.5
+
+- **Start new flows when offline**
+- **New control: Quick select control**
+- Event trigger fix
+- Resolved UI issues
+- Prevent picture access for unauthenticated users
+- Support horizontal scaling
+- Update libraries
+- Bugfixes
+
 ## v2.9.4
 - Various bug fixes
 - UI improvements

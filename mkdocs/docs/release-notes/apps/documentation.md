@@ -1,3 +1,7 @@
+## v3.1.4
+- Bugfixes
+- Library updates
+
 ## v3.1.3
 - Speed improvements
 - Various bug fixes

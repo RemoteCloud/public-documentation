@@ -1,5 +1,9 @@
 title: Automation (Elsa)
 
+## v1.1.18
+- Subscribe to multiple topics in event hub
+- Bugfixes
+
 ## v1.1.15
 - Stability improvements
 - Various bug fixes

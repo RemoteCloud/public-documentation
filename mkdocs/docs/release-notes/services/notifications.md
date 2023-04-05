@@ -1,3 +1,6 @@
+## v2.2.1
+- Delivery improvements and SDK update
+
 ## v2.2.0
 - Send notification to position
 - Allow to subscribe to multiple notifications

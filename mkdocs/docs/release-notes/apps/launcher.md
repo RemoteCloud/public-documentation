@@ -1,3 +1,7 @@
+## v1.2.5
+- Small fixes
+- Library updates
+
 ## v1.2.4
 - Small bug fixes
 

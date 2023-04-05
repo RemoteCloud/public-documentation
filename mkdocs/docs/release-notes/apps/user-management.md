@@ -1,5 +1,11 @@
 title: User Management
 
+## v2.2.7
+- Fix phone number validation
+- Fix invitation process
+- Improved sync
+- Improved notification logic
+
 ## v2.2.6
 - Multi factor authentication support for super users
 - Various security improvements
