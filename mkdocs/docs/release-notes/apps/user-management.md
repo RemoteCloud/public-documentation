@@ -1,5 +1,11 @@
 title: User Management
 
+## v2.3.0
+- New authentication schema (OpenId)
+- Secure upload folder
+- Initial seed by event- and file-sync
+- Bugfixes
+
 ## v2.2.7
 - Fix phone number validation
 - Fix invitation process

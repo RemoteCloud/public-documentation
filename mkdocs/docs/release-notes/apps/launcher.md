@@ -1,3 +1,7 @@
+## v1.2.6
+- New option: redirect to returnUrl
+- Add switchWorkspace parameter
+
 ## v1.2.5
 - Small fixes
 - Library updates

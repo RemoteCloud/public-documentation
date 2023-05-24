@@ -1,3 +1,9 @@
+## v2.10.0
+- Option to hide meta data in flow
+- Option to prevent printing flow
+- Refactor user management authentication
+- Bugfixes
+
 ## v2.9.5
 
 - Event trigger fix

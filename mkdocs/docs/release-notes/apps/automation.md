@@ -1,5 +1,15 @@
 title: Automation (Elsa)
 
+## v1.2.0
+- New authentication schema
+- Merge from community version
+- Added workflow name to the editor screen
+- New activity: Read file as base64
+- New activity: Start checklist
+- Added toaster notification
+- Replaced textboxes with autocomplete
+- Security improvements and bugfixes
+
 ## v1.1.18
 - Subscribe to multiple topics in event hub
 - Bugfixes

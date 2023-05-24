@@ -1,3 +1,8 @@
+## v1.2.7
+- Resilient connection
+- Unique secrets for event-sync locations
+- Caching of security key
+
 ## v1.2.6
 - Fix bugs
 - Additional log output

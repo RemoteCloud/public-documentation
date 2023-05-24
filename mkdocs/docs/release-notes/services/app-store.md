@@ -1,5 +1,10 @@
 title: App Store
 
+## v1.1.8
+- Add new scopes for security keys generation
+- Added posibility to provide Issuer in appstore settings
+- Security improvements
+
 ## v1.1.7
 - Improvements in tenant setup
 

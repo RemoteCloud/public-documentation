@@ -1,3 +1,10 @@
+## v2.10.0
+- Improve offline features
+- Secured file upload folder
+- Refactor user management authentication
+- Allow specifying reason when discarding flow trough REST API
+- Bugfixes
+
 ## v2.9.5
 
 - **Start new flows when offline**

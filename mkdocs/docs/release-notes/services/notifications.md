@@ -1,3 +1,6 @@
+## v2.2.2
+- Provide notification outbox in SDK
+
 ## v2.2.1
 - Delivery improvements and SDK update
 
