@@ -860,9 +860,96 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Maranics Authentication SDK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Maranics Authentication SDK
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    Preparation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tenantresolver" class="md-nav__link">
+    TenantResolver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessioncontextprovisioningmiddleware" class="md-nav__link">
+    SessionContextProvisioningMiddleware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-policies" class="md-nav__link">
+    Authorization policies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using" class="md-nav__link">
+    Using
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signin" class="md-nav__link">
+    SignIn
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1557,6 +1644,76 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    Preparation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tenantresolver" class="md-nav__link">
+    TenantResolver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sessioncontextprovisioningmiddleware" class="md-nav__link">
+    SessionContextProvisioningMiddleware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-policies" class="md-nav__link">
+    Authorization policies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using" class="md-nav__link">
+    Using
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signin" class="md-nav__link">
+    SignIn
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1576,6 +1733,205 @@
 <p>This SDK offers methods to implement Maranics authentication.</p>
 <p><a href="https://www.nuget.org/packages/Maranics.AspNetCore.Authentication/"><strong>Nuget Feed</strong></a> | <a href="https://github.com/RemoteCloud/Maranics.AspNetCore.Authentication"><strong>Git Repository</strong></a></p>
 <hr />
+<h3 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h3>
+<p>Application must be registred in Maranics AppStore service to get app <code>ClientID</code>. This ClientID will be used diring auth process. </p>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<p>Add this configuration section to your application settings. <code>ClientAppUrls</code> must contain all possible application urls that will be in use - they will be used for callbacks. <code>CookieDomain</code> setup domain for which session cookies will be issued.</p>
+<pre><code class="language-json">  &quot;OpenIdConnect&quot;: {
+    &quot;ClientAppUrls&quot;: [ &quot;https://localhost:port&quot; ],
+    &quot;CookieDomain&quot;: &quot;localhost&quot;
+  }
+</code></pre>
+<p>Application settings must contain AppStore and Redis connection section as well.</p>
+<pre><code class="language-json">  &quot;AppStoreSettings&quot;: {
+    &quot;ClientId&quot;: &quot;&quot;,
+    &quot;ClientSecret&quot;: &quot;&quot;,
+    &quot;AppStoreUrl&quot;: &quot;http://localhost:port/&quot;,
+    &quot;Issuer&quot;: &quot;http://localhost:port/&quot;
+  }
+</code></pre>
+<pre><code class="language-json">  &quot;ConnectionStrings&quot;: {
+    &quot;Redis&quot;: &quot;&quot;
+  }
+</code></pre>
+<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
+<p>Add following code to your startup class</p>
+<pre><code class="language-csharp">using Maranics.AspNetCore.Authentication.OpenIdConnect;
+using Maranics.AspNetCore.Authentication.Extensions;
+using Maranics.AspNetCore.Authentication.Services;
+using Maranics.AspNetCore.Authentication;
+using StackExchange.Redis;
+
+public void ConfigureServices(IServiceCollection services)
+{
+...
+  AppStoreSettings appStoreSettings = Configuration.GetSection(nameof(AppStoreSettings)).Get&lt;AppStoreSettings&gt;();
+  OpenIdConnectSettings openIdConnectSettings = Configuration.GetSection(OpenIdConnectSettings.OpenIdConnectSettingsSectionName).Get&lt;OpenIdConnectSettings&gt;();
+  services.AddSingleton(openIdConnectSettings);
+
+  services.AddMaranicsAuthentication(typeof(TenantResolver), appStoreSettings, openIdConnectSettings);
+  services.AddScoped&lt;AuthenticatedSchemeResolver&gt;();
+
+  string redisConnectionString = Configuration.GetConnectionString(RedisConnectionStringName);
+  var redis = ConnectionMultiplexer.Connect(redisConnectionString);  
+  services.AddDataProtection()
+    .PersistKeysToStackExchangeRedis(redis, &quot;DataProtection-Keys&quot;).SetApplicationName(&quot;SSO&quot;);
+
+  services.Configure&lt;ForwardedHeadersOptions&gt;(options =&gt;
+  {
+    options.ForwardedHeaders =
+    ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedHost | ForwardedHeaders.XForwardedProto;
+    options.KnownNetworks.Clear();
+    options.KnownProxies.Clear();
+  });
+...
+}
+
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IConfigurationService configurationService
+{
+  app.UseForwardedHeaders();
+  ...
+  app.UseAuthentication();
+  app.UseAuthorization();
+  app.UseMiddleware&lt;SessionContextProvisioningMiddleware&gt;();
+  ...
+}
+</code></pre>
+<h4 id="tenantresolver">TenantResolver<a class="headerlink" href="#tenantresolver" title="Permanent link">&para;</a></h4>
+<p><code>services.AddMaranicsAuthentication(typeof(TenantResolver), appStoreSettings, openIdConnectSettings);</code> require ITenantResolver.
+Tenant resolver class is used to get current execution tenant for using in authentication / authorization process. With the help of a tenant, the correct UserManagement and the correct IdentityProvider are called.</p>
+<p><code>TenantResolver</code> must be implemented with your own tenant resolving logic but it must inherit <code>ITenantResolver</code> interface from </p>
+<pre><code class="language-csharp">Maranics.AspNetCore.Authentication.Services;
+</code></pre>
+<p>and must return </p>
+<pre><code class="language-csharp">namespace Maranics.AspNetCore.Authentication.Services
+{
+    public class Tenant
+    {
+        public string Name { get; set; }
+
+        public string UserManagementUrl { get; set; }
+    }
+}
+</code></pre>
+<h4 id="sessioncontextprovisioningmiddleware">SessionContextProvisioningMiddleware<a class="headerlink" href="#sessioncontextprovisioningmiddleware" title="Permanent link">&para;</a></h4>
+<p>This middleware is used to set session context based on authentication result. 
+Implementation of this middleware must be completed on your own based on the way how session is stored / used in your application.
+Example will provide the way how to handle different authentication schemas that are used in Maranics apps via <code>AuthenticatedSchemeResolver</code>.</p>
+<p>You can ignore <code>SessionContextProvisioningMiddleware</code> and use default HttpContext.ClaimPrincipal.User in case if you do not need to convert default session to custom.</p>
+<pre><code class="language-csharp">public class SessionContextProvisioningMiddleware
+{
+  private readonly RequestDelegate _next;
+  private readonly AppStoreSettings _appStoreSettings;
+  private string _tenantUnsensitivePath = &quot;/api/service&quot;;
+
+  public SessionContextProvisioningMiddleware(RequestDelegate next, AppStoreSettings appStoreSettings)
+  {
+      _next = next;
+      _appStoreSettings = appStoreSettings;
+  }
+
+  public async Task InvokeAsync(HttpContext context)
+  {
+      AuthenticatedSchemeResolver authenticatedSchemeResolver = context.RequestServices.GetRequiredService&lt;AuthenticatedSchemeResolver&gt;();
+      string authenticatedScheme = authenticatedSchemeResolver.ResolveScheme();
+      if (!string.IsNullOrEmpty(authenticatedScheme))
+      {
+          context.Resolve(out IDependenciesProvider dependenciesProvider);
+          context.Resolve(out IConfigurationService configurationService);
+          TenantConfiguration tenant = null;
+
+          if (!context.Request.Path.Value.ToLower().Contains(_tenantUnsensitivePath))
+          {
+              tenant = configurationService.GetCurrentTenant&lt;TenantConfiguration&gt;();
+          }
+
+          //ExecutingContext is session data provider used in all maranics applications.
+          ExecutingContext executingContext = dependenciesProvider.GetCurentExecutingContext();
+          executingContext.UserManagementUri = tenant?.UserManagementUri;
+
+          switch (authenticatedScheme)
+          {
+              case AuthenticationSchemeConstants.AppStoreScheme:
+                  SetAppStoreAuthorizedSessionContext(context, tenant, executingContext);
+                  break;
+              case AuthenticationSchemeConstants.UserManagementScheme:
+                  SetUserManagementAuthorizedSessionContext(context, executingContext);
+                  break;
+              case AuthenticationSchemeConstants.UserManagementUserApiTokenScheme:
+                  SetUserManagementApiTokenAuthorizedSessionContext(context, executingContext);
+                  break;
+              default:
+                  break;
+          }
+      }
+
+      await _next(context);
+  }
+}
+</code></pre>
+<h4 id="authorization-policies">Authorization policies<a class="headerlink" href="#authorization-policies" title="Permanent link">&para;</a></h4>
+<p>You can provide your own authorization policies as well. To add policy modify your startup class by adding following code.</p>
+<pre><code class="language-csharp">...
+services.AddMaranicsAuthentication(typeof(TenantResolver), appStoreSettings, openIdConnectSettings);
+services.AddSingleton&lt;IAuthorizationHandler, UserHasRoleRequirementHandler&gt;();
+services.AddScoped&lt;AuthenticatedSchemeResolver&gt;();
+
+AuthorizationPolicy defaultPolicy = new AuthorizationPolicyBuilder()
+  .AddRequirements(new UserHasRoleRequirement())
+  .RequireAuthenticatedUser()
+  .Build();
+
+services.AddAuthorization(options =&gt;
+{
+    options.DefaultPolicy = defaultPolicy;
+});
+</code></pre>
+<p>Implement following classes for your policy (use Microsoft docs to get more information about authorization policies)
+You able to use Maranics.Authentication SDK tools as well. Example provide the way how to use AuthenticatedSchemeResolver to build your policy based on it</p>
+<pre><code class="language-csharp">using Maranics.AspNetCore.Authentication;
+using Maranics.AspNetCore.Authentication.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+
+public class UserHasRoleRequirement : IAuthorizationRequirement
+{
+}
+
+public class UserHasRoleRequirementHandler : AuthorizationHandler&lt;UserHasRoleRequirement&gt;
+{
+  private readonly IHttpContextAccessor _httpContextAccessor;
+
+  public UserHasRoleRequirementHandler(IHttpContextAccessor httpContextAccessor)
+  {
+    _httpContextAccessor = httpContextAccessor;
+  }
+
+  protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, UserHasRoleRequirement requirement)
+  {
+    AuthenticatedSchemeResolver authenticatedSchemeResolver = _httpContextAccessor.HttpContext.RequestServices.GetRequiredService&lt;AuthenticatedSchemeResolver&gt;();
+    string authenticatedScheme = authenticatedSchemeResolver.ResolveScheme();
+
+    // add your logic here
+
+    return Task.CompletedTask;
+  }
+}
+</code></pre>
+<h3 id="using">Using<a class="headerlink" href="#using" title="Permanent link">&para;</a></h3>
+<p>To use Authentication / Authorization add following attributes to your controllers. </p>
+<pre><code class="language-csharp">using Maranics.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+
+...
+
+[Authorize(AuthenticationSchemes = AuthenticationSchemeConstants.AppStoreScheme)]
+[Authorize(AuthenticationSchemes = AuthenticationSchemeConstants.AllUsermanagementSchemes, Policy = AuthorizationPolicyConstants.RequireSpecificRolePolicy)]
+</code></pre>
+<p>First attribute allow to use AppStore token to access controller method. Second attribute allow to use all UserManagement schemas - UserManagement session, UserManagement API token as well. Also second attribute require authorization policy validation</p>
+<h3 id="signin">SignIn<a class="headerlink" href="#signin" title="Permanent link">&para;</a></h3>
+<p>Using of this SDK help to setup single sign in logic with Maranics UserManagement. When your controller endpoint with <code>[Authorize...]</code> attribute get 401 - you will be redirected to UserManagement signIn page.</p>
                 
                   
                 
