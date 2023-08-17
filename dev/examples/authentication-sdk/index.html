@@ -1769,10 +1769,11 @@ public void ConfigureServices(IServiceCollection services)
   OpenIdConnectSettings openIdConnectSettings = Configuration.GetSection(OpenIdConnectSettings.OpenIdConnectSettingsSectionName).Get&lt;OpenIdConnectSettings&gt;();
   services.AddSingleton(openIdConnectSettings);
 
+  string redisConnectionString = Configuration.GetConnectionString(RedisConnectionStringName);
+  services.SetupRedisTicketStore(redisConnectionString);
   services.AddMaranicsAuthentication(typeof(TenantResolver), appStoreSettings, openIdConnectSettings);
   services.AddScoped&lt;AuthenticatedSchemeResolver&gt;();
 
-  string redisConnectionString = Configuration.GetConnectionString(RedisConnectionStringName);
   var redis = ConnectionMultiplexer.Connect(redisConnectionString);  
   services.AddDataProtection()
     .PersistKeysToStackExchangeRedis(redis, &quot;DataProtection-Keys&quot;).SetApplicationName(&quot;SSO&quot;);
