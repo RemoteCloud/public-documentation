@@ -55,10 +55,11 @@ public void ConfigureServices(IServiceCollection services)
   OpenIdConnectSettings openIdConnectSettings = Configuration.GetSection(OpenIdConnectSettings.OpenIdConnectSettingsSectionName).Get<OpenIdConnectSettings>();
   services.AddSingleton(openIdConnectSettings);
   
+  string redisConnectionString = Configuration.GetConnectionString(RedisConnectionStringName);
+  services.SetupRedisTicketStore(redisConnectionString);
   services.AddMaranicsAuthentication(typeof(TenantResolver), appStoreSettings, openIdConnectSettings);
   services.AddScoped<AuthenticatedSchemeResolver>();
-  
-  string redisConnectionString = Configuration.GetConnectionString(RedisConnectionStringName);
+
   var redis = ConnectionMultiplexer.Connect(redisConnectionString);  
   services.AddDataProtection()
     .PersistKeysToStackExchangeRedis(redis, "DataProtection-Keys").SetApplicationName("SSO");
