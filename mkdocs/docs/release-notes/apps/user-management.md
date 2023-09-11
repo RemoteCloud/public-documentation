@@ -1,5 +1,10 @@
 title: User Management
 
+## v2.3.1
+- Refactored authorization
+- Added 2 factor authenticator
+- Bugfixes
+
 ## v2.3.0
 - New authentication schema (OpenId)
 - Secure upload folder
