@@ -1,3 +1,8 @@
+## v2.2.3
+- Bug fixes
+- Increase logging
+- Authentication updates
+
 ## v2.2.2
 - Provide notification outbox in SDK
 
