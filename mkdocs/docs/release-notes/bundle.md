@@ -39,10 +39,9 @@ Deployment bundles represent a collection of all applications with a specific ve
 [notifications-2.2.3]: ./services/notifications.md#v223
 [pdf-generator-2.3.0]: ./services/pdf-generator.md#v230
 [remote-exec-v2.1.5]: ./services/remote-execution.md#v215
-[sync-v1.2.7]: ./services/sync.md#v127
+[sync-v1.2.10]: ./services/sync.md#v1210
 [data-sync-v1.2.0]: ./services/data-sync.md#v120
 [event-hub-v1.0.4]: ./services/event-hub.md#v104
-[eventsync-v1.2.10]: ./services/eventsync.md#v1210
 
 
 ## V1.1.6
