@@ -1,3 +1,6 @@
+## v1.2.8
+- Update platform SDK to fix tenant creating process
+
 ## v1.2.6
 - New option: redirect to returnUrl
 - Add switchWorkspace parameter
