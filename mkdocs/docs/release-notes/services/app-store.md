@@ -1,5 +1,8 @@
 title: App Store
 
+## v1.1.9
+- Add new applications registrations
+
 ## v1.1.8
 - Add new scopes for security keys generation
 - Added posibility to provide Issuer in appstore settings
