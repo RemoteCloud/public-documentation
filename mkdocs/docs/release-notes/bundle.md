@@ -2,6 +2,49 @@ title: Deployment Bundles
 
 Deployment bundles represent a collection of all applications with a specific version. The specific app versions in a bundle are validated to play nice together. A bundle does not represent a complete list of applications that are deployed. Depending on the customer and use case only a subset of applications might be deployed. However when adding additional applications to a deployment they will use the version specified in the deployed bundle version.
 
+## V1.1.7
+
+**Note**: 
+
+
+| Application     | Type    |                          Version |
+| :-------------- | :------ | -------------------------------: |
+| User Management | App     |        [v2.3.1][user-mgm-v2.3.1] |
+| Launcher        | App     |        [v1.2.8][launcher-v1.2.8] |
+| Flow            | App     |             [v2.10.2][flow-2.10.2] |
+| Template        | App     |         [v2.10.2][template-2.10.2] |
+| Documentation   | App     |             [v3.2.1][doc-v3.2.1] | 
+| Automation      | App     |    [v1.4.1][automation-v1.4.1] |
+| App Store       | Service |       [v1.1.9][app-store-v1.1.9] |
+| API Gateway     | Service |     [v1.0.4][api-gateway-v1.0.4] |
+| Data Register   | Service |   [v2.3.1][data-register-v2.3.1] |
+| Monitoring      | Service |         [v1.0.3][monitor-v1.0.3] |
+| Notifications   | Service |    [v2.2.3][notifications-2.2.3] |
+| PDF Generator   | Service |    [v2.3.0][pdf-generator-2.3.0] |
+| RemoteExecution | Service |     [v2.1.5][remote-exec-v2.1.5] |
+| Event Sync      | Service |            [v1.2.10][sync-v1.2.10] |
+| Data Sync       | Service |       [v1.2.0][data-sync-v1.2.0] |
+| Event Hub       | Service |       [v1.0.4][event-hub-v1.0.4] |
+
+[user-mgm-v2.3.1]: ./apps/user-management.md#v231
+[launcher-v1.2.8]: ./apps/launcher.md#v128
+[flow-2.10.2]: ./apps/flow.md#v2102
+[template-2.10.2]: ./apps/template.md#v2102
+[doc-v3.2.1]: ./apps/documentation.md#v321
+[automation-v1.4.1]: ./apps/automation.md#v141
+[app-store-v1.1.9]: ./services/app-store.md#v119
+[api-gateway-v1.0.4]: ./services/api-gateway.md#v104
+[data-register-v2.3.1]: ./services/data-register.md#v231
+[monitor-v1.0.3]: ./services/monitoring.md#v103
+[notifications-2.2.3]: ./services/notifications.md#v223
+[pdf-generator-2.3.0]: ./services/pdf-generator.md#v230
+[remote-exec-v2.1.5]: ./services/remote-execution.md#v215
+[sync-v1.2.7]: ./services/sync.md#v127
+[data-sync-v1.2.0]: ./services/data-sync.md#v120
+[event-hub-v1.0.4]: ./services/event-hub.md#v104
+[eventsync-v1.2.10]: ./services/eventsync.md#v1210
+
+
 ## V1.1.6
 
 **Note**: Breaking change! New authentication schema.
