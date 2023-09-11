@@ -1,3 +1,9 @@
+## v2.10.2
+- Multiple small UI adjustments and feature expansions
+- Moved the synchronization to use MassTransit
+- Updated auth library
+- Bugfixes
+
 ## v2.10.0
 - Improve offline features
 - Secured file upload folder
