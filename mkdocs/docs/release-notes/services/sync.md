@@ -1,3 +1,7 @@
+## v1.2.10
+- Started using proto Actors for message subscribing
+- Bug fixes
+
 ## v1.2.7
 - Resilient connection
 - Unique secrets for event-sync locations
