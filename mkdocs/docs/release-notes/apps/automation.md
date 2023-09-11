@@ -1,5 +1,10 @@
 title: Automation (Elsa)
 
+## v1.4.1
+- Consume new authentication from UM
+- Automatic tenant resolving when it is known
+- Prepare application to scale out by adding distributed lock and similar features
+
 ## v1.2.0
 - New authentication schema
 - Merge from community version
