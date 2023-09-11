@@ -1,3 +1,8 @@
+## v3.2.1
+- Bugfixes
+- Update authentication library
+- Rename few endpoints to more appropriate name
+
 ## v3.1.4
 - Bugfixes
 - Library updates
