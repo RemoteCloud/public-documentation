@@ -1,8 +1,11 @@
 title: Data Register
 
+## v2.3.1
+- Update auth library
+- Bug fixes
+
 ## v2.1.1
 - Improved Permissions
-
 
 ## v2.0.3
 - AppStore SDK update
