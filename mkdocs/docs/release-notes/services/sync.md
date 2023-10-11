@@ -1,3 +1,6 @@
+## v1.2.11
+- Security improvements
+
 ## v1.2.10
 - Started using proto Actors for message subscribing
 - Bug fixes

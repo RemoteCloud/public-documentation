@@ -1,5 +1,9 @@
 title: Automation (Elsa)
 
+## v1.4.3
+- Library updates
+- Performance improvements
+
 ## v1.4.1
 - Consume new authentication from UM
 - Automatic tenant resolving when it is known

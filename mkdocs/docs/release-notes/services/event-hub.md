@@ -1,3 +1,6 @@
+## v1.0.6
+- bugfixes
+
 ## v1.0.4
 - Refactor concurrency on database
 

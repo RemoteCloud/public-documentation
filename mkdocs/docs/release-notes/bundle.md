@@ -2,6 +2,48 @@ title: Deployment Bundles
 
 Deployment bundles represent a collection of all applications with a specific version. The specific app versions in a bundle are validated to play nice together. A bundle does not represent a complete list of applications that are deployed. Depending on the customer and use case only a subset of applications might be deployed. However when adding additional applications to a deployment they will use the version specified in the deployed bundle version.
 
+## V1.1.8
+
+**Note**: 
+
+
+| Application     | Type    |                          Version |
+| :-------------- | :------ | -------------------------------: |
+| User Management | App     |        [v2.3.3][user-mgm-v2.3.3] |
+| Launcher        | App     |        [v1.2.9][launcher-v1.2.9] |
+| Flow            | App     |           [v2.11.0][flow-2.11.0] |
+| Template        | App     |       [v2.11.0][template-2.11.0] |
+| Documentation   | App     |             [v3.2.3][doc-v3.2.3] | 
+| Automation      | App     |      [v1.4.3][automation-v1.4.3] |
+| App Store       | Service |       [v1.1.9][app-store-v1.1.9] |
+| API Gateway     | Service |     [v1.0.4][api-gateway-v1.0.4] |
+| Data Register   | Service |   [v2.3.1][data-register-v2.3.1] |
+| Monitoring      | Service |         [v1.0.3][monitor-v1.0.3] |
+| Notifications   | Service |    [v2.2.3][notifications-2.2.3] |
+| PDF Generator   | Service |    [v2.3.0][pdf-generator-2.3.0] |
+| RemoteExecution | Service |     [v2.1.7][remote-exec-v2.1.7] |
+| Event Sync      | Service |          [v1.2.11][sync-v1.2.11] |
+| Data Sync       | Service |       [v1.2.0][data-sync-v1.2.0] |
+| Event Hub       | Service |       [v1.0.6][event-hub-v1.0.6] |
+
+[user-mgm-v2.3.3]: ./apps/user-management.md#v233
+[launcher-v1.2.9]: ./apps/launcher.md#v129
+[flow-2.11.0]: ./apps/flow.md#v2110
+[template-2.11.0]: ./apps/template.md#v2110
+[doc-v3.2.3]: ./apps/documentation.md#v323
+[automation-v1.4.3]: ./apps/automation.md#v143
+[app-store-v1.1.9]: ./services/app-store.md#v119
+[api-gateway-v1.0.4]: ./services/api-gateway.md#v104
+[data-register-v2.3.1]: ./services/data-register.md#v231
+[monitor-v1.0.3]: ./services/monitoring.md#v103
+[notifications-2.2.3]: ./services/notifications.md#v223
+[pdf-generator-2.3.0]: ./services/pdf-generator.md#v230
+[remote-exec-v2.1.7]: ./services/remote-execution.md#v217
+[sync-v1.2.11]: ./services/sync.md#v1211
+[data-sync-v1.2.0]: ./services/data-sync.md#v120
+[event-hub-v1.0.6]: ./services/event-hub.md#v106
+
+
 ## V1.1.7
 
 **Note**: 
@@ -11,10 +53,10 @@ Deployment bundles represent a collection of all applications with a specific ve
 | :-------------- | :------ | -------------------------------: |
 | User Management | App     |        [v2.3.1][user-mgm-v2.3.1] |
 | Launcher        | App     |        [v1.2.8][launcher-v1.2.8] |
-| Flow            | App     |             [v2.10.2][flow-2.10.2] |
-| Template        | App     |         [v2.10.2][template-2.10.2] |
+| Flow            | App     |           [v2.10.2][flow-2.10.2] |
+| Template        | App     |       [v2.10.2][template-2.10.2] |
 | Documentation   | App     |             [v3.2.1][doc-v3.2.1] | 
-| Automation      | App     |    [v1.4.1][automation-v1.4.1] |
+| Automation      | App     |      [v1.4.1][automation-v1.4.1] |
 | App Store       | Service |       [v1.1.9][app-store-v1.1.9] |
 | API Gateway     | Service |     [v1.0.4][api-gateway-v1.0.4] |
 | Data Register   | Service |   [v2.3.1][data-register-v2.3.1] |
@@ -22,7 +64,7 @@ Deployment bundles represent a collection of all applications with a specific ve
 | Notifications   | Service |    [v2.2.3][notifications-2.2.3] |
 | PDF Generator   | Service |    [v2.3.0][pdf-generator-2.3.0] |
 | RemoteExecution | Service |     [v2.1.5][remote-exec-v2.1.5] |
-| Event Sync      | Service |            [v1.2.10][sync-v1.2.10] |
+| Event Sync      | Service |          [v1.2.10][sync-v1.2.10] |
 | Data Sync       | Service |       [v1.2.0][data-sync-v1.2.0] |
 | Event Hub       | Service |       [v1.0.4][event-hub-v1.0.4] |
 
@@ -53,10 +95,11 @@ Deployment bundles represent a collection of all applications with a specific ve
 | :-------------- | :------ | -------------------------------: |
 | User Management | App     |        [v2.3.0][user-mgm-v2.3.0] |
 | Launcher        | App     |        [v1.2.6][launcher-v1.2.6] |
-| Flow            | App     |             [v2.10.0][flow-2.10.0] |
-| Template        | App     |         [v2.10.0][template-2.10.0] |
+| Flow            | App     |           [v2.10.0][flow-2.10.0] |
+| Template        | App     |       [v2.10.0][template-2.10.0] |
 | Documentation   | App     |             [v3.2.0][doc-v3.2.0] | 
-| Automation      | App     |    [v1.2.0][automation-v1.2.0] |
+| Flow Companion  | App     |  [v1.0.0][flow-companion-v1.0.0] | 
+| Automation      | App     |      [v1.2.0][automation-v1.2.0] |
 | App Store       | Service |       [v1.1.8][app-store-v1.1.8] |
 | API Gateway     | Service |     [v1.0.4][api-gateway-v1.0.4] |
 | Data Register   | Service |   [v2.1.1][data-register-v2.1.1] |
@@ -72,6 +115,7 @@ Deployment bundles represent a collection of all applications with a specific ve
 [launcher-v1.2.6]: ./apps/launcher.md#v126
 [flow-2.10.0]: ./apps/flow.md#v2100
 [template-2.10.0]: ./apps/template.md#v2100
+[flow-companion-1.0.0]: ./apps/flow-companion.md#v100
 [doc-v3.2.0]: ./apps/documentation.md#v320
 [automation-v1.2.0]: ./apps/automation.md#v120
 [app-store-v1.1.8]: ./services/app-store.md#v118

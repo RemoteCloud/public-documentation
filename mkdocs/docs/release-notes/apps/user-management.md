@@ -1,5 +1,8 @@
 title: User Management
 
+## v2.3.3
+- Bugfixes and stability improvements
+
 ## v2.3.1
 - Refactored authorization
 - Added 2 factor authenticator

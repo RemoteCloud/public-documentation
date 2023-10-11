@@ -1,3 +1,7 @@
+## v2.11.0
+- Stability improvements
+- Bugfixes
+
 ## v2.10.2
 - Multiple small UI adjustments and feature expansions
 - Moved the synchronization to use MassTransit

@@ -1,3 +1,6 @@
+## v1.2.9
+- Library updates
+
 ## v1.2.8
 - Update platform SDK to fix tenant creating process
 

@@ -1,3 +1,7 @@
+## v3.2.3
+- Bugfixes
+- Update libraries
+
 ## v3.2.1
 - Bugfixes
 - Update authentication library
