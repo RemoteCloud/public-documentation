@@ -2,6 +2,50 @@ title: Deployment Bundles
 
 Deployment bundles represent a collection of all applications with a specific version. The specific app versions in a bundle are validated to play nice together. A bundle does not represent a complete list of applications that are deployed. Depending on the customer and use case only a subset of applications might be deployed. However when adding additional applications to a deployment they will use the version specified in the deployed bundle version.
 
+## V1.1.9
+
+**Note**: 
+
+| Application     | Type    |                          Version |
+| :-------------- | :------ | -------------------------------: |
+| User Management | App     |        [v2.3.6][user-mgm-v2.3.6] |
+| Launcher        | App     |      [v1.2.10][launcher-v1.2.10] |
+| Flow            | App     |           [v2.12.0][flow-2.12.0] |
+| Template        | App     |       [v2.12.0][template-2.12.0] |
+| Flow Manager    | App     |    [v1.0.8][flow-manager-v1.0.8] |
+| Documentation   | App     |             [v3.2.7][doc-v3.2.7] | 
+| Automation      | App     |      [v1.4.7][automation-v1.4.7] |
+| Package Manager | App     | [v1.0.3][package-manager-v1.0.3] |
+| App Store       | Service |     [v1.1.10][app-store-v1.1.10] |
+| API Gateway     | Service |     [v1.0.4][api-gateway-v1.0.4] |
+| Data Register   | Service |   [v2.3.1][data-register-v2.3.1] |
+| Monitoring      | Service |         [v1.0.3][monitor-v1.0.3] |
+| Notifications   | Service |    [v2.2.3][notifications-2.2.3] |
+| PDF Generator   | Service |    [v2.3.0][pdf-generator-2.3.0] |
+| RemoteExecution | Service |     [v2.1.7][remote-exec-v2.1.7] |
+| Event Sync      | Service |            [v1.3.0][sync-v1.3.0] |
+| Data Sync       | Service |       [v1.2.2][data-sync-v1.2.2] |
+| Event Hub       | Service |       [v1.0.6][event-hub-v1.0.6] |
+
+[user-mgm-v2.3.6]: ./apps/user-management.md#v236
+[launcher-v1.2.10]: ./apps/launcher.md#v1210
+[flow-manager-v1.0.8]: ./apps/flow-manager.md#v108
+[flow-2.12.0]: ./apps/flow.md#v2120
+[template-2.12.0]: ./apps/template.md#v2120
+[doc-v3.2.7]: ./apps/documentation.md#v327
+[automation-v1.4.7]: ./apps/automation.md#v147
+[package-manager-v1.0.3]: ./apps/package-manager.md#v103
+[app-store-v1.1.10]: ./services/app-store.md#v1110
+[api-gateway-v1.0.4]: ./services/api-gateway.md#v104
+[data-register-v2.3.1]: ./services/data-register.md#v231
+[monitor-v1.0.3]: ./services/monitoring.md#v103
+[notifications-2.2.3]: ./services/notifications.md#v223
+[pdf-generator-2.3.0]: ./services/pdf-generator.md#v230
+[remote-exec-v2.1.7]: ./services/remote-execution.md#v217
+[sync-v1.3.0]: ./services/sync.md#v130
+[data-sync-v1.2.2]: ./services/data-sync.md#v122
+[event-hub-v1.0.6]: ./services/event-hub.md#v106
+
 ## V1.1.8
 
 **Note**: 
